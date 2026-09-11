@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: colorpicker
+Version: 0.1.0
+Requires-Dist: pyobjc-core; sys_platform == "darwin"
+Requires-Dist: pyobjc-framework-Cocoa; sys_platform == "darwin"
+Requires-Dist: pyobjc-framework-Quartz; sys_platform == "darwin"
+Requires-Dist: pyobjc-framework-ScreenCaptureKit; sys_platform == "darwin"
