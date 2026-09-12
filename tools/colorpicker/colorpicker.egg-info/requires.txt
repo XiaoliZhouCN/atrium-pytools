@@ -1,0 +1,6 @@
+
+[:sys_platform == "darwin"]
+pyobjc-core
+pyobjc-framework-Cocoa
+pyobjc-framework-Quartz
+pyobjc-framework-ScreenCaptureKit
