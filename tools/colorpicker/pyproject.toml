@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "colorpicker"
+version = "0.1.0"
+dependencies = [
+    "pyobjc-core; sys_platform == 'darwin'",
+    "pyobjc-framework-Cocoa; sys_platform == 'darwin'",
+    "pyobjc-framework-Quartz; sys_platform == 'darwin'",
+    "pyobjc-framework-ScreenCaptureKit; sys_platform == 'darwin'",
+]
+
+[project.scripts]
+colorpicker = "colorpicker.cli:main"
+
+[tool.setuptools]
+packages = [
+    "colorpicker",
+    "colorpicker.platform",
+    "colorpicker.platform.win",
+    "colorpicker.platform.mac",
+]
+
+[tool.setuptools.package-dir]
+colorpicker = "."
+"colorpicker.platform" = "platform"
+"colorpicker.platform.win" = "platform/win"
+"colorpicker.platform.mac" = "platform/mac"

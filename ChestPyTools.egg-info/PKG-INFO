@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: ChestPyTools
+Version: 0.1.0
+Summary: Chest 工作区纯 Python 工具库
+Author: Your Name
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+
+# ChestPyTools
