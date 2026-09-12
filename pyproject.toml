@@ -1,0 +1,21 @@
+# D:\Repositories\Manager\AtriumPyTools\pyproject.toml
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ChestPyTools"
+version = "0.1.0"
+description = "Chest 工作区纯 Python 工具库"
+authors = [{ name = "Your Name" }]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []   # 后续根据需要添加依赖（如 numpy, opencv-python 等）
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tools*", "shared*"]   # 确保 tools 和 shared 目录被打包
+
+# （可选）配置 console_scripts，用于 CLI 入口
+[project.scripts]
+chest-cli = "cli:main"
