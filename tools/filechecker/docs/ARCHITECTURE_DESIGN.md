@@ -1,8 +1,8 @@
 # Colorpicker 跨平台重构策划案
 
 > **文档版本**：v1.0\
-> **创建日期**：2026-09-03\
-> **目标路径**：`tools\colorpicker\docs\ARCHITECTURE_DESIGN.md`
+> **创建日期**：2026-09-16\
+> **目标路径**：`tools\filechecker\docs\ARCHITECTURE_DESIGN.md`
 
 ***
 
