@@ -1,0 +1,782 @@
+[
+  {
+    "id": "ma01",
+    "name": "THE FOOL",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Folly, mania, extravagance, intoxication, delirium, frenzy, bewrayment.",
+    "reversed": "Negligence, absence, distribution, carelessness, apathy, nullity, vanity. --- It will be seen that, except where there is an irresistible suggestion conveyed by the surface meaning, that which is extracted from the Trumps Major by the divinatory art is at once artificial and arbitrary, as it seems to me, in the highest degree. But of one order are the mysteries of light and of another are those of fantasy. # THE LESSER ARCANA Otherwise, the Four Suits of Tarot Cards will now be described according to their respective classes by the pictures to each belonging, and a harmony of their meanings provided from all sources. ## WANDS"
+  },
+  {
+    "id": "ma02",
+    "name": "THE MAGICIAN",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Skill, diplomacy, address, sickness, pain, loss, disaster, self-confidence, will, the Querent himself (if male).",
+    "reversed": "Physician, Magus, mental illness, disgrace, disquiet."
+  },
+  {
+    "id": "ma03",
+    "name": "THE HIGH PRIESTESS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Secrets, mystery, the future as yet unrevealed, the woman who interests the Querent (if male); the Querent (if female) silence, tenacity; wisdom, science.",
+    "reversed": "Passion, moral or physical ardor, conceit, surface knowledge."
+  },
+  {
+    "id": "ma04",
+    "name": "THE EMPRESS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Fruitfulness, initiative, action, long days, clandestine, the unknown, dit-ficulty, doubt, ignorance.",
+    "reversed": "Light, truth, the unraveling of involved matters, public rejoice, also, according to another reading - vacillation."
+  },
+  {
+    "id": "ma05",
+    "name": "The Emperor",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "a great person, conviction, reason.",
+    "reversed": "Benevolence, compassion, credit, also confusion to enemies, obstruction, immaturity."
+  },
+  {
+    "id": "ma06",
+    "name": "THE HIEROPHANT",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Marriage alliance, cap-tivity, servitude, mercy and goodness, inspiration, the man to whom the Querent has recourse.",
+    "reversed": "Society, good understanding, concord, over-kindness, weakness."
+  },
+  {
+    "id": "ma07",
+    "name": "THE LOVERS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Attraction, love, beauty, trials overcome.",
+    "reversed": "Failure, foolish designs."
+  },
+  {
+    "id": "ma08",
+    "name": "THE CHARIOT",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Succor, providence, also war, triumph, presumption, vengeance, trouble.",
+    "reversed": "Riot, quarrel, dispute, litigation, defeat."
+  },
+  {
+    "id": "ma09",
+    "name": "STRENGTH",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Power, energy, action, courage, magnanimity.",
+    "reversed": "Abuse of power, despot-ism, weakness, discord."
+  },
+  {
+    "id": "ma10",
+    "name": "The Hermit",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "treason, dissimulation, corruption, roguery.",
+    "reversed": "Concealment, disguise, policy, fear, unreasoned caution."
+  },
+  {
+    "id": "ma11",
+    "name": "WHEEL OF FORTUNE",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Destiny, fortune, success, luck, felicity.",
+    "reversed": "Increase, abun-dance, superfluity."
+  },
+  {
+    "id": "ma12",
+    "name": "JUSTICE",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Equity, rightness, probity, execu-tive.",
+    "reversed": "Law in all departments, bigotry, bias, excessive severity."
+  },
+  {
+    "id": "ma13",
+    "name": "THE HANGED MAN",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Wisdom, trials, cir-cumspection, discernment, sacrifice, intuition, divination, prophecy.",
+    "reversed": "Selfishness, the crowd, body politic."
+  },
+  {
+    "id": "ma14",
+    "name": "DEATH",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "End, mortality, destruction, corrup-tion.",
+    "reversed": "Inertia, sleep, lethargy, petrifaction, somnambulism."
+  },
+  {
+    "id": "ma15",
+    "name": "TEMPERANCE",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Economy, moderation, fru-gality, management, accommodation.",
+    "reversed": "Things connected with churches, religions, sects, the priesthood, also unfortunate combinations, dis union, competing interests."
+  },
+  {
+    "id": "ma16",
+    "name": "THE DEVIL",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Ravage, violence, force, vehe-mence, extraordinary efforts, fatality, that which is predestined but not for this reason evil.",
+    "reversed": "Evil fatality, weakness, pettiness, blindness."
+  },
+  {
+    "id": "ma17",
+    "name": "THE TOWER",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Misery, distress, ruin, indi-gence, adversity, calamity, disgrace, deception.",
+    "reversed": "According to one account, the same in a lesser degree, also oppression, imprisonment, tyranny."
+  },
+  {
+    "id": "ma18",
+    "name": "THE STAR",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Loss, theft, privation, abandon-ment, although another reading suggests hope and bright prospects in the future.",
+    "reversed": "Arrogance, impotence, haughtiness."
+  },
+  {
+    "id": "ma19",
+    "name": "THE MOON",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Hidden enemies, danger, calumny, darkness, terror, deception, error.",
+    "reversed": "Instability, inconstancy, silence, lesser degrees of deception and error."
+  },
+  {
+    "id": "ma20",
+    "name": "THE SUN",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Material happiness, fortunate marriage, contentment.",
+    "reversed": "The same in a lesser sense."
+  },
+  {
+    "id": "ma21",
+    "name": "The Last Judgment",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Change of posi-tion, renewal, outcome.",
+    "reversed": "Weakness, pusillanimity, simplicity, also deliberation, decision, sentence."
+  },
+  {
+    "id": "ma22",
+    "name": "THE WORLD",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "",
+    "upright": "Assured success, route, voy-age, emigration, flight, change of place.",
+    "reversed": "Inertia, fixity, stagnation, permanence."
+  },
+  {
+    "id": "wands01",
+    "name": "ACE OF WANDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A hand issuing from a cloud grasps a stout Wand or Club.",
+    "upright": "Creation, invention, enterprise, the powers which result in these, principle, beginning, source, birth, family, origin, the beginning of enterprises, according to another account-money, fortune, inheritance.",
+    "reversed": "Fall, decadence, ruin, perdition, to perish, also-clouded joy. ## CUPS"
+  },
+  {
+    "id": "wands02",
+    "name": "TWO OF WANDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A tall man looks from a bat-tlemented roof over sea and shore. He holds a globe in his right hand and a staff in his left rests on the battlement, another is fixed in a ring. The Rose and Cross and Lily should also be noticed on the left side.",
+    "upright": "Between the alternative readings there is no marriage possible, on the one hand, riches, fortune, magnificence. And on the other, physical suffering, disease, chagrin, sadness, mortification. The design gives one suggestion-here is a lord overlooking his dominion and alternately contemplating a globe. It looks like the malady, the mortification, the sadness of Alexander amidst the grandeur of this world's wealth.",
+    "reversed": "Surprise, wonder, enchantment, emotion, trouble, fear."
+  },
+  {
+    "id": "wands03",
+    "name": "THREE OF WANDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A calm, stately figure, with his back turned, looking from a cliff's edge at ships passing over the sea. Three staves are planted in the ground and he leans slightly on one of them.",
+    "upright": "He symbolizes established strength, enterprise, effort, trade, discovery, com-merce; those are his ships, bearing his merchandise, which are sailing over the sea.",
+    "reversed": "The end of troubles, suspension or end of adversity, disappointment, and toil."
+  },
+  {
+    "id": "wands04",
+    "name": "FOUR OF WANDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "From the four great staves planted in the foreground there is a great garland suspended, two female figures uplift nosegays and at their side is a bridge over a moat, leading to an old manorial house.",
+    "upright": "They are for once almost on the surface-country life, repose, concord, harmony, prosperity, peace, and the perfected work of these.",
+    "reversed": "The meaning remains unaltered —increase, felicity, beauty, embellishment."
+  },
+  {
+    "id": "wands05",
+    "name": "FIVE OF WANDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A posse of youths are brandishing staves, as if in sport or strife. It is mimic warfare, and hereto correspond the",
+    "upright": "Imitation, for example, sham fight, the strenuous competition and struggle of the search after riches and fortune. Hence some attributions say that it is a card of gold, gain, opulence.",
+    "reversed": "Trickery, Contradiction, litigation, disputes."
+  },
+  {
+    "id": "wands06",
+    "name": "SIX OF WANDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A laureled horseman bears staff adorned with laurel crown; footmen with staves are at his side.",
+    "upright": "The card has been so designed that it can cover several significations. On the surface, it is a victor triumphing, but it is also great news, such as might be carried in state by the King's courier. It is expectation crowned with its own desire, the crown of hope.",
+    "reversed": "Apprehension, fear-as of a victorious enemy at the gate, treachery, disloyalty, as of gates being opened to the enemy."
+  },
+  {
+    "id": "wands07",
+    "name": "SEVEN OF WANDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A young man on a craggy eminence, brandishing a staff, six other staves are raised towards him from below.",
+    "upright": "It is a card of valor, for on the surface, six are attacking one, who has, however, the vantage position. On the intellectual plane, it signifies discussion, wordy strife, in business— negotiations, war of trade, barter, competition. It is further a card of success, for the combatant is on the top and his enemies may be unable to reach him.",
+    "reversed": "Perplexity, embarrassments, anxiety."
+  },
+  {
+    "id": "wands08",
+    "name": "EIGHT OF WANDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "The card represents motion through the immovable-a flight of wands through an open country.",
+    "upright": "Activity in undertakings, the path of such activity, swiftness, as that of an express messenger; great haste, great hope, speed towards an end which promises assured felicity; that which is on the move, also the arrows of love.",
+    "reversed": "Arrows of jealousy, internal dispute, stingings of conscience, quarrels."
+  },
+  {
+    "id": "wands09",
+    "name": "NINE OF WANDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "The figure leans upon his staff and has an expectant look, as if awaiting an enemy. Behind him are eight other staves erect, in orderly disposition, like a palisade.",
+    "upright": "The card signifies strength in opposition. If attacked, he will meet the onslaught boldly. With this main significance there are all its possible adjuncts, including delay, suspension, adjournment.",
+    "reversed": "Obstacles, adversity, calamity."
+  },
+  {
+    "id": "wands10",
+    "name": "TEN OF WANDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A man oppressed by the weight of the ten staves which he is carrying.",
+    "upright": "A card of many significances, and some of the readings cannot be harmo-nized. I set aside that which connects it with honor and good faith. It is oppression simply, but it is also fortune, gain, any kind of success of these things. It is also a card of false-seeming, disguise, perfidy. The place which the figure is approaching may suffer from the rods that he carries. Success is stultified if the Nine of Swords follows, and if it is a question of a lawsuit-there will be certain loss.",
+    "reversed": "Contrarieties, difficulties, intrigues, and their analogies."
+  },
+  {
+    "id": "wands11",
+    "name": "PAGE OF WANDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "In a scene similar to the former, a young man stands in the act of proclamation. He is unknown but faithful, and his tidings are strange.",
+    "upright": "Dark young man, faithful, a lover, an envoy, a postman. Beside a man, he will bear favorable testimony concerning him. He is a dangerous rival, if followed by the Page of Cups. Has the chief qualities of his suit.",
+    "reversed": "Anecdotes, announcements, evil news. Also indecision and the instability which usually accompanies it."
+  },
+  {
+    "id": "wands12",
+    "name": "KNIGHT OF WANDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "He is shown as if upon a journey, armed with a short wand, and although mailed is not on a warlike errand. He is passing mounds or pyramids.",
+    "upright": "Departure, absence, flight, emigration. A dark young man, friendly. Change of residence.",
+    "reversed": "Rupture, division, interruption, discord."
+  },
+  {
+    "id": "wands13",
+    "name": "QUEEN OF WANDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "Throughout this suit the wands are always in leaf, as it is a suit of life and animation. Emotionally and otherwise, the Queen's personality corresponds to that of the King, but is more magnetic.",
+    "upright": "A dark woman or a countrywoman, friendly, chaste, loving, honorable. If the card beside her signifies a man, she is well disposed towards him; if a woman, she is interested in the Querent. Also, love of money.",
+    "reversed": "Good, economical, obliging, serviceable. Also signifies opposition, jealousy, deceit, and infidelity."
+  },
+  {
+    "id": "wands14",
+    "name": "KING OF WANDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "The physical and emotional nature to which this card is attributed is dark, ardent, lithe, animated, impassioned, noble. He uplifts a flowering Wand and wears, like his three correspondences in the remaining suits, what is called a cap of maintenance beneath his crown. He connects with the symbol of the lion, which is emblazoned on the back of his throne.",
+    "upright": "Dark man, friendly, countryman, generally married, honest and conscientious.",
+    "reversed": "Good, but severe; austere, yet tolerant."
+  },
+  {
+    "id": "cups01",
+    "name": "ACE OF CUPS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "The waters are beneath, upon which are water lilies. The hand issues from the cloud, holding in its palm the cup, from which four streams are pouring. A dove, bearing in its bill a cross-marked host, descends to place the wafer in the cup —the dew of water is falling on all sides. It is an intimation of that which may lie behind the Lesser Arcana.",
+    "upright": "True heart, joy, content, abode, nourishment, abundance, fertility, holy table, felicity hereof.",
+    "reversed": "False heart, mutation, instability, revolution. ## SWORDS"
+  },
+  {
+    "id": "cups02",
+    "name": "TWO OF CUPS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A youth and maiden are pledging one another, and above their cups rises the caduceus of Hermes, between the great wings of which there.",
+    "upright": "",
+    "reversed": ""
+  },
+  {
+    "id": "cups03",
+    "name": "THREE OF CUPS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "Maidens in a garden ground with cups uplifted, as if pledging one another.",
+    "upright": "The conclusion of any matter in plenty, perfection and merriment, happy issue, victory, fulfillment, solace, healing.",
+    "reversed": "Expedition, dispatch, achievement, end."
+  },
+  {
+    "id": "cups04",
+    "name": "FOUR OF CUPS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A young man is seated under a tree and contemplates three cups set on the grass before him, an arm issuing from a cloud offers him another cup. His expression notwithstanding is one of discontent with his environment.",
+    "upright": "Weariness, disgust, aversion, imaginary vexations-as if the wine of this world had caused satiety only. Another wine, as if a fairy gift, is now offered him, but he sees no consolation therein. This is also a card of blended pleasure.",
+    "reversed": "Novelty, presage, new instruction, new relations."
+  },
+  {
+    "id": "cups05",
+    "name": "FIVE OF CUPS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A dark, cloaked figure, looking sideways at three prone cups, two others stand upright behind him and a bridge is in the back-ground, leading to a small keep or holding",
+    "upright": "It is a card of loss, but something remains over, three have been taken, but two are left. It is a card of inheritance, transmission, and patrimony, but not corresponding to expectations. With some it is a card of marriage, but not without bitterness or frustration.",
+    "reversed": "News, alliances, affinity, consanguinity, ancestry, return, false projects."
+  },
+  {
+    "id": "cups06",
+    "name": "SIX OF CUPS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "Children in an old garden, their cups filled with flowers.",
+    "upright": "A card of memories and of the past. For example, reflecting on childhood, happiness, enjoyment, but coming rather from the past, things that have vanished. Another reading reverses this, giving new relations, new knowledge, new environment, and then the children are disporting in a newly-entered precinct.",
+    "reversed": "The future, renewal, that which will come to pass presently."
+  },
+  {
+    "id": "cups07",
+    "name": "SEVEN OF CUPS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "Strange chalices of vision.",
+    "upright": "Fairy favors, images of reflection, imagination, sentiment, things seen in the glass of contemplation, some attainment in these degrees but nothing permanent or substantial is suggested.",
+    "reversed": "Desire, will, determination, project."
+  },
+  {
+    "id": "cups08",
+    "name": "EIGHT OF CUPS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A man of dejected aspect is deserting the cups of his felicity, enterprise, undertaking or previous concern.",
+    "upright": "The card speaks for itself on the surface, but other readings are entirely antithetical —giving joy, mildness, timidity, honor, modesty.",
+    "reversed": "Great joy, happiness, feasting."
+  },
+  {
+    "id": "cups09",
+    "name": "NINE OF CUPS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "The goodly personage is feasting to his heart's content, and abundant refreshment of wine is on the arched counter behind him.",
+    "upright": "Concord, contentment, physical bienêtre; also victory, success, advantage, satisfaction for the Querent or person for whom the consultation is made.",
+    "reversed": "Truth, loyalty, lib-erty. But the readings vary and include mistakes, imperfections, etc."
+  },
+  {
+    "id": "cups10",
+    "name": "TEN OF CUPS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "Appearance of Cups in a rain-bow, it is contemplated in wonder and ecstasy by a man and woman below, evidently husband and wife. His right arm is about her, his left raised upward as she raises her right arm. The two children dancing near them have not observed the prodigy, but are happy after their own manner. There is a home scene beyond.",
+    "upright": "Contentment, repose of the entire heart-the perfection of that state, if with several picture cards, a person who is taking charge of the Querent's interests. Also the town, village or country inhabited by the Querent.",
+    "reversed": "Repose of the false heart, indignation, violence."
+  },
+  {
+    "id": "cups11",
+    "name": "PAGE OF CUPS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A fair, pleasing, somewhat effeminate Page, of studious and intent aspect, contemplates a fish rising from a cup to look at him.",
+    "upright": "Fair young man, one impelled to render service and with whom the Querent will be connected, a studious youth, news, message, application, reflection, meditation—also these things directed to business.",
+    "reversed": "Taste, inclination, attachment, seduction, deception, artifice."
+  },
+  {
+    "id": "cups12",
+    "name": "KNIGHT OF CUPS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "Graceful, not warlike, riding quietly, wearing a winged helmet, referring to the higher graces of the imagination which sometimes characterize this card.",
+    "upright": "Arrival, approach —sometimes that of a messenger, advances, proposition, demeanor, invitation, incitement.",
+    "reversed": "Trickery, artifice, subtlety, swindling, duplicity, fraud."
+  },
+  {
+    "id": "cups13",
+    "name": "QUEEN OF CUPS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "Beautiful, fair, dreamy woman (as one who sees visions in a cup).",
+    "upright": "Good, fair woman, honest, devoted, who will do service to the Querent. Loving intelligence, and hence the gift of vision, success, happiness, pleasure, also wisdom, virtue.",
+    "reversed": "The accounts vary; good woman, otherwise, distinguished woman but one not to be trusted, perverse woman, vice, dishonor, depravity."
+  },
+  {
+    "id": "cups14",
+    "name": "KING OF CUPS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "He holds a short scepter in his left hand and a great cup in his right, his throne is set upon the sea, on one side a ship is riding and on the other a dolphin is leaping. The implicit is that the sign of the Cup naturally refers to water, which appears in all the court cards.",
+    "upright": "Fair man, man of business, law, or divinity, responsible, disposed to oblige the Querent. Also equity, art and science, including those who profess science, law and art, creative intelligence.",
+    "reversed": "Dishonest, double-dealing man, roguery, exaction, injustice, vice, scandal."
+  },
+  {
+    "id": "swords01",
+    "name": "ACE OF SWORDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A hand issues from a cloud, grasping a sword, the point of which is encircled by a crown.",
+    "upright": "Triumph, the excessive degree in everything, conquest, triumph of force. A card of great force, in love as well as in hatred.",
+    "reversed": "The same meanings, but the results are disastrous; another account says —conception, childbirth, augmentation, multiplicity. ## PENTACLES"
+  },
+  {
+    "id": "swords02",
+    "name": "TWO OF SWORDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A hoodwinked figure balances two swords upon her shoulders.",
+    "upright": "Conformity and the equipoise which it gests, courage, friendship, affection, concord in a state of arms, intimacy.",
+    "reversed": "Imposture, falsehood, duplicity, disloyalty."
+  },
+  {
+    "id": "swords03",
+    "name": "THREE OF SWORDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "Three swords piercing a heart, cloud and rain behind.",
+    "upright": "Removal, absence, delay, division, rupture, dispersion, and all that the design signifies naturally.",
+    "reversed": "Mental alienation, error, loss, distraction, disorder, confusion."
+  },
+  {
+    "id": "swords04",
+    "name": "FOUR OF SWORDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "The effigy of a Knight in the attitude of prayer, at full length upon his tomb.",
+    "upright": "Vigilance, retreat, solitude, hermit's repose, exile, tomb and coffin.",
+    "reversed": "Wise administration, circumspection, economy, avarice, precaution, testament."
+  },
+  {
+    "id": "swords05",
+    "name": "FIVE OF SWORDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A disdainful man looks after two retreating and dejected figures. Their two swords lie upon the ground. He carries two others on his left shoulder, and a third sword is in his right hand, point to earth. He is the master in possession of the field.",
+    "upright": "Degradation, destruction, reversal, infamy, dishonor, loss.",
+    "reversed": "The same-burial and obsequies."
+  },
+  {
+    "id": "swords06",
+    "name": "SIX OF SWORDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A ferryman carrying passengers in his punt to the further shore.",
+    "upright": "Journey by water, route, way, envoy, commissionary, expedient.",
+    "reversed": "Declaration, confession, publicity. One account says that it is a proposal of love."
+  },
+  {
+    "id": "swords07",
+    "name": "SEVEN OF SWORDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A man in the act of carrying away five swords rapidly, the two others of the card remain stuck in the ground. A camp close at hand.",
+    "upright": "Design, attempt, wish, hope, confidence-also quarrelling. A plan that may fail, annoyance.",
+    "reversed": "Good advice, counsel, instruction, slander, babbling."
+  },
+  {
+    "id": "swords08",
+    "name": "EIGHT OF SWORDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A woman, bound and hoodwinked, with the swords of the card about her.",
+    "upright": "Bad news, violent chagrin, crisis, censure, power in trammels, conflict, calumny-also sickness.",
+    "reversed": "Disquiet, difficulty, opposition, accident, treachery, the unforeseen, fatality."
+  },
+  {
+    "id": "swords09",
+    "name": "NINE OF SWORDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "One seated on her couch in lamentation with the swords over her.",
+    "upright": "Death, failure, miscarriage, delay, deception, disappointment, despair.",
+    "reversed": "Imprisonment, doubt, suspicion, reasonable fear, shame."
+  },
+  {
+    "id": "swords10",
+    "name": "TEN OF SWORDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A prostrate figure, pierced by all the swords belonging to the card.",
+    "upright": "Whatsoever is intimated by the design-also pain, affliction, tears, sadness, desolation.",
+    "reversed": "Advantage, profit, success, favor, but none of these are permanent. Also power and authority."
+  },
+  {
+    "id": "swords11",
+    "name": "PAGE OF SWORDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A lithe, active figure holds a sword upright in both hands, while in the act of swift walking.",
+    "upright": "Authority, overseeing, secret service, vigilance, spying, exam-ination, and the qualities thereto belonging.",
+    "reversed": "More evil side of these qualities, what is unforeseen, an unprepared state, sickness is also intimated."
+  },
+  {
+    "id": "swords12",
+    "name": "KNIGHT OF SWORDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "In full course, as if scattering his enemies.",
+    "upright": "Skill, bravery, capacity, defense, address, enmity, wrath, war, destruction, opposition, resistance, ruin.",
+    "reversed": "Imprudence, incapacity, extravagance."
+  },
+  {
+    "id": "swords13",
+    "name": "QUEEN OF SWORDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "Her right hand raises the weapon vertically and the hilt rests on an arm of her royal chair. The left hand is extended, the arm raised, her countenance is severe, chastened, and suggests familiarity with sorrow.",
+    "upright": "Widowhood, female sadness and embarrassment, absence, sterility, mourning, privation, separation.",
+    "reversed": "Malice, bigotry, artifice, prudery, deceit."
+  },
+  {
+    "id": "swords14",
+    "name": "KING OF SWORDS",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "He sits in judgment, holding the unsheathed sign of his suit.",
+    "upright": "Whatsoever arises out of the idea of judgment and all its connections-power, command, authority, militant intelligence, law, offices of the crown, and so forth.",
+    "reversed": "Cruelty, perversity, barbarity, perfidy, evil intention."
+  },
+  {
+    "id": "pentacles01",
+    "name": "ACE OF PENTACLES",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A hand-issuing, usual, from a cloud-holds up a pentacle.",
+    "upright": "Perfect contentment, felicity, ecstasy —also speedy intelligence, gold.",
+    "reversed": "The evil side of wealth, bad intelligence. Also great riches. # THE ART OF TAROT DIVINATION Cups are assumed to represent people with light brown hair and of fair complexion; Wands represent those having yellow or red hair and blue eyes; Swords correspond to persons with dark brown hair and possibly gray, hazel or even blue eyes; Pentacles answer to very dark people. The procedure is as follows: Select the Significator of the person or thing about whom or which the inquiry is made. It is the card which, in the reader's judgment or experience, is the most representative, and is not, therefore, of necessity the Magician or High Priestess mentioned in the official divinatory meanings. Place the Significator in the middle. Let the reader and querent shuffle and cut the remainder of the deck three times each. Turn up the FIRST CARD; cover the Significator therewith, and say; \"That covers him.\" This is the person or thing's general environment at the time, the influence with which he is actuated all through. Turn up the SECOND CARD; put it across him horizontally, and say: \"This represents his obsta-cles.\" If it is a favorable card, it will be something good in itself, but not productive of good in the particular connection. Turn up the THIRD CARD; place it above the head of the Significator, and say: \"This crowns him.\" It represents (a) the best that he can arrive at, or (b) his ideal in the matter; (c) what he wants to make his own; (d) but it is not his own at present. Turn up the FOURTH CARD; place it below the feet of the Significator, and say: \"This is beneath him.\" It is his own-that which he has to work with and can use. Turn up the FIFTH CARD; place it on the side that the Significator is looking away from, and say: \"This is behind him.\" It is the current from which he is passing away, and it may be the past of the matter. Turn up the SIXTH CARD; place it on the side that the Significator is facing, and say: \"This is before him.\" It is the current that is coming into action and will operate in the specific matter. The first six cards (plus the Significator card) are now disposed in the form of a cross. The next four cards are turned up in succession and placed to your right, one card above another. The SEVENTH signifies himself, his attitude and relation to the matter. The EIGHTH signifies his house, his environment in the affair-the influence, people and events about him. The NINTH CARD signifies his hopes and fears. The TENTH CARD represents what will come. It is on this card that you concentrate your intuitive powers, your experience and your memory in respect to the official divinatory meanings attached thereto. It should include whatsoever you may have divined from the other cards on the table, including the Significator itself and concerning him or it, not excepting such lights upon higher significance as might fall like sparks from heaven if the card which serves for the oracle, the card for reading, should happen to be a Trump Major. Thus basing your calculations, if you obtain a decisive judgment the reading is over, and you have only to formulate the result. In conclusion, as regards the question of com-plexions, their allocation to the Suits need not be taken conventionally. You can go by the temperament of a person; one who is exceedingly dark may be very energetic, and would be better represented by a Sword card than a Pentacle. On the other hand, a very fair person who was indolent and lethargic should be allocated to Cups rather than Wands. Great facility may be obtained by this method in a comparatively short time, allowance being always made for the gifts of the reader."
+  },
+  {
+    "id": "pentacles02",
+    "name": "TWO OF PENTACLES",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A young man in the act of dancing has a pentacle in either hand, and they are joined by that endless cord which is like the number eight reversed.",
+    "upright": "It is represented as a card of gaiety, recreation and its connections, which is the subject of the design. But it is read also as news and messages in writing, such as obstacles, agitation, trouble, embroilment.",
+    "reversed": "Enforced gaiety, simulated enjoyment, literal sense, handwriting, composition, letters of exchange."
+  },
+  {
+    "id": "pentacles03",
+    "name": "THREE OF PENTACLES",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A sculptor at his work in a monastery.",
+    "upright": "Métier, trade, skilled labor. Usually, however, regarded as a card of nobility, aristocracy, renown, glory.",
+    "reversed": "Mediocrity in work and otherwise, puerility, pettiness, weakness."
+  },
+  {
+    "id": "pentacles04",
+    "name": "FOUR OF PENTACLES",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A crowned figure, having a pentacle over his crown, clasps another with hands and arms; two pentacles are under his feet.",
+    "upright": "The surety of posses-sions, cleaving to that which one has, gifts, legacy, inheritance.",
+    "reversed": "Suspense, delay, opposition."
+  },
+  {
+    "id": "pentacles05",
+    "name": "FIVE OF PENTACLES",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "Two mendicants in a snowstorm pass a lighted casement.",
+    "upright": "It foretells material trouble above all, whether in the form illustrated, that is, destitution, or otherwise. For some cartomancists, it is a card of love and lovers —wife, husband, friend, mistress— also concordance, affinities. These alternatives cannot be harmonized.",
+    "reversed": "Disorder, chaos, ruin, discord, profligacy."
+  },
+  {
+    "id": "pentacles06",
+    "name": "SIX OF PENTACLES",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "One in the guise of a merchant weighs money in a pair of scales and distributes it to the needy and distressed.",
+    "upright": "Presents, gifts, gratification. Another account says attention, vigilance, now is the accepted time, present prosperity, etc.",
+    "reversed": "Desire, cupidity, envy, jealousy, illusion."
+  },
+  {
+    "id": "pentacles07",
+    "name": "SEVEN OF PENTACLES",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A young man, leaning on his staff, looks intently at seven pentacles attached to a clump of greenery on his right. One would say that these were his treasures and that his heart was there.",
+    "upright": "These are exceedingly contradictory, in the main, it is a card of money, business, barter-but one reading gives altercation, quarrel, and another innocence, ingenuity, purgation.",
+    "reversed": "Anxiety about money."
+  },
+  {
+    "id": "pentacles08",
+    "name": "EIGHT OF PENTACLES",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "An artist in stone at work.",
+    "upright": "Work, employment, commission, craftsmanship, skill in craft and business.",
+    "reversed": "Voided ambition, vanity, cupidity, exaction, usury."
+  },
+  {
+    "id": "pentacles09",
+    "name": "NINE OF PENTACLES",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A woman, with a bird upon her wrist, stands amidst a great abundance of grapevines in the garden of a great house.",
+    "upright": "Prudence, safety, success, accomplishment, certitude, discernment. Reversed: Roguery, deception, voided project, bad faith.",
+    "reversed": ""
+  },
+  {
+    "id": "pentacles10",
+    "name": "TEN OF PENTACLES",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A man and woman beneath an archway which gives entrance to a house and domain.",
+    "upright": "Gain, riches, family matters, archives, extraction, the abode of a family.",
+    "reversed": "Chance, fatality, loss, robbery, games of hazard; sometimes gift, dowry, pension."
+  },
+  {
+    "id": "pentacles11",
+    "name": "PAGE OF PENTACLES",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "A youthful figure, looking intently at the pentacle that hovers over his raised hands.",
+    "upright": "Application, study scholarship, reflection. Another reading says news, messages and the bringer thereof-also rule, management.",
+    "reversed": "Prodigality, dissipation, liberality, luxury, unfavorable news."
+  },
+  {
+    "id": "pentacles12",
+    "name": "KNIGHT OF PENTACLES",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "He rides a slow, enduring, heavy horse, to which his own aspect corresponds.",
+    "upright": "Utility, serviceableness, interest, rectitude, responsibility.",
+    "reversed": "Inertia, idleness, repose of that kind, stagnation —also discouragement, carelessness."
+  },
+  {
+    "id": "pentacles13",
+    "name": "QUEEN OF PENTACLES",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "The face suggests that of a dark woman, whose qualities might be summed up in the idea of greatness of soul. She has also the serious cast of intelligence-she contemplates her symbol and may see worlds therein.",
+    "upright": "Opulence, generosity, security, magnificence, liberty.",
+    "reversed": "Evil, fear, suspicion, suspense, mistrust."
+  },
+  {
+    "id": "pentacles14",
+    "name": "KING OF PENTACLES",
+    "astro": "",
+    "element": "",
+    "direction": "",
+    "intro": "The figure calls for no special description. The face is rather dark, suggesting also courage, but somewhat lethargic in tendency. The bull's head should be noted as a recurrent symbol on his throne. The sign of this suit is represented throughout as engraved or blazoned with the pentagram, typifying the correspondence of the four elements in human nature and that by which they may be governed.",
+    "upright": "Valor, realizing intelligence, business and normal intellectual aptitude, sometimes mathematical gifts and attainments of this kind-success in these paths.",
+    "reversed": "Vice, weakness, ugliness, perversity, corruption, peril."
+  }
+]

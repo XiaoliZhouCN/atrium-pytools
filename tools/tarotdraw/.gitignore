@@ -1,0 +1,12 @@
+# tarotdraw 运行产物与缓存
+
+out/
+tests/_work/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# 抽牌导出的 HTML（由用户按需产出）
+draw.html
+tarotdraw-*.html
