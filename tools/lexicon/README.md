@@ -24,7 +24,7 @@
 | :-- | :-- | :-- |
 | `data_dir` | 原文存档 `raw/`、`wordbook.db`、`needs_review.csv`、`overrides/` | `import` / `build` |
 | `data_dir/koolearn-ielts/` | 分层词表 `0_`–`5_` CSV、`ielts_layered.json`、`raw_tags.json` | `scripts/crawl_koolearn_ielts.py` + `merge` / `layers` |
-| 同上（不入库） | `.cache/`（抓取缓存）、`_backup_*/`（合并前备份） | 抓取 / `merge` |
+| 同上（不入库） | `.cache/`（抓取缓存）、`_backup_*/`（合并前备份，自动保留最近 3 份，`--keep-backups N` 可改） | 抓取 / `merge` |
 | 同上（个人数据） | `drill_state.json`、`drill_unlearned_*.txt` | `drill` |
 
 仓库里只留三样东西：代码、文档、以及**不可再生的人工定稿配置**

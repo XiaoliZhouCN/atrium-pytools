@@ -68,7 +68,7 @@ koolearn **不提供词频和难度标注**，只提供词表。所以核心度�
 | `drill_state.json` | 认词判定进度（**个人数据，不入库**） | `drill` |
 | `drill_unlearned_r*.txt` | 每轮收工的「不认识 + 不熟」合并清单 | `drill` |
 | `.cache/` | 2917 个词表快照（可删，重跑会重抓） | 抓取 |
-| `_backup_*/` | 每轮合并前的 6 个 CSV 备份 | `merge` / `all` |
+| `_backup_*/` | 每轮合并前的 6 个 CSV 备份（自动轮转，保留最近 3 份） | `merge` / `all` / `layers --backup` |
 
 下面两样**放在代码仓库**里（见 [`../README.md`](../README.md)）：
 
@@ -83,8 +83,10 @@ CSV 用 `utf-8-sig` 编码，Excel 直接双击打开不乱码。每行都带 `u
 > 抓取脚本重跑会**覆盖**上述分层文件、抹掉合并结果。要保留合并，请勿重跑该脚本，
 > 或重跑后重新执行 `run_lexicon.bat merge && run_lexicon.bat layers`。
 
-> 每次 `merge`/`all`（未加 `--no-backup`）都会新建一个 `_backup_<时间戳>/`，
-> 目前不会自动清理，会逐渐堆积。确认无误后可手动删除，只留 `_backup_original/`。
+> 每次 `merge`/`all`/`layers --backup`（未加 `--no-backup`）都会新建一个
+> `_backup_<时间戳>/`，并**自动轮转只保留最近 3 份**（`--keep-backups N` 可改）。
+> `_backup_original/` 是人工命名的合并前存档，不参与轮转、永不被删。
+> 同一秒内重复备份会补 `-2`/`-3` 后缀，不会互相覆盖。
 
 ## 分层结果
 

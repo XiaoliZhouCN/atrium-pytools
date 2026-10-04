@@ -79,6 +79,7 @@ from .enrich import (
     stripword,
 )
 from .merge import (
+    BACKUP_KEEP,
     CORE_MIN_BOOKS,
     XDF_LAYER,
     LayerReport,
@@ -88,6 +89,7 @@ from .merge import (
     build_layers,
     export_master_json,
     merge_master,
+    prune_backups,
     tier_of,
 )
 from .parse import (
@@ -202,6 +204,8 @@ __all__ = [
     "build_layers",
     "export_master_json",
     "backup_files",
+    "prune_backups",
+    "BACKUP_KEEP",
     "verify",
     "tier_of",
     "MergeReport",

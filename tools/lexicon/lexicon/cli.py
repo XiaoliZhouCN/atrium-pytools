@@ -46,7 +46,14 @@ from .enrich import (
     build_enrichment,
     fetch_ecdict,
 )
-from .merge import MergeError, backup_files, build_layers, export_master_json, merge_master
+from .merge import (
+    BACKUP_KEEP,
+    MergeError,
+    backup_files,
+    build_layers,
+    export_master_json,
+    merge_master,
+)
 from .paths import DataError, config_file, data_paths
 from .qa import verify
 from .sources import load_pool
@@ -193,6 +200,10 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p_merge.add_argument("--no-backup", action="store_true", help="跳过自动备份")
     p_merge.add_argument(
+        "--keep-backups", type=int, default=BACKUP_KEEP, metavar="N",
+        help=f"自动备份最多保留几份，默认 {BACKUP_KEEP}（_backup_original/ 永不删）",
+    )
+    p_merge.add_argument(
         "--force", action="store_true",
         help="跳过「已合并过」的安全拦截；重跑本身幂等，不会重复计数",
     )
@@ -200,6 +211,10 @@ def build_parser() -> argparse.ArgumentParser:
 
     p_layers = sub.add_parser("layers", parents=[common], help="按新计数重建 1–5 号分层文件")
     p_layers.add_argument("--backup", action="store_true", help="重建前先备份")
+    p_layers.add_argument(
+        "--keep-backups", type=int, default=BACKUP_KEEP, metavar="N",
+        help=f"自动备份最多保留几份，默认 {BACKUP_KEEP}",
+    )
     p_layers.add_argument("--json", action="store_true", help="输出 JSON 报告")
 
     p_export = sub.add_parser(
@@ -241,6 +256,10 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p_all.add_argument("--no-xdf-listening", action="store_true", help="不计入听力桶")
     p_all.add_argument("--no-backup", action="store_true", help="跳过 koolearn 备份")
+    p_all.add_argument(
+        "--keep-backups", type=int, default=BACKUP_KEEP, metavar="N",
+        help=f"自动备份最多保留几份，默认 {BACKUP_KEEP}",
+    )
     p_all.add_argument("--force", action="store_true", help="允许重复合并")
     p_all.add_argument("--json", action="store_true", help="输出 JSON 报告")
 
@@ -342,6 +361,7 @@ def _cmd_merge(args) -> int:
         xdf_listening=not args.no_xdf_listening,
         backup=not args.no_backup,
         force=args.force,
+        keep_backups=args.keep_backups,
     )
     if args.json:
         print(json.dumps(report.as_dict(), ensure_ascii=False, indent=2))
@@ -358,7 +378,9 @@ def _cmd_merge(args) -> int:
 
 
 def _cmd_layers(args) -> int:
-    report = build_layers(_split_paths(args), backup=args.backup)
+    report = build_layers(
+        _split_paths(args), backup=args.backup, keep_backups=args.keep_backups
+    )
     if args.json:
         print(json.dumps(report.as_dict(), ensure_ascii=False, indent=2))
         return EXIT_OK
@@ -440,7 +462,7 @@ def _cmd_all(args) -> int:
     paths = _split_paths(args)
     backup_dir = ""
     if not args.no_backup:
-        backup_dir = str(backup_files(paths))
+        backup_dir = str(backup_files(paths, keep=args.keep_backups))
 
     merge_report = None
     merge_note = ""

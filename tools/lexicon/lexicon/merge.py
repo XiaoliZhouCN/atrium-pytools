@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import datetime as _dt
 import json
+import re
 import shutil
 from collections import defaultdict
 from dataclasses import asdict, dataclass, field
@@ -151,15 +152,57 @@ class LayerReport:
         ]
 
 
-def backup_files(paths: PP.DataPaths) -> Path:
-    """把要改写的 CSV 复制到 ``_backup_<时间戳>/``。"""
+#: 自动备份保留份数。备份是「这次合并前的状态」，留最近几份就够回滚；
+#: 不轮转的话每次 merge/all 都新增一份，实测堆过 6 份 23 MB。
+#: ``_backup_original/`` 是人工命名的一次性存档，不参与轮转、永不被删。
+BACKUP_KEEP = 3
+#: 时间戳只到秒。同一秒内再备份一次时补 ``-2``/``-3`` 后缀，
+#: 否则第二份会把第一份**覆盖掉** —— 那样「merge 完立刻 layers --backup」
+#: 会用合并后的内容盖掉合并前的快照，备份就白做了。
+_BACKUP_RE = re.compile(r"^_backup_(\d{8}-\d{6})(?:-(\d+))?$")
+
+
+def _backup_sort_key(name: str) -> tuple[str, int]:
+    """按 (时间戳, 同秒序号) 排序；同秒内序号越大越新。"""
+    match = _BACKUP_RE.match(name)
+    return ("", 0) if not match else (match.group(1), int(match.group(2) or 1))
+
+
+def prune_backups(paths: PP.DataPaths, keep: int = BACKUP_KEEP) -> list[str]:
+    """只保留最近 ``keep`` 份 ``_backup_<时间戳>[-N]/``，返回被删掉的目录名。
+
+    ``_backup_original/`` 是人工命名的一次性存档，不匹配时间戳格式，
+    因此不参与轮转、永不被删。
+    """
+    if keep < 0:
+        return []
+    candidates = [
+        entry
+        for entry in paths.koolearn.glob("_backup_*")
+        if entry.is_dir() and _BACKUP_RE.match(entry.name)
+    ]
+    candidates.sort(key=lambda p: _backup_sort_key(p.name), reverse=True)  # 新的在前
+    removed: list[str] = []
+    for path in candidates[keep:]:
+        shutil.rmtree(path, ignore_errors=True)
+        removed.append(path.name)
+    return removed
+
+
+def backup_files(paths: PP.DataPaths, keep: int = BACKUP_KEEP) -> Path:
+    """把要改写的 CSV 复制到 ``_backup_<时间戳>/``，并轮转掉过旧的备份。"""
     stamp = _dt.datetime.now().strftime("%Y%m%d-%H%M%S")
     target = paths.koolearn / f"_backup_{stamp}"
-    target.mkdir(parents=True, exist_ok=True)
+    suffix = 2
+    while target.exists():                      # 同一秒内重复备份也不互相覆盖
+        target = paths.koolearn / f"_backup_{stamp}-{suffix}"
+        suffix += 1
+    target.mkdir(parents=True)
     for name in PP.ALL_FILES:
         source = paths.file(name)
         if source.is_file():
             shutil.copy2(source, target / name)
+    prune_backups(paths, keep=keep)
     return target
 
 
@@ -194,6 +237,7 @@ def merge_master(
     xdf_listening: bool = True,
     backup: bool = True,
     force: bool = False,
+    keep_backups: int = BACKUP_KEEP,
 ) -> MergeReport:
     """合并我们的词书进 0 号总表。
 
@@ -210,7 +254,7 @@ def merge_master(
 
     report = MergeReport()
     if backup:
-        report.backup_dir = str(backup_files(paths))
+        report.backup_dir = str(backup_files(paths, keep=keep_backups))
 
     fields, rows = read_csv(master)
     report.master_before = len(rows)
@@ -319,11 +363,13 @@ def merge_master(
     return report
 
 
-def build_layers(paths: PP.DataPaths, backup: bool = False) -> LayerReport:
+def build_layers(
+    paths: PP.DataPaths, backup: bool = False, keep_backups: int = BACKUP_KEEP
+) -> LayerReport:
     """从 0 号总表重建 1–5 号分层文件。"""
     report = LayerReport()
     if backup:
-        backup_files(paths)
+        backup_files(paths, keep=keep_backups)
 
     fields, rows = read_csv(paths.master)
 

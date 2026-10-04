@@ -13,9 +13,11 @@ from lexicon import paths as PP
 from lexicon.merge import (
     MergeError,
     XDF_LAYER,
+    backup_files,
     build_layers,
     export_master_json,
     merge_master,
+    prune_backups,
     tier_of,
 )
 from lexicon.paths import DataPaths
@@ -390,6 +392,93 @@ class ExportJsonTest(MergeTestCase):
         third = export_master_json(self.paths)
         self.assertTrue(third["changed"])
         self.assertNotEqual(target.read_text(encoding="utf-8"), first)
+
+
+class BackupRotationTest(MergeTestCase):
+    """自动备份要轮转，否则每次 merge/all 都堆一份，实测堆过 6 份 23 MB。"""
+
+    def _fake_backups(self, names: list[str]) -> None:
+        for name in names:
+            d = self.koolearn / name
+            d.mkdir(parents=True, exist_ok=True)
+            (d / "0_ielts_layered_master.csv").write_text("word\nx\n", encoding="utf-8")
+
+    def test_prune_keeps_newest(self) -> None:
+        self._fake_backups(
+            [
+                "_backup_20260101-000000",
+                "_backup_20260102-000000",
+                "_backup_20260103-000000",
+                "_backup_20260104-000000",
+            ]
+        )
+        removed = prune_backups(self.paths, keep=2)
+        self.assertEqual(
+            sorted(removed), ["_backup_20260101-000000", "_backup_20260102-000000"]
+        )
+        left = sorted(p.name for p in self.koolearn.glob("_backup_*"))
+        self.assertEqual(
+            left, ["_backup_20260103-000000", "_backup_20260104-000000"]
+        )
+
+    def test_original_is_never_pruned(self) -> None:
+        """_backup_original 是人工命名的一次性存档，不参与轮转。"""
+        self._fake_backups(["_backup_original"])
+        self._fake_backups([f"_backup_2026010{i}-000000" for i in range(1, 6)])
+        prune_backups(self.paths, keep=1)
+        names = sorted(p.name for p in self.koolearn.glob("_backup_*"))
+        self.assertIn("_backup_original", names)
+        self.assertEqual(
+            [n for n in names if n != "_backup_original"],
+            ["_backup_20260105-000000"],
+        )
+
+    def test_keep_zero_removes_all_timestamped(self) -> None:
+        self._fake_backups(["_backup_20260101-000000", "_backup_original"])
+        prune_backups(self.paths, keep=0)
+        names = sorted(p.name for p in self.koolearn.glob("_backup_*"))
+        self.assertEqual(names, ["_backup_original"])
+
+    def test_negative_keep_means_no_pruning(self) -> None:
+        self._fake_backups([f"_backup_2026010{i}-000000" for i in range(1, 5)])
+        self.assertEqual(prune_backups(self.paths, keep=-1), [])
+        self.assertEqual(len(list(self.koolearn.glob("_backup_*"))), 4)
+
+    def test_backup_files_prunes_as_it_goes(self) -> None:
+        merge_master(self.paths, backup=False)
+        for _ in range(3):
+            backup_files(self.paths, keep=2)
+        names = list(self.koolearn.glob("_backup_*"))
+        self.assertEqual(len(names), 2)
+
+    def test_same_second_backups_do_not_overwrite(self) -> None:
+        """时间戳只到秒；同秒内的第二份备份必须另起目录，不能盖掉第一份。"""
+        merge_master(self.paths, backup=False)
+        first = backup_files(self.paths, keep=10)
+        second = backup_files(self.paths, keep=10)
+        self.assertNotEqual(first, second)
+        self.assertTrue(first.is_dir() and second.is_dir())
+        # 两份都完整（各 6 个 CSV）
+        self.assertEqual(len(list(first.glob("*.csv"))), 6)
+        self.assertEqual(len(list(second.glob("*.csv"))), 6)
+
+    def test_same_second_ordering_is_chronological(self) -> None:
+        self._fake_backups(
+            ["_backup_20260101-000000", "_backup_20260101-000000-2",
+             "_backup_20260101-000000-3"]
+        )
+        prune_backups(self.paths, keep=1)
+        left = [p.name for p in self.koolearn.glob("_backup_*")]
+        self.assertEqual(left, ["_backup_20260101-000000-3"])
+
+    def test_unrelated_dirs_are_left_alone(self) -> None:
+        """只认 _backup_<时间戳> 这一种命名，别的目录不要误删。"""
+        (self.koolearn / "_backup_manual-copy").mkdir(parents=True, exist_ok=True)
+        (self.koolearn / "notes").mkdir(parents=True, exist_ok=True)
+        self._fake_backups([f"_backup_2026010{i}-000000" for i in range(1, 4)])
+        prune_backups(self.paths, keep=1)
+        self.assertTrue((self.koolearn / "_backup_manual-copy").is_dir())
+        self.assertTrue((self.koolearn / "notes").is_dir())
 
 
 class VerifyTest(MergeTestCase):
