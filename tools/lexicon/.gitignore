@@ -1,0 +1,2 @@
+# 外部数据源下载缓存（ECDICT 63 MB + Tatoeba 24 MB），不入库
+.cache/
