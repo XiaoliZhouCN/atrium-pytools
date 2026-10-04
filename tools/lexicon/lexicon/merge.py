@@ -418,7 +418,7 @@ def export_master_json(
     这个 JSON 是 0 号的**派生视图**，所以 ``build_layers`` 之后必须重新导出，
     否则会与 CSV 不一致（早期版本就踩过：合并后 JSON 仍是 26,728 词的旧快照）。
     """
-    target = Path(output) if output else paths.koolearn / "ielts_layered.json"
+    target = Path(output) if output else paths.koolearn / PP.LAYERED_JSON
     _, rows = read_csv(paths.master)
 
     # 保留抓取侧的 meta（书单、分类、口径说明等），只刷新会变的部分
@@ -459,7 +459,7 @@ def export_master_json(
     meta["generated_by"] = "lexicon export-json"
     meta["notes"] = (
         "0 号总表的派生视图。已合并本词书（sources/xdf 列标记来源），"
-        "字段含义见 koolearn-ielts/README.md。"
+        "字段含义见 tools/lexicon/docs/koolearn-layered-list.md。"
     )
 
     payload = {"meta": meta, "words": words}

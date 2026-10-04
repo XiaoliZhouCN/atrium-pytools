@@ -27,13 +27,13 @@ ENV_KOLEARN_DIR = "LEXICON_KOLEARN_DIR"
 CONFIG_FILENAME = "lexicon.config.json"
 
 #: 词库数据目录（内容资产，放 AtriumNote）
+VOCABULARIES_SUBDIR = "education/language/vocabularies"
 DEFAULT_DATA_DIR = Path(
     r"D:\Repositories\Manager\AtriumNote\education\language\vocabularies"
 )
-#: koolearn 分层词表目录
-DEFAULT_KOLEARN_DIR = Path(
-    r"D:\Repositories\Manager\AtriumPyTools\vocab\koolearn-ielts"
-)
+#: koolearn 分层词表目录 —— 与 wordbook.db 同处 AtriumNote。
+#: 两个位置都是内容数据，必须待在一起；代码仓库里只放代码、文档与人工定稿的配置。
+DEFAULT_KOLEARN_DIR = DEFAULT_DATA_DIR / "koolearn-ielts"
 
 RAW_SUBDIR = "raw"
 OVERRIDES_SUBDIR = "overrides"
@@ -51,6 +51,11 @@ WRITING = "5_L2_writing_core.csv"
 
 LAYER_FILES = (BASE, LISTENING, READING, WRITING)
 ALL_FILES = (MASTER, BASE, PACK, LISTENING, READING, WRITING)
+
+#: 0 号总表的 JSON 派生视图（抓取脚本与 export_master_json 都写它）
+LAYERED_JSON = "ielts_layered.json"
+#: 抓取快照：119 本书名与技能分组
+RAW_TAGS = "raw_tags.json"
 
 DRILL_STATE = "drill_state.json"
 

@@ -1,14 +1,22 @@
 # -*- coding: utf-8 -*-
 """从 koolearn 在线词典构建雅思分层词表（含权重）。
 
-产出（同目录）：
+**抓取侧脚本**：重跑会覆盖分层文件，抹掉 lexicon 合并进来的本词书结果，
+之后需要重新执行 ``run_lexicon.bat merge && run_lexicon.bat layers``。
+
+产出（写入 ``lexicon.config.json`` 的 ``koolearn_dir``）：
     raw_tags.json              原始抓取快照（审计/复现）
     ielts_layered.json         主数据（meta + 词条）
-    ielts_layered_master.csv   全量主表
-    L1_base_vocabulary.csv     底座：Vocabulary 5000/10000/22000
-    L2_listening_core.csv      听力核心（≥5 本收录）
-    L2_reading_core.csv        阅读核心（≥5 本收录）
-    L2_writing_core.csv        写作核心（≥5 本收录）
+    0_ielts_layered_master.csv 全量主表
+    1_L1_base_vocabulary.csv   底座：Vocabulary 5000/10000/22000
+    3_L2_listening_core.csv    听力核心（≥5 本收录）
+    4_L2_reading_core.csv      阅读核心（≥5 本收录）
+    5_L2_writing_core.csv      写作核心（≥5 本收录）
+    2_study_pack_recommended.csv 推荐包（仅 L1 ∪ L2；合并后的版本还含 L3-xdf）
+
+文件名统一取自 :mod:`lexicon.paths`，避免本脚本与工具各写一套名字而漂移
+（早期版本写的是不带前缀的 ``ielts_layered_master.csv``，重跑只会生成一套
+平行文件，并不覆盖真正在用的那份）。
 
 数据来源：https://www.koolearn.com/dict/
 权重口径：一个词被多少本词书收录 = 该词的核心度（站点不提供词频，以此代理）。
@@ -27,15 +35,50 @@ from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 
-sys.stdout.reconfigure(encoding="utf-8")
+HERE = os.path.dirname(os.path.abspath(__file__))
+TOOLDIR = os.path.dirname(HERE)
+
+# 复用工具里的文件名常量（读 koolearn_dir 的规则也保持一致）
+sys.path.insert(0, TOOLDIR)
+from lexicon.paths import (  # noqa: E402
+    BASE as FILE_BASE,
+    LAYERED_JSON as FILE_LAYERED_JSON,
+    LISTENING as FILE_LISTENING,
+    MASTER as FILE_MASTER,
+    PACK as FILE_PACK,
+    RAW_TAGS as FILE_RAW_TAGS,
+    READING as FILE_READING,
+    WRITING as FILE_WRITING,
+    config_file,
+)
+
+
+def _koolearn_dir() -> str:
+    """数据目录：``--koolearn-dir`` > 环境变量 > lexicon.config.json。"""
+    argv = sys.argv[1:]
+    for flag in ("--koolearn-dir", "--outdir"):
+        if flag in argv:
+            return os.path.abspath(argv[argv.index(flag) + 1])
+    env = os.environ.get("LEXICON_KOLEARN_DIR", "").strip()
+    if env:
+        return os.path.abspath(env)
+    with open(config_file(), encoding="utf-8-sig") as fh:
+        return os.path.abspath(json.load(fh)["koolearn_dir"])
+
+
+OUTDIR = _koolearn_dir()
+os.makedirs(OUTDIR, exist_ok=True)
+CACHE = os.path.join(OUTDIR, ".cache")
+
+# 附着控制台时保留控制台编码（中文 Windows 是 cp936），强行 UTF-8 会变乱码
+if not sys.stdout.isatty():
+    sys.stdout.reconfigure(encoding="utf-8")
 
 UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 )
 BASE = "https://www.koolearn.com"
-HERE = os.path.dirname(os.path.abspath(__file__))
-CACHE = os.path.join(HERE, ".cache")
 
 IELTS_CATEGORY = "fenlei_2_105"  # 雅思词汇书
 CATEGORY_PAGES = 40
@@ -47,9 +90,9 @@ SERIES = {
     "Vocabulary 22000": (339, 3),
 }
 
-# 技能分桶：默认读同目录 skill_map.json（人工定稿，可审计/可改）。
+# 技能分桶：读工具里的 data/skill_map.json（人工定稿，可审计/可改）。
 # 缺失时退回关键词启发式，并把草稿写出来供人工核对。
-SKILL_MAP_FILE = os.path.join(HERE, "skill_map.json")
+SKILL_MAP_FILE = os.path.join(TOOLDIR, "data", "skill_map.json")
 SKILL_KEYWORDS = {
     "听力": ("听力", "听写"),
     "口语": ("口语",),
@@ -255,17 +298,17 @@ def main() -> None:
         })
     rows.sort(key=lambda r: (r["tier"], -r["ielts_books"], -r["base_books"], r["word"].lower()))
 
-    master = os.path.join(HERE, "ielts_layered_master.csv")
+    master = os.path.join(OUTDIR, FILE_MASTER)
     fields = list(rows[0].keys())
     with open(master, "w", encoding="utf-8-sig", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=fields)
         w.writeheader()
         w.writerows(rows)
-    print(f"   ielts_layered_master.csv  {len(rows)} 行")
+    print(f"   {FILE_MASTER}  {len(rows)} 行")
 
     # 分层文件
     def dump(name: str, subset: list[dict], cols: list[str]) -> None:
-        path = os.path.join(HERE, name)
+        path = os.path.join(OUTDIR, name)
         with open(path, "w", encoding="utf-8-sig", newline="") as fh:
             w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
             w.writeheader()
@@ -273,14 +316,15 @@ def main() -> None:
         print(f"   {name}  {len(subset)} 行")
 
     base_cols = ["word", "wd_id", "url", "base_level", "base_source"]
-    dump("L1_base_vocabulary.csv", [r for r in rows if r["in_base"]], base_cols)
+    dump(FILE_BASE, [r for r in rows if r["in_base"]], base_cols)
 
     skill_col = {"听力": "listen_books", "阅读": "reading_books", "写作": "writing_books"}
+    skill_file = {"听力": FILE_LISTENING, "阅读": FILE_READING, "写作": FILE_WRITING}
     slug = {"听力": "listening", "阅读": "reading", "写作": "writing"}
     for skill, col in skill_col.items():
         sub = [r for r in rows if r[col] >= CORE_MIN_BOOKS]
         dump(
-            f"L2_{slug[skill]}_core.csv",
+            skill_file[skill],
             sub,
             ["word", "wd_id", "url", col, "tier", "base_level"],
         )
@@ -301,7 +345,7 @@ def main() -> None:
             pack.append(item)
     pack.sort(key=lambda r: (-r["layer_count"], r["tier"], -r["ielts_books"], r["word"].lower()))
     dump(
-        "study_pack_recommended.csv",
+        FILE_PACK,
         pack,
         ["word", "wd_id", "url", "layers", "layer_count", "tier", "ielts_books",
          "listen_books", "reading_books", "writing_books", "speaking_books",
@@ -309,17 +353,17 @@ def main() -> None:
     )
 
     payload = {"meta": meta, "words": rows}
-    with open(os.path.join(HERE, "ielts_layered.json"), "w", encoding="utf-8") as fh:
+    with open(os.path.join(OUTDIR, FILE_LAYERED_JSON), "w", encoding="utf-8") as fh:
         json.dump(payload, fh, ensure_ascii=False, indent=1)
-    print("   ielts_layered.json")
+    print(f"   {FILE_LAYERED_JSON}")
 
-    with open(os.path.join(HERE, "raw_tags.json"), "w", encoding="utf-8") as fh:
+    with open(os.path.join(OUTDIR, FILE_RAW_TAGS), "w", encoding="utf-8") as fh:
         json.dump(
             {"ielts_all": ielts_tags, "active": active_tags,
              "skills": skills, "general": general_tags},
             fh, ensure_ascii=False, indent=1,
         )
-    print("   raw_tags.json")
+    print(f"   {FILE_RAW_TAGS}")
 
     # ---- 摘要 ----
     tier_dist = Counter(r["tier"] for r in rows)

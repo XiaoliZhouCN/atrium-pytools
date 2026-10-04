@@ -9,15 +9,3 @@ temp/
 
 # lexicon 的外部数据源下载缓存（ECDICT 63 MB + Tatoeba 24 MB）
 tools/lexicon/.cache/
-
-# koolearn 抓取缓存与一次性备份
-vocab/**/.cache/
-vocab/**/.cache_fenlei/
-vocab/koolearn-ielts/_backup_*/
-
-# 认词判定的运行时状态与结果（个人数据，不入公开仓库）
-vocab/koolearn-ielts/drill_state.json
-vocab/koolearn-ielts/drill_unlearned_*.txt
-
-# koolearn 全量抓取产物（另一套分析：数据约 61 MB + 缓存 71 MB）
-vocab/koolearn-full/

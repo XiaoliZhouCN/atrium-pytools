@@ -34,9 +34,9 @@
 **雅思词库工具链**，一条链做四件事：建库 → 补全 → 给语料 → 用起来。
 原来拆成 `vocabdrill` 与 `ieltsvocab` 两个目录，现已合并为单一工具。
 
-**代码在本仓库，两个数据位置在外部**（由 `tools/lexicon/lexicon.config.json` 单点指定）：
-词库数据在 `AtriumNote/education/language/vocabularies/`（内容资产），
-koolearn 分层词表在 `vocab/koolearn-ielts/`。
+**代码在本仓库，两个数据位置都在仓库外**（由 `tools/lexicon/lexicon.config.json` 单点指定）：
+词库数据与 koolearn 分层词表都在 `AtriumNote/education/language/vocabularies/` 下。
+仓库里只留代码、文档，以及不可再生的人工定稿配置（`tools/lexicon/data/skill_map.json`）。
 
 两个外部数据源只放工具目录 `.cache/`（gitignore，约 87 MB）：
 
@@ -81,7 +81,7 @@ from lexicon import (
 
 零第三方依赖（HTTP 服务用标准库 `http.server`，页面为内置单文件 HTML；
 语料扫描 200 万句 43 秒）。
-测试：`python -X utf8 -m unittest discover -s tests -t .`（158 项）。
+测试：`python -X utf8 -m unittest discover -s tests -t .`（168 项）。
 
 背单词调度（SM-2 / 复习日志）与例句挖空题型尚未实现。
 
@@ -193,11 +193,14 @@ AtriumPyTools/
     │   ├── run_tarotdraw.bat   # 工具内入口（委托 launcher）
     │   ├── pyproject.toml
     │   └── docs/ARCHITECTURE_DESIGN.md
-    ├── lexicon/                # 有实现（词库数据在 AtriumNote，不在本仓库）
+    ├── lexicon/                # 有实现（两个数据位置都在 AtriumNote，不在本仓库）
     │   ├── lexicon/            # 包：paths / parse / schema / build / enrich / corpus
     │   │                       #     / sources / merge / qa / drill / cli
+    │   ├── scripts/            # 抓取侧脚本（koolearn 分层词表）
+    │   ├── data/skill_map.json # 119 本书的技能归属，人工定稿
+    │   ├── docs/               # 分层词表数据说明
     │   ├── .cache/             # ECDICT + Tatoeba 下载缓存（gitignore，约 87 MB）
-    │   ├── tests/              # unittest，158 项
+    │   ├── tests/              # unittest，168 项
     │   ├── lexicon.config.json # 两个数据位置的单点声明
     │   ├── run_lexicon.bat     # 工具内入口（委托 launcher）
     │   ├── pyproject.toml

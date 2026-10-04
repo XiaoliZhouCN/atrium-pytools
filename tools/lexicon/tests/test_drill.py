@@ -115,6 +115,62 @@ class DrillStateTest(DrillTestCase):
         state = DrillState.load(self.paths.drill_state)
         self.assertEqual(state.records, {})
 
+    def test_save_leaves_no_temp_file(self) -> None:
+        """落盘用「唯一临时名 + os.replace」，不该留下任何临时文件。
+
+        回归：原来固定写 ``drill_state.tmp``，且 replace 不重试 —— Windows 上
+        杀软/索引器短暂持有句柄时抛 PermissionError，用户答到一半就崩。
+        """
+        state = DrillState.load(self.paths.drill_state)
+        for i in range(5):
+            state.mark(f"word{i}", STATUS_UNKNOWN, 1)
+            state.save()
+        leftovers = [p.name for p in self.koolearn.iterdir() if p.name.endswith(".tmp")]
+        self.assertEqual(leftovers, [])
+        self.assertTrue(self.paths.drill_state.is_file())
+
+    def test_save_survives_a_transient_permission_error(self) -> None:
+        """模拟一次瞬时的 WinError 5：应当重试成功，而不是崩掉整轮。"""
+        from unittest import mock
+
+        from lexicon import drill as D
+
+        state = DrillState.load(self.paths.drill_state)
+        state.mark("alpha", STATUS_UNKNOWN, 1)
+
+        real_replace = D.os.replace
+        calls = {"n": 0}
+
+        def flaky_replace(src, dst):
+            calls["n"] += 1
+            if calls["n"] == 1:
+                raise PermissionError(5, "拒绝访问。")
+            return real_replace(src, dst)
+
+        with mock.patch.object(D.os, "replace", side_effect=flaky_replace):
+            state.save()
+
+        self.assertGreaterEqual(calls["n"], 2)          # 确实重试过
+        reloaded = DrillState.load(self.paths.drill_state)
+        self.assertEqual(reloaded.status("alpha"), STATUS_UNKNOWN)
+
+    def test_save_gives_up_and_cleans_temp_after_persistent_failure(self) -> None:
+        from unittest import mock
+
+        from lexicon import drill as D
+
+        state = DrillState.load(self.paths.drill_state)
+        state.mark("alpha", STATUS_UNKNOWN, 1)
+
+        with mock.patch.object(
+            D.os, "replace", side_effect=PermissionError(5, "拒绝访问。")
+        ):
+            with self.assertRaises(PermissionError):
+                state.save()
+
+        leftovers = [p.name for p in self.koolearn.iterdir() if p.name.endswith(".tmp")]
+        self.assertEqual(leftovers, [], "放弃时也要清掉临时文件")
+
 
 class DrillSessionTest(DrillTestCase):
     def _session(self, limit: int = 100, retest: str = "none", count_unsure: bool = False):

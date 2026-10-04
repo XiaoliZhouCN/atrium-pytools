@@ -14,7 +14,10 @@ from __future__ import annotations
 
 import datetime as _dt
 import json
+import os
 import threading
+import time
+import uuid
 from dataclasses import dataclass, field
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -102,11 +105,7 @@ class DrillState:
             "records": self.records,
             "rounds": self.rounds,
         }
-        tmp = self.path.with_suffix(".tmp")
-        tmp.write_text(
-            json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8"
-        )
-        tmp.replace(self.path)
+        _atomic_write_json(self.path, payload)
 
     def status(self, word: str) -> str:
         record = self.records.get(word)
@@ -137,6 +136,32 @@ class DrillState:
         for word in words:
             tally[self.status(word)] += 1
         return tally
+
+
+def _atomic_write_json(path: Path, payload: dict) -> None:
+    """原子写 JSON：先写**唯一**临时名，再 ``os.replace`` 顶替，失败则重试。
+
+    两个 Windows 上的真实坑：
+
+    1. 临时文件不能用固定名（原来写成 ``drill_state.tmp``）。判定是逐词落盘的，
+       若同时开着两个 drill，两个进程会抢同一个临时文件。
+    2. ``os.replace`` 到目标文件偶尔报 ``PermissionError [WinError 5]`` ——
+       杀软/搜索索引器会短暂持有刚写出的文件的句柄。这是瞬时的，退避重试即可；
+       不重试的话，用户答到第 60 个词时崩一次，整轮就废了。
+    """
+    tmp = path.with_name(f".{path.name}.{os.getpid()}.{uuid.uuid4().hex[:8]}.tmp")
+    tmp.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
+    last_error: OSError | None = None
+    for attempt in range(12):
+        try:
+            os.replace(tmp, path)
+            return
+        except PermissionError as exc:      # WinError 5：句柄被短暂占用
+            last_error = exc
+            time.sleep(0.02 * (attempt + 1))
+    tmp.unlink(missing_ok=True)
+    assert last_error is not None
+    raise last_error
 
 
 # --------------------------------------------------------------------------- #

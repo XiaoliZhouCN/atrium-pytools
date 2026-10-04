@@ -36,7 +36,7 @@ koolearn **不提供词频和难度标注**，只提供词表。所以核心度�
 ## 已合并我们的词书
 
 本词表已并入 `AtriumPyTools/tools/lexicon` 从新东方《雅思词汇词根+联想记忆法》
-构建的 3610 词，规则见 [`../../tools/lexicon/README.md`](../../tools/lexicon/README.md)：
+构建的 3610 词，规则见 [`../README.md`](../README.md)：
 
 - 命中已有词 → `ielts_books += 1`（3591 词，其中 1 词靠模糊匹配并入 `spot-on`）
 - 原书 `*` 标记（听力词汇）→ 额外 `listen_books += 1`（1619 词）
@@ -52,27 +52,36 @@ koolearn **不提供词频和难度标注**，只提供词表。所以核心度�
 
 ## 文件
 
+**全部位于 `lexicon.config.json` 的 `koolearn_dir`**
+（`AtriumNote/education/language/vocabularies/koolearn-ielts/`），不在代码仓库里。
+
+| 文件 | 内容 | 谁生成 |
+|---|---|---|
+| `0_ielts_layered_master.csv` | 全量主表 **26,747** 词，按 tier → 收录数 → 底座层级排序 | 抓取 + `merge` |
+| `1_L1_base_vocabulary.csv` | 底座：Vocabulary 5000/10000/22000，2606 词 | 抓取 |
+| `2_study_pack_recommended.csv` | **推荐背诵包 7260 词**（底座 ∪ 听力/阅读/写作核心 ∪ L3-xdf），含 `layers` 列标明所属层 | `layers` |
+| `3_L2_listening_core.csv` | 听力核心 **2832** 词（≥5 本收录） | `layers` |
+| `4_L2_reading_core.csv` | 阅读核心 1790 词 | `layers` |
+| `5_L2_writing_core.csv` | 写作核心 367 词 | `layers` |
+| `ielts_layered.json` | 同上的 JSON 派生视图（含 `meta`，约 12 MB）；`layers` 会自动重导出，内容未变则不重写 | `layers` |
+| `raw_tags.json` | 抓取快照：119 本书名、技能分组、通用组 | 抓取 |
+| `drill_state.json` | 认词判定进度（**个人数据，不入库**） | `drill` |
+| `drill_unlearned_r*.txt` | 每轮收工的「不认识 + 不熟」合并清单 | `drill` |
+| `.cache/` | 2917 个词表快照（可删，重跑会重抓） | 抓取 |
+| `_backup_*/` | 每轮合并前的 6 个 CSV 备份 | `merge` / `all` |
+
+下面两样**放在代码仓库**里（见 [`../README.md`](../README.md)）：
+
 | 文件 | 内容 |
 |---|---|
-| `0_ielts_layered_master.csv` | 全量主表 **26,747** 词，按 tier → 收录数 → 底座层级排序 |
-| `1_L1_base_vocabulary.csv` | 底座：Vocabulary 5000/10000/22000，2606 词 |
-| `2_study_pack_recommended.csv` | **推荐背诵包 7260 词**（底座 ∪ 听力/阅读/写作核心 ∪ L3-xdf），含 `layers` 列标明所属层 |
-| `3_L2_listening_core.csv` | 听力核心 **2832** 词（≥5 本收录） |
-| `4_L2_reading_core.csv` | 阅读核心 1790 词 |
-| `5_L2_writing_core.csv` | 写作核心 367 词 |
-| `ielts_layered.json` | 同上的 JSON 派生视图（含 `meta`，约 12 MB）；`layers` 会自动重导出，内容未变则不重写 |
-| `skill_map.json` | 技能归属映射（可编辑） |
-| `raw_tags.json` | 抓取快照：119 本书名、技能分组、通用组 |
-| `build_koolearn_ielts.py` | 构建脚本（可复现，带磁盘缓存） |
-| `qa_check.py` | 输出校验脚本（委派给 `tools/lexicon` 的 `verify`） |
-| `_backup_original/` | 合并前的原始 6 个 CSV |
+| `tools/lexicon/scripts/crawl_koolearn_ielts.py` | 抓取脚本（可复现，带磁盘缓存） |
+| `tools/lexicon/data/skill_map.json` | 技能归属映射，**人工定稿**，可编辑、必须版本化 |
 
 CSV 用 `utf-8-sig` 编码，Excel 直接双击打开不乱码。每行都带 `url`，可回到原词典页查音标和发音
 （`xdf` 来源的行没有 `url`，因为不在 koolearn 站内）。
 
-> `build_koolearn_ielts.py` 是**抓取侧**脚本，重跑会**覆盖**上述分层文件、
-> 抹掉合并结果。要保留合并，请勿重跑该脚本，或重跑后重新执行
-> `run_lexicon.bat all`。
+> 抓取脚本重跑会**覆盖**上述分层文件、抹掉合并结果。要保留合并，请勿重跑该脚本，
+> 或重跑后重新执行 `run_lexicon.bat merge && run_lexicon.bat layers`。
 
 > 每次 `merge`/`all`（未加 `--no-backup`）都会新建一个 `_backup_<时间戳>/`，
 > 目前不会自动清理，会逐渐堆积。确认无误后可手动删除，只留 `_backup_original/`。
@@ -116,10 +125,16 @@ CSV 用 `utf-8-sig` 编码，Excel 直接双击打开不乱码。每行都带 `u
 
 ## 复现
 
+本文件描述的数据由 [`../scripts/crawl_koolearn_ielts.py`](../scripts/crawl_koolearn_ielts.py)
+生成，写入 `lexicon.config.json` 的 `koolearn_dir`：
+
 ```powershell
-python build_koolearn_ielts.py   # 首次约 5–10 分钟，之后走 .cache 秒级
-python qa_check.py               # 校验行数、tier 一致性、层间包含关系
+python tools\lexicon\scripts\crawl_koolearn_ielts.py   # 首次约 5–10 分钟，之后走 .cache 秒级
+run_lexicon.bat qa                                     # 校验行数、tier 一致性、层间包含关系
 ```
+
+> 该脚本是**抓取侧**的：重跑会覆盖分层文件、抹掉合并进来的本词书结果，
+> 之后需要重新执行 `run_lexicon.bat merge && run_lexicon.bat layers`。
 
 脚本对 koolearn 的请求为串行友好访问（6 并发 + 缓存），`robots.txt` 未禁止 `/dict/`。
 

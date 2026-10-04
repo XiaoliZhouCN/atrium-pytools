@@ -11,16 +11,24 @@
 
 两个数据位置由 `lexicon/paths.py` **单点**决定，当前取自
 `lexicon.config.json`；未来集成进 `AtriumSteward` 时只改这一处。
+**两者都是内容数据，都在仓库外面**（与仓库 README 的分工一致：本仓库只放代码与文档）：
 
 ```json
 {
   "data_dir":     "D:/Repositories/Manager/AtriumNote/education/language/vocabularies",
-  "koolearn_dir": "D:/Repositories/Manager/AtriumPyTools/vocab/koolearn-ielts"
+  "koolearn_dir": "D:/Repositories/Manager/AtriumNote/education/language/vocabularies/koolearn-ielts"
 }
 ```
 
-`data_dir` 是**内容资产**（原文、`wordbook.db`、`overrides/`）；
-`koolearn_dir` 是分层 CSV 与认词判定的运行时状态。
+| 位置 | 放什么 | 谁生成 |
+| :-- | :-- | :-- |
+| `data_dir` | 原文存档 `raw/`、`wordbook.db`、`needs_review.csv`、`overrides/` | `import` / `build` |
+| `data_dir/koolearn-ielts/` | 分层词表 `0_`–`5_` CSV、`ielts_layered.json`、`raw_tags.json` | `scripts/crawl_koolearn_ielts.py` + `merge` / `layers` |
+| 同上（不入库） | `.cache/`（抓取缓存）、`_backup_*/`（合并前备份） | 抓取 / `merge` |
+| 同上（个人数据） | `drill_state.json`、`drill_unlearned_*.txt` | `drill` |
+
+仓库里只留三样东西：代码、文档、以及**不可再生的人工定稿配置**
+（`data/skill_map.json`，119 本书的技能归属）。
 
 ## 产物与实测数字
 
@@ -190,7 +198,7 @@ run_lexicon.bat all
 > **`build` 会重建整库**，补全/例句/搭配随之清空，必须重跑 `enrich` 与 `corpus`
 > ——这正是 `rebuild` 与 `all` 存在的原因。派生数据都能从数据源重建，不需要备份。
 
-测试：`python -X utf8 -m unittest discover -s tests -t .`（164 项）
+测试：`python -X utf8 -m unittest discover -s tests -t .`（168 项）
 
 ## 对外 API
 
@@ -243,11 +251,17 @@ tools/lexicon/
 │   ├── enrich.py     # ECDICT 补全
 │   ├── corpus.py     # 语料 → 例句与搭配
 │   ├── sources.py    # koolearn CSV 读写与词形归一
-│   ├── merge.py      # 合并进总表、重建分层
+│   ├── merge.py      # 合并进总表、重建分层、导出 JSON
 │   ├── qa.py         # 分层不变量校验
 │   ├── drill.py      # A/S/D 认词判定（标准库 http.server + 内置单文件页面）
 │   └── cli.py        # 全部子命令
-├── tests/            # unittest，158 项
+├── scripts/
+│   └── crawl_koolearn_ielts.py   # 抓取侧脚本：重跑会覆盖分层文件（见其 docstring）
+├── data/
+│   └── skill_map.json            # 119 本书的技能归属，人工定稿，必须版本化
+├── docs/
+│   └── koolearn-layered-list.md  # 分层词表的数据说明
+├── tests/            # unittest，168 项
 ├── .cache/           # 外部数据源缓存（gitignore，约 87 MB）
 ├── lexicon.config.json
 ├── run_lexicon.bat
