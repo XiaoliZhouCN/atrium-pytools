@@ -16,7 +16,10 @@ from pathlib import Path
 HERE = os.path.dirname(os.path.abspath(__file__))
 TOOLDIR = os.path.normpath(os.path.join(HERE, "..", "..", "tools", "lexicon"))
 
-sys.stdout.reconfigure(encoding="utf-8")
+# 附着控制台时保留控制台编码（中文 Windows 是 cp936），强行 UTF-8 会变乱码；
+# 只有重定向时才统一成 UTF-8。等价命令：run_lexicon.bat qa
+if not sys.stdout.isatty():
+    sys.stdout.reconfigure(encoding="utf-8")
 if TOOLDIR not in sys.path:
     sys.path.insert(0, TOOLDIR)
 

@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 
 from . import __version__
@@ -61,13 +62,33 @@ POOL_CHOICES = (
 
 
 def _ensure_utf8_stdout() -> None:
+    """让 stdout/stderr 的编码与它们**实际要写入的地方**匹配。
+
+    * 附着控制台时 → 用控制台自己的编码（中文 Windows 是 cp936）。
+      否则 cmd 会按 cp936 解码我们输出的 UTF-8 字节，中文全变乱码
+      （``词库`` → ``璇嶅簱``）。用 ``os.device_encoding`` 取，这样即使外部设了
+      ``PYTHONUTF8=1`` 或 ``python -X utf8``（会强制 stdout=UTF-8），也能纠回来。
+    * 被重定向到文件/管道时 → UTF-8，这是最通用的选择。
+    """
     for stream in (sys.stdout, sys.stderr):
+        if stream is None:
+            continue
         reconfigure = getattr(stream, "reconfigure", None)
-        if reconfigure is not None:
-            try:
-                reconfigure(encoding="utf-8")
-            except (ValueError, OSError):
-                pass
+        if reconfigure is None:
+            continue
+        try:
+            if stream.isatty():
+                device = os.device_encoding(stream.fileno())
+                current = (stream.encoding or "").lower().replace("-", "")
+                if device and current != device.lower().replace("-", ""):
+                    reconfigure(encoding=device, errors="replace")
+                continue
+        except (ValueError, OSError):
+            pass
+        try:
+            reconfigure(encoding="utf-8")
+        except (ValueError, OSError):
+            pass
 
 
 # --------------------------------------------------------------------------- #

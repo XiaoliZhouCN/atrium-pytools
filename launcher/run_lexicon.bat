@@ -14,16 +14,26 @@ rem    run_lexicon.bat stats                          wordbook overview
 rem    run_lexicon.bat lookup depend                  definition + enrichment + examples + collocations
 rem    run_lexicon.bat merge                          merge wordbook into the koolearn master list
 rem    run_lexicon.bat layers                         rebuild layered files 1-5
+rem    run_lexicon.bat export-json                    re-export ielts_layered.json (layers does it too)
 rem    run_lexicon.bat qa                             invariant checks
 rem    run_lexicon.bat pools                          list pool sizes
 rem    run_lexicon.bat drill                          start the A/S/D recognition drill (opens browser)
 rem    run_lexicon.bat all                            everything above, rerunnable
 rem
+rem  Exit codes: 0 ok / 1 launcher problem / 2 usage / 3 data problem / 4 qa failed.
+rem
 rem  Dependency: the workspace venv Manager\.venv only (no third-party packages).
 rem  Data locations come from tools\lexicon\lexicon.config.json (see lexicon\paths.py).
 rem  External sources are cached under tools\lexicon\.cache\ (gitignored).
-rem  NOTE: this file is intentionally ASCII-only so cmd.exe parses it under any
-rem        code page. Chinese text is printed by Python, not by this script.
+rem
+rem  DO NOT add "chcp" here. Changing the code page while cmd.exe is reading this
+rem  file makes it lose track of its position in the file and it starts executing
+rem  the remaining lines with their first characters chopped off ("set" -> "TS",
+rem  "enrich" -> "ich"). Console encoding is handled inside Python instead, see
+rem  lexicon/cli.py::_ensure_utf8_stdout.
+rem
+rem  This file must keep CRLF line endings; cmd.exe mis-parses LF-only batch files.
+rem  It is intentionally ASCII-only so cmd.exe parses it under any code page.
 rem ===========================================================================
 setlocal enabledelayedexpansion
 
@@ -46,7 +56,6 @@ if not exist "%TOOLDIR%\lexicon\cli.py" (
 rem Let python import the lexicon package.
 rem ORDER MATTERS: tools\lexicon must come BEFORE tools.
 set "PYTHONPATH=%TOOLDIR%;%WORKSPACE%\AtriumPyTools\tools;%PYTHONPATH%"
-set "PYTHONUTF8=1"
 
 rem For "drill", open the browser a couple of seconds later (server needs to be up).
 rem Uses ping (not timeout) for the delay: timeout needs an interactive console and
@@ -69,11 +78,16 @@ if /I "%~1"=="drill" (
     )
 )
 
+rem NOTE: %ERRORLEVEL% would be expanded when this block is parsed, i.e. before
+rem the command runs, so the real exit code must come from !ERRORLEVEL!.
+set "RC=0"
 if exist "%LEXICON_CMD%" (
     "%LEXICON_CMD%" %*
-    exit /b %ERRORLEVEL%
+    set "RC=!ERRORLEVEL!"
+) else (
+    rem fall back to the module entry point when pip install was not run
+    "%VENV_PYTHON%" -m lexicon %*
+    set "RC=!ERRORLEVEL!"
 )
 
-rem fall back to the module entry point when pip install was not run
-"%VENV_PYTHON%" -X utf8 -m lexicon %*
-exit /b %ERRORLEVEL%
+exit /b !RC!
