@@ -35,8 +35,8 @@ koolearn **不提供词频和难度标注**，只提供词表。所以核心度�
 
 ## 已合并我们的词书
 
-本词表已并入 `AtriumPyTools/tools/vocabdrill` 从新东方《雅思词汇词根+联想记忆法》
-构建的 3610 词，规则见 [`../../tools/ieltsvocab/README.md`](../../tools/ieltsvocab/README.md)：
+本词表已并入 `AtriumPyTools/tools/lexicon` 从新东方《雅思词汇词根+联想记忆法》
+构建的 3610 词，规则见 [`../../tools/lexicon/README.md`](../../tools/lexicon/README.md)：
 
 - 命中已有词 → `ielts_books += 1`（3591 词，其中 1 词靠模糊匹配并入 `spot-on`）
 - 原书 `*` 标记（听力词汇）→ 额外 `listen_books += 1`（1619 词）
@@ -45,6 +45,10 @@ koolearn **不提供词频和难度标注**，只提供词表。所以核心度�
 
 新增列：`sources`（`koolearn` / `koolearn;xdf` / `xdf`）、`xdf`、`xdf_listening`、
 `xdf_listen_counted`。合并**幂等**，重跑不会重复计数。
+
+> **只有词头，没有释义/音标。** 真正的词典内容（音标、释义、词形变化、词频、
+> 例句、介词搭配）在 `AtriumNote/education/language/vocabularies/wordbook.db`，
+> 由 `tools/lexicon` 的 `rebuild` 生成。本目录是**词表层**，负责「背哪些词、按什么顺序」。
 
 ## 文件
 
@@ -56,11 +60,11 @@ koolearn **不提供词频和难度标注**，只提供词表。所以核心度�
 | `3_L2_listening_core.csv` | 听力核心 **2832** 词（≥5 本收录） |
 | `4_L2_reading_core.csv` | 阅读核心 1790 词 |
 | `5_L2_writing_core.csv` | 写作核心 367 词 |
-| `ielts_layered.json` | 同上的 JSON（含 `meta`，约 10 MB，**尚未按合并结果重生成**） |
+| `ielts_layered.json` | 同上的 JSON 派生视图（含 `meta`，约 12 MB）；`layers` 会自动重导出，内容未变则不重写 |
 | `skill_map.json` | 技能归属映射（可编辑） |
 | `raw_tags.json` | 抓取快照：119 本书名、技能分组、通用组 |
 | `build_koolearn_ielts.py` | 构建脚本（可复现，带磁盘缓存） |
-| `qa_check.py` | 输出校验脚本（委派给 `tools/ieltsvocab` 的 `verify`） |
+| `qa_check.py` | 输出校验脚本（委派给 `tools/lexicon` 的 `verify`） |
 | `_backup_original/` | 合并前的原始 6 个 CSV |
 
 CSV 用 `utf-8-sig` 编码，Excel 直接双击打开不乱码。每行都带 `url`，可回到原词典页查音标和发音
@@ -68,7 +72,10 @@ CSV 用 `utf-8-sig` 编码，Excel 直接双击打开不乱码。每行都带 `u
 
 > `build_koolearn_ielts.py` 是**抓取侧**脚本，重跑会**覆盖**上述分层文件、
 > 抹掉合并结果。要保留合并，请勿重跑该脚本，或重跑后重新执行
-> `run_ieltsvocab.bat all`。
+> `run_lexicon.bat all`。
+
+> 每次 `merge`/`all`（未加 `--no-backup`）都会新建一个 `_backup_<时间戳>/`，
+> 目前不会自动清理，会逐渐堆积。确认无误后可手动删除，只留 `_backup_original/`。
 
 ## 分层结果
 
@@ -94,8 +101,8 @@ CSV 用 `utf-8-sig` 编码，Excel 直接双击打开不乱码。每行都带 `u
 ## 建议用法
 
 1. **先背 `2_study_pack_recommended.csv`**，按 `layer_count` 降序——同时命中多个层的词优先。
-   也可以直接用 `tools/ieltsvocab` 的 A/D 认词判定工具边测边挑：
-   `run_ieltsvocab.bat drill --pool pack`。
+   也可以直接用 `tools/lexicon` 的 A/S/D 认词判定工具边测边挑：
+   `run_lexicon.bat drill --pool pack`。
 2. **听力单独推进**。雅思听力考拼写，这桶与阅读桶区分度最高，且页面上有音标和英/美发音 mp3，是目前唯一能直接从「认」走到「写」的桶。
 3. **口语桶别用**。只有 8 本词书、≥5 本收录的核心词仅 29 个，统计上不可靠，站内数据撑不起独立口语词库。
 4. 需要更多词时，按 `tier` 从 S 往下取，`D`（仅 1 本书收录）基本是长尾噪声。

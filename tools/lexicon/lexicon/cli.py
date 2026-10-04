@@ -169,7 +169,10 @@ def build_parser() -> argparse.ArgumentParser:
         "rebuild", parents=[common], help="build + enrich + corpus（重建词库并补全）"
     )
     p_rebuild.add_argument("--source", default=None, help="直接指定原文路径")
-    p_rebuild.add_argument("--skip-corpus", action="store_true", help="跳过语料扫描")
+    p_rebuild.add_argument(
+        "--skip-corpus", action="store_true",
+        help="重建后不补例句/搭配 —— 注意结果是空表，不是保留旧数据",
+    )
     p_rebuild.add_argument("--json", action="store_true", help="输出 JSON 报告")
 
     p_stats = sub.add_parser("stats", parents=[common], help="打印词库概览")
@@ -232,7 +235,10 @@ def build_parser() -> argparse.ArgumentParser:
         "all", parents=[common], help="rebuild + merge + layers + qa（可重复执行）"
     )
     p_all.add_argument("--source", default=None, help="直接指定原文路径")
-    p_all.add_argument("--skip-corpus", action="store_true", help="跳过语料扫描")
+    p_all.add_argument(
+        "--skip-corpus", action="store_true",
+        help="重建后不补例句/搭配 —— 注意结果是空表，不是保留旧数据",
+    )
     p_all.add_argument("--no-xdf-listening", action="store_true", help="不计入听力桶")
     p_all.add_argument("--no-backup", action="store_true", help="跳过 koolearn 备份")
     p_all.add_argument("--force", action="store_true", help="允许重复合并")
@@ -387,6 +393,18 @@ def _cmd_pools(args) -> int:
     return EXIT_OK
 
 
+def _skipped_corpus_note() -> str:
+    """``--skip-corpus`` 的真实后果要说清楚。
+
+    ``build`` 会重建整个 wordbook.db，所以「跳过语料扫描」得到的是**空表**，
+    而不是保留上一次的例句/搭配。只写「已跳过」会让人以为数据还在。
+    """
+    return (
+        "⚠ 已跳过语料扫描：build 已重建整库，例句/搭配现在是 0 条。\n"
+        "  需要时补跑（约 20 秒）：run_lexicon.bat corpus"
+    )
+
+
 def _cmd_rebuild(args) -> int:
     """build + enrich + corpus。"""
     build = build_wordbook(source=args.source, data_dir=args.data_dir)
@@ -409,7 +427,7 @@ def _cmd_rebuild(args) -> int:
         for line in corpus.summary_lines():
             print("  " + line)
     else:
-        print("\n（已跳过语料扫描：--skip-corpus）")
+        print("\n" + _skipped_corpus_note())
     return EXIT_OK
 
 
@@ -466,6 +484,8 @@ def _cmd_all(args) -> int:
         print("\n=== 开放语料：例句与搭配 ===")
         for line in corpus.summary_lines():
             print("  " + line)
+    else:
+        print("\n" + _skipped_corpus_note())
     print("\n=== 0 号总表合并 ===")
     if merge_report is not None:
         for line in merge_report.summary_lines():
