@@ -25,7 +25,7 @@ rem  External sources are cached under tools\lexicon\.cache\ (gitignored).
 rem  NOTE: this file is intentionally ASCII-only so cmd.exe parses it under any
 rem        code page. Chinese text is printed by Python, not by this script.
 rem ===========================================================================
-setlocal
+setlocal enabledelayedexpansion
 
 set "WORKSPACE=D:\Repositories\Manager"
 set "TOOLDIR=%WORKSPACE%\AtriumPyTools\tools\lexicon"
@@ -51,8 +51,22 @@ set "PYTHONUTF8=1"
 rem For "drill", open the browser a couple of seconds later (server needs to be up).
 rem Uses ping (not timeout) for the delay: timeout needs an interactive console and
 rem fails when stdin is redirected.
+rem The port is read from --port so a custom port opens the right tab; --help does
+rem not start a server, so it must not open a tab either.
 if /I "%~1"=="drill" (
-    start "" /min cmd /c "ping -n 3 127.0.0.1 >nul & start http://127.0.0.1:8765/"
+    set "DRILL_PORT=8765"
+    set "PREV="
+    for %%A in (%*) do (
+        if /I "!PREV!"=="--port" set "DRILL_PORT=%%A"
+        set "PREV=%%A"
+    )
+    set "ALLARGS=%*"
+    set "SKIP_BROWSER="
+    if not "!ALLARGS:--help=!"=="!ALLARGS!" set "SKIP_BROWSER=1"
+    if not "!ALLARGS:-h=!"=="!ALLARGS!" set "SKIP_BROWSER=1"
+    if not defined SKIP_BROWSER (
+        start "" /min cmd /c "ping -n 3 127.0.0.1 >nul & start http://127.0.0.1:!DRILL_PORT!/"
+    )
 )
 
 if exist "%LEXICON_CMD%" (
