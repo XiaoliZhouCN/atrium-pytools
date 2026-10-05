@@ -43,13 +43,31 @@ OWNER = 'XiaoliZhouCN'
 ORIGIN_RE = re.compile(rf'github(?:-shirley)?[:\/]+{OWNER}/', re.I)
 SKIP = {'acp-ui'}                      # 上游仓库的 fork，按用户决定跳过
 KEEP = ('develop', 'main')
+#: 不合并、只删除的引用（dsh-sync-plugin 的自动快照分支，与 develop 无共同历史）
+SKIP_MERGE_PATTERNS = ('origin/ws/',)
+#: 跳过「已并入 develop」校验、直接删除的分支（本地与远端同名者都适用；SHA 仍会记录，可恢复）
+FORCE_DELETE = {
+    'shirleyzh-dsh-sessions': ['ws/eb803cad-8802-4c0b-b599-7dcc383cda7b'],
+    # LFS 迁移重写了未推送提交的 SHA，导致 dev/basic 的祖先关系失效（内容早已并入 develop）
+    'AtriumNote': ['dev/basic'],
+    # 剔除两个超大视频时重写了未推送提交，这些分支的 SHA 同样失效但内容已并入 develop
+    'NexusRenderer': ['dev/basic', 'dev/basic-p1-forward-renderer', '主要的'],
+}
+#: 明确跳过合并、只保留的引用（内容已在 develop 里，只是 LFS 重写让祖先关系失效）
+SKIP_MERGE = {
+    'AtriumNote': ['main', 'origin/main'],
+    'NexusRenderer': ['main', 'origin/main'],
+}
 SKIP_DIRS = {'node_modules', 'Library', 'Temp', 'obj', 'bin', 'dist', 'build', '.next',
              '__pycache__', '.venv', 'venv', 'target', '.dsh-build', 'vendor', 'ThirdParty',
              '.vs', 'Packages', 'snapshots', 'Logs', 'UserSettings'}
 
 #: 自动 commit 时要排除的路径（嵌套 git 仓库 / 生成物），避免产出残缺 submodule 引用
 COMMIT_EXCLUDE = {
-    'atrium-pytools': ['tools/markitdown', 'tools/repo_to_notion/out'],
+    'atrium-pytools': ['tools/markitdown', 'tools/repo_to_notion/out',
+                       'tools/git_develop_sync/out'],
+    # 两个测试视频已从 git 历史剔除，仅保留在磁盘上，别再提交回去
+    'NexusRenderer': ['Assets/videos/Test.mov', 'Assets/videos/SONY-HDR-Food.mp4'],
 }
 
 COMMIT_MESSAGE = 'chore: 同步工作区改动（收敛到 develop 前自动提交）'
@@ -59,9 +77,34 @@ MERGE_MESSAGE = 'merge: {branch} -> develop'
 # ---------------------------------------------------------------------------
 # 基础封装
 # ---------------------------------------------------------------------------
+def resolve_ours(repo: Path) -> list[str]:
+    """把剩下的未合并条目逐条按「以本地为准」处理。
+
+    * 内容冲突（stage 2 存在）→ ``git checkout --ours``。
+    * 改名/删除、删除/修改冲突（本地这边没有该文件）→ ``git rm``，即保持本地已删/已改名。
+    """
+    rc, out = run(repo, 'diff', '--name-only', '--diff-filter=U')
+    handled = []
+    for path in [line for line in out.splitlines() if line.strip()]:
+        rc2, stages = run(repo, 'ls-files', '-u', '--', path)
+        has_ours = any(parts[2] == '2' for parts in
+                       (line.split('\t')[0].split() for line in stages.splitlines()
+                        if line.strip()))
+        if has_ours:
+            run(repo, 'checkout', '--ours', '--', path)
+            run(repo, 'add', '--', path)
+            handled.append(f'{path}（保留本地版本）')
+        else:
+            run(repo, 'rm', '-f', '--', path)
+            handled.append(f'{path}（保持本地已删除/改名）')
+    run(repo, 'add', '-A')
+    return handled
+
+
 class Ctx:
-    def __init__(self, apply: bool) -> None:
+    def __init__(self, apply: bool, prefer_local: bool = False) -> None:
         self.apply = apply
+        self.prefer_local = prefer_local
         self.actions: list[str] = []
         self.deleted: dict[str, str] = {}
         self.failures: list[dict] = []
@@ -149,7 +192,7 @@ def commit_wip(ctx: Ctx, repo: Path, name: str) -> bool:
     if rc != 0:
         ctx.failures.append({'repo': name, 'stage': 'add', 'error': out})
         return False
-    rc, out = run(repo, 'status', '--porcelain', '--cached')
+    rc, out = run(repo, 'diff', '--cached', '--name-only')
     if not out.strip():
         ctx.log('排除后没有可提交内容（改动都在排除范围内）')
         return True
@@ -315,16 +358,39 @@ def process(ctx: Ctx, repo: Path, name: str) -> dict:
     candidates = [b for b in local_branches(repo) if b != 'develop']
     candidates += [f'origin/{b}' for b in origin_branches(repo) if b != 'develop']
     seen = set()
+    force_list = FORCE_DELETE.get(name, [])
     for ref in candidates:
         if ref in seen:
             continue
         seen.add(ref)
+        short = ref[7:] if ref.startswith('origin/') else ref
+        if ref in SKIP_MERGE.get(name, []):
+            ctx.log(f'{ref} 内容已在 develop 里（LFS 重写导致祖先关系失效），跳过合并、保留分支')
+            continue
+        if short in force_list:
+            ctx.log(f'{ref} 在删除白名单里（内容已并入），跳过合并、稍后直接删除')
+            continue
+        if any(ref.startswith(p) for p in SKIP_MERGE_PATTERNS):
+            ctx.log(f'{ref} 属于自动快照分支，跳过合并（稍后直接删除）')
+            continue
         if not ref_exists(repo, ref):
             continue
         if is_ancestor(repo, ref, 'develop'):
             ctx.log(f'{ref} 已在 develop 里，跳过合并')
             continue
         rc, out = run(repo, 'merge', '--no-ff', '-m', MERGE_MESSAGE.format(branch=ref), ref)
+        if rc != 0 and ctx.prefer_local:
+            ctx.log(f'合并 {ref} 冲突 → 按「以本地为准」重试（-X ours）')
+            run(repo, 'merge', '--abort')
+            rc, out = run(repo, 'merge', '--no-ff', '-X', 'ours',
+                          '-m', MERGE_MESSAGE.format(branch=ref) + '（冲突以本地为准）', ref)
+            if rc != 0:
+                ctx.log('仍有改名/删除类冲突 → 逐条按「本地为准」处理')
+                for line in resolve_ours(repo):
+                    ctx.log(f'  {line}')
+                rc, out = run(repo, 'commit', '--no-edit')
+            if rc == 0:
+                ctx.log(f'已按本地优先合并 {ref}（对方冲突片段被丢弃）')
         if rc != 0:
             ctx.log(f'✗ 合并 {ref} 冲突，已回滚该次合并，本仓库停止后续操作')
             print(out, flush=True)
@@ -355,22 +421,36 @@ def process(ctx: Ctx, repo: Path, name: str) -> dict:
             ctx.log(f'⚠ 默认分支是 {default}，但没有 main 可切换，稍后可能删不掉')
 
     # 8) 删除其它分支（本地 + 远端），删前逐个校验已并入 develop
+    force = FORCE_DELETE.get(name, [])
     for branch in local_branches(repo):
         if branch in KEEP or branch == 'develop':
             continue
-        if not is_ancestor(repo, branch, 'develop'):
+        if branch not in force and not is_ancestor(repo, branch, 'develop'):
             ctx.log(f'⚠ 本地 {branch} 仍未并入 develop，保留不删')
             continue
         ctx.deleted.setdefault(f'{name}:{branch}', run(repo, 'rev-parse', branch)[1].strip())
         rc, out = run(repo, 'branch', '-D', branch)
         if rc == 0:
-            ctx.log(f'删除本地分支 {branch}')
+            ctx.log(f'删除本地分支 {branch}'
+                    + ('（白名单：SHA 变化但内容已并入）' if branch in force else ''))
             result['deleted_local'].append(branch)
         else:
             ctx.log(f'✗ 删除本地分支 {branch} 失败：{out[:120]}')
 
+    force = FORCE_DELETE.get(name, [])
     for branch in origin_branches(repo):
         if branch in KEEP or branch == 'develop':
+            continue
+        if branch in force:
+            ctx.deleted.setdefault(f'{name}:origin/{branch}',
+                                   run(repo, 'rev-parse', f'origin/{branch}')[1].strip())
+            rc, out = run(repo, 'push', 'origin', '--delete', branch)
+            if rc == 0:
+                ctx.log(f'删除远端孤儿分支 origin/{branch}（原先未并入 develop，SHA 已记录）')
+                result['deleted_remote'].append(branch)
+            else:
+                ctx.log(f'✗ 删除远端分支 {branch} 失败：{out.splitlines()[-1][:160] if out else ""}')
+                result['notes'].append(f'远端 {branch} 删除失败')
             continue
         if not is_ancestor(repo, f'origin/{branch}', 'develop'):
             ctx.log(f'⚠ 远端 {branch} 仍未并入 develop，保留不删')
@@ -394,8 +474,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument('--apply', action='store_true', help='真正执行（默认 dry-run）')
     parser.add_argument('--dry-run', action='store_true', help='只打印计划（默认行为）')
     parser.add_argument('--only', default='', help='只处理名字匹配的仓库（子串）')
+    parser.add_argument('--prefer-local-on-conflict', action='store_true',
+                        help='合并冲突时用 -X ours 重试（以本地为准）')
     args = parser.parse_args(argv)
-    ctx = Ctx(apply=args.apply)
+    ctx = Ctx(apply=args.apply, prefer_local=args.prefer_local_on_conflict)
 
     targets = []
     for repo in find_repos():
