@@ -1,0 +1,1731 @@
+1 DeepseekHarness/
+  1.1 deepseek-harness/
+    1.1.1 .github/
+      1.1.1.1 issue-management/
+        1.1.1.1.1 README.md  (6.8 KB)
+        1.1.1.1.2 README.zh.md  (6.3 KB)
+      1.1.1.2 preview-sizing/
+        1.1.1.2.1 README.md  (2.6 KB)
+        1.1.1.2.2 README.zh.md  (2.3 KB)
+      1.1.1.3 review-ownership/
+        1.1.1.3.1 README.md  (13.0 KB)
+      1.1.1.4 AGENTS.md  (1.3 KB)
+    1.1.2 apps/
+      1.1.2.1 cli/
+        1.1.2.1.1 reference/
+          1.1.2.1.1.1 README.md  (20.0 KB)
+          1.1.2.1.1.2 README.zh.md  (19.8 KB)
+        1.1.2.1.2 tests/
+          1.1.2.1.2.1 profiles/
+            1.1.2.1.2.1.1 AGENTS.md  (815 B)
+        1.1.2.1.3 README.md  (5.8 KB)
+        1.1.2.1.4 README.zh.md  (5.9 KB)
+      1.1.2.2 desktop/
+        1.1.2.2.1 tests/
+          1.1.2.2.1.1 installed-update/
+            1.1.2.2.1.1.1 network/
+              1.1.2.2.1.1.1.1 README.md  (4.2 KB)
+              1.1.2.2.1.1.1.2 README.zh.md  (3.8 KB)
+            1.1.2.2.1.1.2 publication/
+              1.1.2.2.1.1.2.1 README.md  (8.5 KB)
+              1.1.2.2.1.1.2.2 README.zh.md  (7.6 KB)
+            1.1.2.2.1.1.3 README.md  (16.8 KB)
+            1.1.2.2.1.1.4 README.zh.md  (14.7 KB)
+          1.1.2.2.1.2 README.md  (11.9 KB)
+          1.1.2.2.1.3 README.zh.md  (10.4 KB)
+        1.1.2.2.2 README.md  (60.3 KB)
+        1.1.2.2.3 README.zh.md  (53.5 KB)
+      1.1.2.3 web/
+        1.1.2.3.1 tests/
+          1.1.2.3.1.1 expected/
+            1.1.2.3.1.1.1 file-upload-round/
+              1.1.2.3.1.1.1.1 history.expected.md  (432 B)
+            1.1.2.3.1.1.2 max-tokens-notice/
+              1.1.2.3.1.1.2.1 history-turn.expected.txt  (162 B)
+            1.1.2.3.1.1.3 sidebar-terminal/
+              1.1.2.3.1.1.3.1 guide.expected.md  (106 B)
+          1.1.2.3.1.2 fixtures/
+            1.1.2.3.1.2.1 office/
+              1.1.2.3.1.2.1.1 README.md  (766 B)
+              1.1.2.3.1.2.1.2 README.zh.md  (729 B)
+          1.1.2.3.1.3 README.md  (2.7 KB)
+          1.1.2.3.1.4 README.zh.md  (2.6 KB)
+    1.1.3 benchmarks/
+      1.1.3.1 active-stream-reconnect/
+        1.1.3.1.1 README.md  (1.1 KB)
+        1.1.3.1.2 README.zh.md  (1.0 KB)
+      1.1.3.2 agent-continuation/
+        1.1.3.2.1 README.md  (2.2 KB)
+        1.1.3.2.2 README.zh.md  (2.0 KB)
+      1.1.3.3 long-session-browser/
+        1.1.3.3.1 README.md  (3.4 KB)
+        1.1.3.3.2 README.zh.md  (3.3 KB)
+      1.1.3.4 AGENTS.md  (2.7 KB)
+    1.1.4 docs/
+      1.1.4.1 cookbook/
+        1.1.4.1.1 adding-a-package.md  (12.2 KB)
+        1.1.4.1.2 adding-a-package.zh.md  (11.5 KB)
+        1.1.4.1.3 adding-a-remote-api.md  (10.3 KB)
+        1.1.4.1.4 adding-a-remote-api.zh.md  (9.5 KB)
+        1.1.4.1.5 adding-a-session-format-version.md  (13.0 KB)
+        1.1.4.1.6 adding-a-session-format-version.zh.md  (12.0 KB)
+        1.1.4.1.7 adding-a-settings-card.md  (5.7 KB)
+        1.1.4.1.8 adding-a-settings-card.zh.md  (5.5 KB)
+        1.1.4.1.9 adding-a-tool.md  (13.7 KB)
+        1.1.4.1.10 adding-a-tool.zh.md  (13.5 KB)
+        1.1.4.1.11 adding-a-vendored-package.md  (4.2 KB)
+        1.1.4.1.12 adding-a-vendored-package.zh.md  (4.2 KB)
+        1.1.4.1.13 adding-an-llm-adapter.md  (3.9 KB)
+        1.1.4.1.14 adding-an-llm-adapter.zh.md  (4.0 KB)
+        1.1.4.1.15 extension-cookbook.md  (11.2 KB)
+        1.1.4.1.16 extension-cookbook.zh.md  (11.1 KB)
+        1.1.4.1.17 maintaining-dsh-code-review.md  (7.3 KB)
+        1.1.4.1.18 maintaining-dsh-code-review.zh.md  (6.9 KB)
+        1.1.4.1.19 responding-to-pr-review-on-a-stack.md  (3.8 KB)
+        1.1.4.1.20 responding-to-pr-review-on-a-stack.zh.md  (3.9 KB)
+        1.1.4.1.21 reviewing-persistence-type-changes.md  (6.3 KB)
+        1.1.4.1.22 reviewing-persistence-type-changes.zh.md  (5.7 KB)
+      1.1.4.2 cordis-api/
+        1.1.4.2.1 context.md  (11.9 KB)
+        1.1.4.2.2 context.zh.md  (12.1 KB)
+        1.1.4.2.3 events.md  (7.2 KB)
+        1.1.4.2.4 events.zh.md  (7.7 KB)
+        1.1.4.2.5 fiber.md  (11.2 KB)
+        1.1.4.2.6 fiber.zh.md  (11.7 KB)
+        1.1.4.2.7 inherited.md  (4.5 KB)
+        1.1.4.2.8 registry.md  (5.2 KB)
+        1.1.4.2.9 registry.zh.md  (5.4 KB)
+        1.1.4.2.10 service.md  (2.6 KB)
+        1.1.4.2.11 service.zh.md  (2.8 KB)
+      1.1.4.3 cordis-tutorial/
+        1.1.4.3.1 01-first-plugin.md  (3.3 KB)
+        1.1.4.3.2 01-first-plugin.zh.md  (3.3 KB)
+        1.1.4.3.3 02-lifecycle-and-effects.md  (4.1 KB)
+        1.1.4.3.4 02-lifecycle-and-effects.zh.md  (4.1 KB)
+        1.1.4.3.5 03-services.md  (4.1 KB)
+        1.1.4.3.6 03-services.zh.md  (4.1 KB)
+        1.1.4.3.7 04-events.md  (5.4 KB)
+        1.1.4.3.8 04-events.zh.md  (5.4 KB)
+        1.1.4.3.9 05-config.md  (2.8 KB)
+        1.1.4.3.10 05-config.zh.md  (2.8 KB)
+        1.1.4.3.11 06-composition-and-hmr.md  (4.8 KB)
+        1.1.4.3.12 06-composition-and-hmr.zh.md  (5.0 KB)
+        1.1.4.3.13 07-into-the-harness.md  (4.7 KB)
+        1.1.4.3.14 07-into-the-harness.zh.md  (4.7 KB)
+        1.1.4.3.15 index.md  (4.2 KB)
+        1.1.4.3.16 index.zh.md  (4.2 KB)
+      1.1.4.4 i18n/
+        1.1.4.4.1 README.md  (12.3 KB)
+        1.1.4.4.2 README.zh.md  (11.7 KB)
+        1.1.4.4.3 style-samples.md  (12.5 KB)
+        1.1.4.4.4 terminology.md  (13.6 KB)
+        1.1.4.4.5 translation-prompt.md  (22.8 KB)
+        1.1.4.4.6 translation-rules.md  (9.7 KB)
+        1.1.4.4.7 translation-rules.zh.md  (9.1 KB)
+      1.1.4.5 persistence-changes/
+        1.1.4.5.1 historical-formats/
+          1.1.4.5.1.1 README.md  (5.1 KB)
+          1.1.4.5.1.2 README.zh.md  (4.6 KB)
+          1.1.4.5.1.3 v0.md  (167.8 KB)
+          1.1.4.5.1.4 v0.zh.md  (166.5 KB)
+          1.1.4.5.1.5 v1.md  (167.8 KB)
+          1.1.4.5.1.6 v1.zh.md  (166.6 KB)
+          1.1.4.5.1.7 v2.md  (177.6 KB)
+          1.1.4.5.1.8 v2.zh.md  (176.3 KB)
+        1.1.4.5.2 releases/
+          1.1.4.5.2.1 dsh-v0.0.1-rc.1.md  (7.4 KB)
+          1.1.4.5.2.2 dsh-v0.0.1-rc.1.zh.md  (7.2 KB)
+          1.1.4.5.2.3 dsh-v0.0.1-rc.2.md  (14.0 KB)
+          1.1.4.5.2.4 dsh-v0.0.1-rc.2.zh.md  (13.8 KB)
+          1.1.4.5.2.5 dsh-v0.0.1-rc.3.md  (5.0 KB)
+          1.1.4.5.2.6 dsh-v0.0.1-rc.3.zh.md  (4.8 KB)
+          1.1.4.5.2.7 dsh-v0.0.1-rc.4.md  (2.2 KB)
+          1.1.4.5.2.8 dsh-v0.0.1-rc.4.zh.md  (2.0 KB)
+          1.1.4.5.2.9 dsh-v0.0.1-rc.5.md  (2.2 KB)
+          1.1.4.5.2.10 dsh-v0.0.1-rc.5.zh.md  (2.0 KB)
+          1.1.4.5.2.11 dsh-v0.1.0-rc.1.md  (2.2 KB)
+          1.1.4.5.2.12 dsh-v0.1.0-rc.1.zh.md  (2.0 KB)
+          1.1.4.5.2.13 dsh-v0.1.0-rc.2.md  (2.2 KB)
+          1.1.4.5.2.14 dsh-v0.1.0-rc.2.zh.md  (2.0 KB)
+          1.1.4.5.2.15 dsh-v0.1.0-rc.3.md  (2.2 KB)
+          1.1.4.5.2.16 dsh-v0.1.0-rc.3.zh.md  (2.0 KB)
+          1.1.4.5.2.17 dsh-v0.1.0-rc.5.md  (2.2 KB)
+          1.1.4.5.2.18 dsh-v0.1.0-rc.5.zh.md  (2.0 KB)
+          1.1.4.5.2.19 dsh-v0.1.0-rc.6.md  (2.2 KB)
+          1.1.4.5.2.20 dsh-v0.1.0-rc.6.zh.md  (2.0 KB)
+          1.1.4.5.2.21 dsh-v0.1.0-rc.7.md  (2.6 KB)
+          1.1.4.5.2.22 dsh-v0.1.0-rc.7.zh.md  (2.4 KB)
+          1.1.4.5.2.23 dsh-v0.1.0-rc.8.md  (4.2 KB)
+          1.1.4.5.2.24 dsh-v0.1.0-rc.8.zh.md  (4.0 KB)
+          1.1.4.5.2.25 dsh-v0.1.1-rc.1.md  (2.6 KB)
+          1.1.4.5.2.26 dsh-v0.1.1-rc.1.zh.md  (2.4 KB)
+          1.1.4.5.2.27 dsh-v0.1.1-rc.2.md  (5.6 KB)
+          1.1.4.5.2.28 dsh-v0.1.1-rc.2.zh.md  (5.3 KB)
+          1.1.4.5.2.29 dsh-v0.1.2-alpha.1.md  (16.5 KB)
+          1.1.4.5.2.30 dsh-v0.1.2-alpha.1.zh.md  (16.3 KB)
+          1.1.4.5.2.31 dsh-v0.1.2-alpha.2.md  (16.1 KB)
+          1.1.4.5.2.32 dsh-v0.1.2-alpha.2.zh.md  (15.8 KB)
+          1.1.4.5.2.33 dsh-v0.1.2-alpha.3.md  (2.2 KB)
+          1.1.4.5.2.34 dsh-v0.1.2-alpha.3.zh.md  (2.0 KB)
+          1.1.4.5.2.35 dsh-v0.1.2-alpha.4.md  (3.7 KB)
+          1.1.4.5.2.36 dsh-v0.1.2-alpha.4.zh.md  (3.4 KB)
+          1.1.4.5.2.37 dsh-v0.1.2-alpha.5.md  (2.2 KB)
+          1.1.4.5.2.38 dsh-v0.1.2-alpha.5.zh.md  (2.0 KB)
+          1.1.4.5.2.39 dsh-v0.1.2-rc.1.md  (2.2 KB)
+          1.1.4.5.2.40 dsh-v0.1.2-rc.1.zh.md  (2.0 KB)
+          1.1.4.5.2.41 dsh-v0.1.3-alpha.1.md  (7.9 KB)
+          1.1.4.5.2.42 dsh-v0.1.3-alpha.1.zh.md  (7.6 KB)
+          1.1.4.5.2.43 dsh-v0.1.3-alpha.2.md  (2.8 KB)
+          1.1.4.5.2.44 dsh-v0.1.3-alpha.2.zh.md  (2.6 KB)
+          1.1.4.5.2.45 dsh-v0.1.5-alpha.1.md  (6.3 KB)
+          1.1.4.5.2.46 dsh-v0.1.5-alpha.1.zh.md  (6.1 KB)
+          1.1.4.5.2.47 dsh-v0.1.5-alpha.2.md  (3.4 KB)
+          1.1.4.5.2.48 dsh-v0.1.5-alpha.2.zh.md  (3.2 KB)
+          1.1.4.5.2.49 dsh-v0.1.5-rc.1.md  (2.2 KB)
+          1.1.4.5.2.50 dsh-v0.1.5-rc.1.zh.md  (2.0 KB)
+          1.1.4.5.2.51 dsh-v0.1.5-rc.2.md  (2.2 KB)
+          1.1.4.5.2.52 dsh-v0.1.5-rc.2.zh.md  (2.0 KB)
+          1.1.4.5.2.53 README.md  (7.0 KB)
+          1.1.4.5.2.54 README.zh.md  (6.2 KB)
+        1.1.4.5.3 2026-09-11-initial.md  (10.4 KB)
+        1.1.4.5.4 2026-09-11-initial.zh.md  (10.3 KB)
+        1.1.4.5.5 2026-09-12-auto-review-error-metadata.md  (2.3 KB)
+        1.1.4.5.6 2026-09-12-auto-review-error-metadata.zh.md  (2.2 KB)
+        1.1.4.5.7 2026-09-14-image-offload.md  (3.6 KB)
+        1.1.4.5.8 2026-09-14-image-offload.zh.md  (3.5 KB)
+        1.1.4.5.9 2026-09-14-workspace-changes-event.md  (1.5 KB)
+        1.1.4.5.10 2026-09-14-workspace-changes-event.zh.md  (1.4 KB)
+        1.1.4.5.11 README.md  (5.8 KB)
+        1.1.4.5.12 README.zh.md  (5.1 KB)
+      1.1.4.6 postmortem/
+        1.1.4.6.1 0001-acp-default-export-drops-inject.md  (11.0 KB)
+        1.1.4.6.2 0001-acp-default-export-drops-inject.zh.md  (11.2 KB)
+        1.1.4.6.3 0002-js-expression-disabled-filesystem-tools.md  (4.3 KB)
+        1.1.4.6.4 0002-js-expression-disabled-filesystem-tools.zh.md  (4.2 KB)
+        1.1.4.6.5 0003-web-agent-gui-feedback-loop.md  (5.7 KB)
+        1.1.4.6.6 0003-web-agent-gui-feedback-loop.zh.md  (5.6 KB)
+        1.1.4.6.7 0004-landlock-partial-notice-misclassified-child-failures.md  (6.7 KB)
+        1.1.4.6.8 0004-landlock-partial-notice-misclassified-child-failures.zh.md  (6.8 KB)
+        1.1.4.6.9 README.md  (1.8 KB)
+        1.1.4.6.10 README.zh.md  (2.0 KB)
+      1.1.4.7 subsystems/
+        1.1.4.7.1 agent-team.md  (9.4 KB)
+        1.1.4.7.2 agent-team.zh.md  (9.2 KB)
+        1.1.4.7.3 approval.md  (9.1 KB)
+        1.1.4.7.4 approval.zh.md  (9.1 KB)
+        1.1.4.7.5 attachment.md  (17.7 KB)
+        1.1.4.7.6 attachment.zh.md  (17.3 KB)
+        1.1.4.7.7 boot.md  (9.1 KB)
+        1.1.4.7.8 boot.zh.md  (9.0 KB)
+        1.1.4.7.9 browser-use.md  (5.3 KB)
+        1.1.4.7.10 browser-use.zh.md  (5.0 KB)
+        1.1.4.7.11 client-modules.md  (13.5 KB)
+        1.1.4.7.12 client-modules.zh.md  (12.9 KB)
+        1.1.4.7.13 client-resources.md  (7.9 KB)
+        1.1.4.7.14 client-resources.zh.md  (7.3 KB)
+        1.1.4.7.15 commands.md  (10.0 KB)
+        1.1.4.7.16 commands.zh.md  (9.9 KB)
+        1.1.4.7.17 compaction.md  (19.2 KB)
+        1.1.4.7.18 compaction.zh.md  (18.8 KB)
+        1.1.4.7.19 computer-use.md  (3.4 KB)
+        1.1.4.7.20 computer-use.zh.md  (3.2 KB)
+        1.1.4.7.21 conversation.md  (16.5 KB)
+        1.1.4.7.22 conversation.zh.md  (16.0 KB)
+        1.1.4.7.23 core.md  (64.2 KB)
+        1.1.4.7.24 core.zh.md  (63.9 KB)
+        1.1.4.7.25 credentials.md  (16.1 KB)
+        1.1.4.7.26 credentials.zh.md  (16.0 KB)
+        1.1.4.7.27 deliverables.md  (9.1 KB)
+        1.1.4.7.28 deliverables.zh.md  (9.0 KB)
+        1.1.4.7.29 extensions.md  (16.1 KB)
+        1.1.4.7.30 extensions.zh.md  (16.1 KB)
+        1.1.4.7.31 feedback.md  (19.3 KB)
+        1.1.4.7.32 feedback.zh.md  (18.8 KB)
+        1.1.4.7.33 filesystem.md  (29.5 KB)
+        1.1.4.7.34 filesystem.zh.md  (29.2 KB)
+        1.1.4.7.35 goal.md  (11.5 KB)
+        1.1.4.7.36 goal.zh.md  (11.4 KB)
+        1.1.4.7.37 invariants.md  (6.5 KB)
+        1.1.4.7.38 invariants.zh.md  (6.3 KB)
+        1.1.4.7.39 jobs.md  (14.1 KB)
+        1.1.4.7.40 jobs.zh.md  (14.1 KB)
+        1.1.4.7.41 llm-streaming.md  (61.2 KB)
+        1.1.4.7.42 llm-streaming.zh.md  (60.5 KB)
+        1.1.4.7.43 lsp.md  (10.3 KB)
+        1.1.4.7.44 lsp.zh.md  (10.3 KB)
+        1.1.4.7.45 mcp.md  (9.6 KB)
+        1.1.4.7.46 mcp.zh.md  (8.9 KB)
+        1.1.4.7.47 office-to-pdf.md  (7.3 KB)
+        1.1.4.7.48 office-to-pdf.zh.md  (6.9 KB)
+        1.1.4.7.49 permission-presets.md  (10.5 KB)
+        1.1.4.7.50 permission-presets.zh.md  (10.3 KB)
+        1.1.4.7.51 persistence.md  (26.7 KB)
+        1.1.4.7.52 persistence.zh.md  (26.2 KB)
+        1.1.4.7.53 plan.md  (7.7 KB)
+        1.1.4.7.54 plan.zh.md  (7.6 KB)
+        1.1.4.7.55 ptc-runtime.md  (12.8 KB)
+        1.1.4.7.56 ptc-runtime.zh.md  (12.4 KB)
+        1.1.4.7.57 README.md  (10.3 KB)
+        1.1.4.7.58 README.zh.md  (10.0 KB)
+        1.1.4.7.59 sandbox.md  (12.6 KB)
+        1.1.4.7.60 sandbox.zh.md  (12.5 KB)
+        1.1.4.7.61 schedule.md  (11.7 KB)
+        1.1.4.7.62 schedule.zh.md  (11.4 KB)
+        1.1.4.7.63 scope.md  (3.7 KB)
+        1.1.4.7.64 scope.zh.md  (3.7 KB)
+        1.1.4.7.65 session-projection.md  (21.9 KB)
+        1.1.4.7.66 session-projection.zh.md  (21.8 KB)
+        1.1.4.7.67 session-query.md  (21.0 KB)
+        1.1.4.7.68 session-query.zh.md  (21.1 KB)
+        1.1.4.7.69 session-reference.md  (10.2 KB)
+        1.1.4.7.70 session-reference.zh.md  (10.1 KB)
+        1.1.4.7.71 session-telemetry.md  (12.9 KB)
+        1.1.4.7.72 session-telemetry.zh.md  (12.7 KB)
+        1.1.4.7.73 session-title.md  (8.5 KB)
+        1.1.4.7.74 session-title.zh.md  (8.5 KB)
+        1.1.4.7.75 session.md  (69.1 KB)
+        1.1.4.7.76 session.zh.md  (68.6 KB)
+        1.1.4.7.77 settings.md  (21.7 KB)
+        1.1.4.7.78 settings.zh.md  (21.4 KB)
+        1.1.4.7.79 shell.md  (17.3 KB)
+        1.1.4.7.80 shell.zh.md  (17.1 KB)
+        1.1.4.7.81 sidebar-right.md  (26.0 KB)
+        1.1.4.7.82 sidebar-right.zh.md  (24.2 KB)
+        1.1.4.7.83 skills.md  (23.9 KB)
+        1.1.4.7.84 skills.zh.md  (23.5 KB)
+        1.1.4.7.85 slots.md  (12.7 KB)
+        1.1.4.7.86 slots.zh.md  (12.2 KB)
+        1.1.4.7.87 spill.md  (7.1 KB)
+        1.1.4.7.88 spill.zh.md  (7.0 KB)
+        1.1.4.7.89 ssh.md  (8.1 KB)
+        1.1.4.7.90 ssh.zh.md  (7.8 KB)
+        1.1.4.7.91 storage.md  (16.7 KB)
+        1.1.4.7.92 storage.zh.md  (16.7 KB)
+        1.1.4.7.93 subagent.md  (56.6 KB)
+        1.1.4.7.94 subagent.zh.md  (55.9 KB)
+        1.1.4.7.95 subprocess.md  (18.5 KB)
+        1.1.4.7.96 subprocess.zh.md  (18.3 KB)
+        1.1.4.7.97 system-prompt.md  (11.1 KB)
+        1.1.4.7.98 system-prompt.zh.md  (11.1 KB)
+        1.1.4.7.99 terminal.md  (8.3 KB)
+        1.1.4.7.100 terminal.zh.md  (8.3 KB)
+        1.1.4.7.101 todo.md  (1.8 KB)
+        1.1.4.7.102 todo.zh.md  (1.7 KB)
+        1.1.4.7.103 token-meter.md  (5.8 KB)
+        1.1.4.7.104 token-meter.zh.md  (5.6 KB)
+        1.1.4.7.105 tools.md  (43.0 KB)
+        1.1.4.7.106 tools.zh.md  (42.7 KB)
+        1.1.4.7.107 typert.md  (14.9 KB)
+        1.1.4.7.108 typert.zh.md  (14.7 KB)
+        1.1.4.7.109 user-questions.md  (8.2 KB)
+        1.1.4.7.110 user-questions.zh.md  (8.2 KB)
+        1.1.4.7.111 web-client.md  (13.1 KB)
+        1.1.4.7.112 web-client.zh.md  (12.3 KB)
+        1.1.4.7.113 web-server.md  (11.8 KB)
+        1.1.4.7.114 web-server.zh.md  (11.7 KB)
+        1.1.4.7.115 web.md  (12.5 KB)
+        1.1.4.7.116 web.zh.md  (12.6 KB)
+        1.1.4.7.117 webhook.md  (5.6 KB)
+        1.1.4.7.118 webhook.zh.md  (5.2 KB)
+        1.1.4.7.119 workflow.md  (15.2 KB)
+        1.1.4.7.120 workflow.zh.md  (15.0 KB)
+        1.1.4.7.121 workspace.md  (27.1 KB)
+        1.1.4.7.122 workspace.zh.md  (27.1 KB)
+      1.1.4.8 user/
+        1.1.4.8.1 develop/
+          1.1.4.8.1.1 basic/
+            1.1.4.8.1.1.1 config.md  (3.1 KB)
+            1.1.4.8.1.1.2 config.zh.md  (3.1 KB)
+            1.1.4.8.1.1.3 index.md  (3.8 KB)
+            1.1.4.8.1.1.4 index.zh.md  (3.7 KB)
+            1.1.4.8.1.1.5 publish.md  (8.8 KB)
+            1.1.4.8.1.1.6 publish.zh.md  (8.7 KB)
+            1.1.4.8.1.1.7 tool.md  (1.8 KB)
+            1.1.4.8.1.1.8 tool.zh.md  (1.7 KB)
+          1.1.4.8.1.2 framework/
+            1.1.4.8.1.2.1 events.md  (4.0 KB)
+            1.1.4.8.1.2.2 events.zh.md  (3.9 KB)
+            1.1.4.8.1.2.3 index.md  (3.7 KB)
+            1.1.4.8.1.2.4 index.zh.md  (3.6 KB)
+            1.1.4.8.1.2.5 service.md  (3.7 KB)
+            1.1.4.8.1.2.6 service.zh.md  (3.6 KB)
+          1.1.4.8.1.3 practice/
+            1.1.4.8.1.3.1 dynamic-cordis.md  (1.4 KB)
+            1.1.4.8.1.3.2 dynamic-cordis.zh.md  (1.3 KB)
+            1.1.4.8.1.3.3 index.md  (5.2 KB)
+            1.1.4.8.1.3.4 index.zh.md  (5.0 KB)
+            1.1.4.8.1.3.5 llm-adapter.md  (6.4 KB)
+            1.1.4.8.1.3.6 llm-adapter.zh.md  (6.4 KB)
+        1.1.4.8.2 guide/
+          1.1.4.8.2.1 github-review.md  (4.3 KB)
+          1.1.4.8.2.2 github-review.zh.md  (4.1 KB)
+          1.1.4.8.2.3 index.md  (1.3 KB)
+          1.1.4.8.2.4 index.zh.md  (1.3 KB)
+          1.1.4.8.2.5 mcp-memory.md  (6.5 KB)
+          1.1.4.8.2.6 mcp-memory.zh.md  (6.4 KB)
+          1.1.4.8.2.7 network-proxy.md  (5.9 KB)
+          1.1.4.8.2.8 network-proxy.zh.md  (5.7 KB)
+          1.1.4.8.2.9 providers.md  (14.1 KB)
+          1.1.4.8.2.10 providers.zh.md  (13.7 KB)
+          1.1.4.8.2.11 python-sdk.md  (8.0 KB)
+          1.1.4.8.2.12 python-sdk.zh.md  (7.6 KB)
+          1.1.4.8.2.13 schedule.md  (2.9 KB)
+          1.1.4.8.2.14 schedule.zh.md  (2.7 KB)
+        1.1.4.8.3 index.md  (159 B)
+        1.1.4.8.4 index.zh.md  (156 B)
+      1.1.4.9 agent-lifecycle.md  (5.5 KB)
+      1.1.4.10 agent-lifecycle.zh.md  (5.8 KB)
+      1.1.4.11 AGENTS.md  (10.6 KB)
+      1.1.4.12 api-gateway.md  (17.7 KB)
+      1.1.4.13 api-gateway.zh.md  (15.5 KB)
+      1.1.4.14 architecture.md  (18.2 KB)
+      1.1.4.15 architecture.zh.md  (17.8 KB)
+      1.1.4.16 capability-seams.md  (55.2 KB)
+      1.1.4.17 capability-seams.zh.md  (54.9 KB)
+      1.1.4.18 config-catalog.md  (166.6 KB)
+      1.1.4.19 config-catalog.zh.md  (167.2 KB)
+      1.1.4.20 cordis-primer.md  (4.0 KB)
+      1.1.4.21 cordis-primer.zh.md  (4.0 KB)
+      1.1.4.22 deepseek-llm-api-wire-extensions.md  (12.0 KB)
+      1.1.4.23 deepseek-llm-api-wire-extensions.zh.md  (11.1 KB)
+      1.1.4.24 defensive-patterns.md  (3.6 KB)
+      1.1.4.25 defensive-patterns.zh.md  (4.0 KB)
+      1.1.4.26 development.md  (18.1 KB)
+      1.1.4.27 development.zh.md  (17.3 KB)
+      1.1.4.28 event-producer-consumer.md  (25.9 KB)
+      1.1.4.29 event-producer-consumer.zh.md  (26.2 KB)
+      1.1.4.30 glossary.md  (6.4 KB)
+      1.1.4.31 glossary.zh.md  (6.4 KB)
+      1.1.4.32 graph-atlas.md  (1.4 KB)
+      1.1.4.33 graph-atlas.zh.md  (1.8 KB)
+      1.1.4.34 module-graph.md  (110.9 KB)
+      1.1.4.35 module-graph.zh.md  (110.9 KB)
+      1.1.4.36 persistence-catalog.md  (229.2 KB)
+      1.1.4.37 persistence-catalog.zh.md  (228.3 KB)
+      1.1.4.38 rescope.md  (4.7 KB)
+      1.1.4.39 rescope.zh.md  (4.4 KB)
+      1.1.4.40 session-format-status.md  (4.2 KB)
+      1.1.4.41 session-format-status.zh.md  (3.9 KB)
+      1.1.4.42 testing.md  (10.6 KB)
+      1.1.4.43 testing.zh.md  (11.0 KB)
+      1.1.4.44 tool-catalog.md  (91.8 KB)
+      1.1.4.45 tool-catalog.zh.md  (91.4 KB)
+      1.1.4.46 tool-execution-pipeline.md  (3.9 KB)
+      1.1.4.47 tool-execution-pipeline.zh.md  (4.4 KB)
+      1.1.4.48 web-styling.md  (5.0 KB)
+      1.1.4.49 web-styling.zh.md  (4.6 KB)
+    1.1.5 native/
+      1.1.5.1 system/
+        1.1.5.1.1 docs/
+          1.1.5.1.1.1 architecture.md  (3.1 KB)
+          1.1.5.1.1.2 cli-contract.md  (2.5 KB)
+          1.1.5.1.1.3 flock-contract.md  (3.2 KB)
+          1.1.5.1.1.4 naming.md  (1.2 KB)
+          1.1.5.1.1.5 packaging.md  (2.8 KB)
+          1.1.5.1.1.6 release.md  (4.1 KB)
+          1.1.5.1.1.7 support-matrix.md  (1.1 KB)
+        1.1.5.1.2 packages/
+          1.1.5.1.2.1 darwin-arm64/
+            1.1.5.1.2.1.1 README.md  (477 B)
+            1.1.5.1.2.1.2 README.zh.md  (467 B)
+          1.1.5.1.2.2 darwin-x64/
+            1.1.5.1.2.2.1 README.md  (471 B)
+            1.1.5.1.2.2.2 README.zh.md  (473 B)
+          1.1.5.1.2.3 entry/
+            1.1.5.1.2.3.1 README.md  (1.5 KB)
+            1.1.5.1.2.3.2 README.zh.md  (1.5 KB)
+          1.1.5.1.2.4 linux-arm64/
+            1.1.5.1.2.4.1 README.md  (781 B)
+            1.1.5.1.2.4.2 README.zh.md  (746 B)
+          1.1.5.1.2.5 linux-x64/
+            1.1.5.1.2.5.1 README.md  (777 B)
+            1.1.5.1.2.5.2 README.zh.md  (712 B)
+        1.1.5.1.3 AGENTS.md  (3.1 KB)
+        1.1.5.1.4 README.md  (2.4 KB)
+        1.1.5.1.5 README.zh.md  (2.3 KB)
+      1.1.5.2 README.md  (996 B)
+      1.1.5.3 README.zh.md  (887 B)
+    1.1.6 packages/
+      1.1.6.1 acp/
+        1.1.6.1.1 acp/
+          1.1.6.1.1.1 README.md  (12.2 KB)
+          1.1.6.1.1.2 README.zh.md  (11.3 KB)
+        1.1.6.1.2 README.md  (1.8 KB)
+        1.1.6.1.3 README.zh.md  (1.7 KB)
+      1.1.6.2 api/
+        1.1.6.2.1 gateway/
+          1.1.6.2.1.1 README.md  (13.7 KB)
+          1.1.6.2.1.2 README.zh.md  (12.7 KB)
+        1.1.6.2.2 remotes/
+          1.1.6.2.2.1 README.md  (9.0 KB)
+          1.1.6.2.2.2 README.zh.md  (8.1 KB)
+        1.1.6.2.3 session-controller/
+          1.1.6.2.3.1 README.md  (13.6 KB)
+          1.1.6.2.3.2 README.zh.md  (12.8 KB)
+        1.1.6.2.4 settings-controller/
+          1.1.6.2.4.1 README.md  (4.0 KB)
+          1.1.6.2.4.2 README.zh.md  (3.6 KB)
+        1.1.6.2.5 terminal-controller/
+          1.1.6.2.5.1 README.md  (10.2 KB)
+          1.1.6.2.5.2 README.zh.md  (9.1 KB)
+        1.1.6.2.6 workspace-controller/
+          1.1.6.2.6.1 README.md  (3.0 KB)
+          1.1.6.2.6.2 README.zh.md  (2.7 KB)
+        1.1.6.2.7 workspace-files/
+          1.1.6.2.7.1 README.md  (15.0 KB)
+          1.1.6.2.7.2 README.zh.md  (13.7 KB)
+        1.1.6.2.8 README.md  (3.6 KB)
+        1.1.6.2.9 README.zh.md  (3.3 KB)
+      1.1.6.3 attachment/
+        1.1.6.3.1 attachment/
+          1.1.6.3.1.1 README.md  (11.4 KB)
+          1.1.6.3.1.2 README.zh.md  (10.4 KB)
+        1.1.6.3.2 attachment-local/
+          1.1.6.3.2.1 README.md  (12.1 KB)
+          1.1.6.3.2.2 README.zh.md  (11.0 KB)
+        1.1.6.3.3 README.md  (2.1 KB)
+        1.1.6.3.4 README.zh.md  (1.9 KB)
+      1.1.6.4 boot/
+        1.1.6.4.1 app-boot/
+          1.1.6.4.1.1 README.md  (22.2 KB)
+          1.1.6.4.1.2 README.zh.md  (20.8 KB)
+        1.1.6.4.2 cmdline/
+          1.1.6.4.2.1 README.md  (8.8 KB)
+          1.1.6.4.2.2 README.zh.md  (8.2 KB)
+        1.1.6.4.3 hmr/
+          1.1.6.4.3.1 README.md  (4.9 KB)
+          1.1.6.4.3.2 README.zh.md  (4.3 KB)
+        1.1.6.4.4 plugin-manager/
+          1.1.6.4.4.1 README.md  (11.8 KB)
+          1.1.6.4.4.2 README.zh.md  (10.6 KB)
+        1.1.6.4.5 README.md  (2.0 KB)
+        1.1.6.4.6 README.zh.md  (1.9 KB)
+      1.1.6.5 browser-use/
+        1.1.6.5.1 browser-use/
+          1.1.6.5.1.1 README.md  (3.4 KB)
+          1.1.6.5.1.2 README.zh.md  (3.1 KB)
+        1.1.6.5.2 README.md  (1.1 KB)
+        1.1.6.5.3 README.zh.md  (1016 B)
+      1.1.6.6 bundle/
+        1.1.6.6.1 acp-app/
+          1.1.6.6.1.1 README.md  (4.5 KB)
+          1.1.6.6.1.2 README.zh.md  (4.4 KB)
+        1.1.6.6.2 base/
+          1.1.6.6.2.1 README.md  (9.5 KB)
+          1.1.6.6.2.2 README.zh.md  (9.2 KB)
+        1.1.6.6.3 headless/
+          1.1.6.6.3.1 README.md  (14.6 KB)
+          1.1.6.6.3.2 README.zh.md  (14.1 KB)
+        1.1.6.6.4 sdk-app/
+          1.1.6.6.4.1 README.md  (4.3 KB)
+          1.1.6.6.4.2 README.zh.md  (4.3 KB)
+        1.1.6.6.5 sdk-minimal/
+          1.1.6.6.5.1 README.md  (5.5 KB)
+          1.1.6.6.5.2 README.zh.md  (5.2 KB)
+        1.1.6.6.6 web-app/
+          1.1.6.6.6.1 README.md  (11.5 KB)
+          1.1.6.6.6.2 README.zh.md  (10.8 KB)
+        1.1.6.6.7 README.md  (2.1 KB)
+        1.1.6.6.8 README.zh.md  (2.1 KB)
+      1.1.6.7 client/
+        1.1.6.7.1 connection/
+          1.1.6.7.1.1 README.md  (9.7 KB)
+          1.1.6.7.1.2 README.zh.md  (9.0 KB)
+        1.1.6.7.2 file-upload/
+          1.1.6.7.2.1 README.md  (5.6 KB)
+          1.1.6.7.2.2 README.zh.md  (5.2 KB)
+        1.1.6.7.3 hmr/
+          1.1.6.7.3.1 README.md  (6.8 KB)
+          1.1.6.7.3.2 README.zh.md  (6.1 KB)
+        1.1.6.7.4 locale/
+          1.1.6.7.4.1 README.md  (8.3 KB)
+          1.1.6.7.4.2 README.zh.md  (7.6 KB)
+        1.1.6.7.5 modules/
+          1.1.6.7.5.1 README.md  (13.3 KB)
+          1.1.6.7.5.2 README.zh.md  (12.2 KB)
+        1.1.6.7.6 resources/
+          1.1.6.7.6.1 README.md  (5.7 KB)
+          1.1.6.7.6.2 README.zh.md  (5.3 KB)
+        1.1.6.7.7 store/
+          1.1.6.7.7.1 README.md  (1.8 KB)
+          1.1.6.7.7.2 README.zh.md  (1.7 KB)
+        1.1.6.7.8 ui-agent-preset/
+          1.1.6.7.8.1 README.md  (8.9 KB)
+          1.1.6.7.8.2 README.zh.md  (8.2 KB)
+        1.1.6.7.9 ui-approval/
+          1.1.6.7.9.1 README.md  (1.5 KB)
+          1.1.6.7.9.2 README.zh.md  (1.4 KB)
+        1.1.6.7.10 ui-attachment/
+          1.1.6.7.10.1 README.md  (6.6 KB)
+          1.1.6.7.10.2 README.zh.md  (6.0 KB)
+        1.1.6.7.11 ui-brand-official/
+          1.1.6.7.11.1 README.md  (4.3 KB)
+          1.1.6.7.11.2 README.zh.md  (3.9 KB)
+        1.1.6.7.12 ui-chat/
+          1.1.6.7.12.1 README.md  (9.7 KB)
+          1.1.6.7.12.2 README.zh.md  (8.9 KB)
+        1.1.6.7.13 ui-commands/
+          1.1.6.7.13.1 README.md  (7.2 KB)
+          1.1.6.7.13.2 README.zh.md  (6.5 KB)
+        1.1.6.7.14 ui-conversation/
+          1.1.6.7.14.1 README.md  (19.2 KB)
+          1.1.6.7.14.2 README.zh.md  (17.6 KB)
+        1.1.6.7.15 ui-deliverables/
+          1.1.6.7.15.1 README.md  (14.5 KB)
+          1.1.6.7.15.2 README.zh.md  (13.2 KB)
+        1.1.6.7.16 ui-directory-picker-browse/
+          1.1.6.7.16.1 README.md  (4.8 KB)
+          1.1.6.7.16.2 README.zh.md  (4.5 KB)
+        1.1.6.7.17 ui-directory-picker-native/
+          1.1.6.7.17.1 README.md  (5.2 KB)
+          1.1.6.7.17.2 README.zh.md  (4.9 KB)
+        1.1.6.7.18 ui-dockkit/
+          1.1.6.7.18.1 README.md  (15.9 KB)
+          1.1.6.7.18.2 README.zh.md  (14.9 KB)
+        1.1.6.7.19 ui-goal/
+          1.1.6.7.19.1 README.md  (5.2 KB)
+          1.1.6.7.19.2 README.zh.md  (4.8 KB)
+        1.1.6.7.20 ui-input-trigger/
+          1.1.6.7.20.1 README.md  (7.2 KB)
+          1.1.6.7.20.2 README.zh.md  (6.7 KB)
+        1.1.6.7.21 ui-jobs/
+          1.1.6.7.21.1 README.md  (5.3 KB)
+          1.1.6.7.21.2 README.zh.md  (4.9 KB)
+        1.1.6.7.22 ui-layout/
+          1.1.6.7.22.1 README.md  (7.5 KB)
+          1.1.6.7.22.2 README.zh.md  (6.7 KB)
+        1.1.6.7.23 ui-message-feedback/
+          1.1.6.7.23.1 README.md  (6.9 KB)
+          1.1.6.7.23.2 README.zh.md  (6.2 KB)
+        1.1.6.7.24 ui-model-selection/
+          1.1.6.7.24.1 README.md  (6.3 KB)
+          1.1.6.7.24.2 README.zh.md  (5.9 KB)
+        1.1.6.7.25 ui-open-in-app/
+          1.1.6.7.25.1 README.md  (5.5 KB)
+          1.1.6.7.25.2 README.zh.md  (5.0 KB)
+        1.1.6.7.26 ui-permission-presets/
+          1.1.6.7.26.1 README.md  (7.2 KB)
+          1.1.6.7.26.2 README.zh.md  (6.4 KB)
+        1.1.6.7.27 ui-plan/
+          1.1.6.7.27.1 README.md  (6.7 KB)
+          1.1.6.7.27.2 README.zh.md  (6.1 KB)
+        1.1.6.7.28 ui-plugin-manager/
+          1.1.6.7.28.1 README.md  (12.2 KB)
+          1.1.6.7.28.2 README.zh.md  (10.9 KB)
+        1.1.6.7.29 ui-primitives/
+          1.1.6.7.29.1 README.md  (20.6 KB)
+          1.1.6.7.29.2 README.zh.md  (19.2 KB)
+        1.1.6.7.30 ui-reference/
+          1.1.6.7.30.1 README.md  (6.7 KB)
+          1.1.6.7.30.2 README.zh.md  (6.2 KB)
+        1.1.6.7.31 ui-renderer/
+          1.1.6.7.31.1 README.md  (6.2 KB)
+          1.1.6.7.31.2 README.zh.md  (5.7 KB)
+        1.1.6.7.32 ui-schedule/
+          1.1.6.7.32.1 README.md  (6.7 KB)
+          1.1.6.7.32.2 README.zh.md  (6.2 KB)
+        1.1.6.7.33 ui-session/
+          1.1.6.7.33.1 README.md  (1.5 KB)
+          1.1.6.7.33.2 README.zh.md  (1.4 KB)
+        1.1.6.7.34 ui-settings/
+          1.1.6.7.34.1 README.md  (7.2 KB)
+          1.1.6.7.34.2 README.zh.md  (6.7 KB)
+        1.1.6.7.35 ui-settings-general/
+          1.1.6.7.35.1 README.md  (8.6 KB)
+          1.1.6.7.35.2 README.zh.md  (7.6 KB)
+        1.1.6.7.36 ui-settings-models/
+          1.1.6.7.36.1 README.md  (13.4 KB)
+          1.1.6.7.36.2 README.zh.md  (12.7 KB)
+        1.1.6.7.37 ui-settings-plugin-inventory/
+          1.1.6.7.37.1 README.md  (7.0 KB)
+          1.1.6.7.37.2 README.zh.md  (6.4 KB)
+        1.1.6.7.38 ui-settings-plugins/
+          1.1.6.7.38.1 README.md  (9.1 KB)
+          1.1.6.7.38.2 README.zh.md  (8.3 KB)
+        1.1.6.7.39 ui-settings-unarchive-sessions/
+          1.1.6.7.39.1 README.md  (6.8 KB)
+          1.1.6.7.39.2 README.zh.md  (6.1 KB)
+        1.1.6.7.40 ui-sidebar/
+          1.1.6.7.40.1 README.md  (8.5 KB)
+          1.1.6.7.40.2 README.zh.md  (7.8 KB)
+        1.1.6.7.41 ui-sidebar-browser/
+          1.1.6.7.41.1 README.md  (7.9 KB)
+          1.1.6.7.41.2 README.zh.md  (7.4 KB)
+        1.1.6.7.42 ui-sidebar-documentpreview/
+          1.1.6.7.42.1 README.md  (18.1 KB)
+          1.1.6.7.42.2 README.zh.md  (16.6 KB)
+        1.1.6.7.43 ui-sidebar-files/
+          1.1.6.7.43.1 README.md  (5.5 KB)
+          1.1.6.7.43.2 README.zh.md  (5.2 KB)
+        1.1.6.7.44 ui-sidebar-right/
+          1.1.6.7.44.1 README.md  (21.0 KB)
+          1.1.6.7.44.2 README.zh.md  (19.0 KB)
+        1.1.6.7.45 ui-sidebar-terminal/
+          1.1.6.7.45.1 README.md  (6.7 KB)
+          1.1.6.7.45.2 README.zh.md  (5.8 KB)
+        1.1.6.7.46 ui-skill/
+          1.1.6.7.46.1 README.md  (7.6 KB)
+          1.1.6.7.46.2 README.zh.md  (7.2 KB)
+        1.1.6.7.47 ui-slots/
+          1.1.6.7.47.1 README.md  (7.6 KB)
+          1.1.6.7.47.2 README.zh.md  (7.1 KB)
+        1.1.6.7.48 ui-subagent/
+          1.1.6.7.48.1 README.md  (7.9 KB)
+          1.1.6.7.48.2 README.zh.md  (7.2 KB)
+        1.1.6.7.49 ui-theme/
+          1.1.6.7.49.1 README.md  (9.0 KB)
+          1.1.6.7.49.2 README.zh.md  (8.3 KB)
+        1.1.6.7.50 ui-tool/
+          1.1.6.7.50.1 README.md  (9.2 KB)
+          1.1.6.7.50.2 README.zh.md  (8.6 KB)
+        1.1.6.7.51 ui-trajectory/
+          1.1.6.7.51.1 README.md  (9.3 KB)
+          1.1.6.7.51.2 README.zh.md  (8.6 KB)
+        1.1.6.7.52 ui-user-questions/
+          1.1.6.7.52.1 README.md  (6.8 KB)
+          1.1.6.7.52.2 README.zh.md  (6.3 KB)
+        1.1.6.7.53 ui-workflow-run/
+          1.1.6.7.53.1 README.md  (5.6 KB)
+          1.1.6.7.53.2 README.zh.md  (5.2 KB)
+        1.1.6.7.54 ui-workspace/
+          1.1.6.7.54.1 README.md  (14.1 KB)
+          1.1.6.7.54.2 README.zh.md  (13.1 KB)
+        1.1.6.7.55 web/
+          1.1.6.7.55.1 README.md  (8.9 KB)
+          1.1.6.7.55.2 README.zh.md  (8.2 KB)
+        1.1.6.7.56 AGENTS.md  (25.9 KB)
+        1.1.6.7.57 README.md  (8.5 KB)
+        1.1.6.7.58 README.zh.md  (8.0 KB)
+      1.1.6.8 compaction/
+        1.1.6.8.1 command-compact/
+          1.1.6.8.1.1 README.md  (9.1 KB)
+          1.1.6.8.1.2 README.zh.md  (8.3 KB)
+        1.1.6.8.2 compaction/
+          1.1.6.8.2.1 README.md  (13.8 KB)
+          1.1.6.8.2.2 README.zh.md  (12.5 KB)
+        1.1.6.8.3 compaction-basic/
+          1.1.6.8.3.1 README.md  (20.9 KB)
+          1.1.6.8.3.2 README.zh.md  (19.0 KB)
+        1.1.6.8.4 compaction-image-offload/
+          1.1.6.8.4.1 README.md  (6.6 KB)
+          1.1.6.8.4.2 README.zh.md  (6.0 KB)
+        1.1.6.8.5 compaction-tool-result-pruner/
+          1.1.6.8.5.1 README.md  (8.8 KB)
+          1.1.6.8.5.2 README.zh.md  (8.1 KB)
+        1.1.6.8.6 README.md  (3.0 KB)
+        1.1.6.8.7 README.zh.md  (2.7 KB)
+      1.1.6.9 computer-use/
+        1.1.6.9.1 computer-use/
+          1.1.6.9.1.1 README.md  (3.3 KB)
+          1.1.6.9.1.2 README.zh.md  (3.0 KB)
+        1.1.6.9.2 README.md  (1.1 KB)
+        1.1.6.9.3 README.zh.md  (1020 B)
+      1.1.6.10 context/
+        1.1.6.10.1 agent-instructions/
+          1.1.6.10.1.1 README.md  (13.3 KB)
+          1.1.6.10.1.2 README.zh.md  (12.1 KB)
+        1.1.6.10.2 file-reference/
+          1.1.6.10.2.1 README.md  (6.1 KB)
+          1.1.6.10.2.2 README.zh.md  (5.6 KB)
+        1.1.6.10.3 file-reference-local/
+          1.1.6.10.3.1 README.md  (7.5 KB)
+          1.1.6.10.3.2 README.zh.md  (7.1 KB)
+        1.1.6.10.4 session-reference/
+          1.1.6.10.4.1 README.md  (12.0 KB)
+          1.1.6.10.4.2 README.zh.md  (11.0 KB)
+        1.1.6.10.5 time-context/
+          1.1.6.10.5.1 README.md  (8.1 KB)
+          1.1.6.10.5.2 README.zh.md  (7.5 KB)
+        1.1.6.10.6 tmux-context/
+          1.1.6.10.6.1 README.md  (7.4 KB)
+          1.1.6.10.6.2 README.zh.md  (6.8 KB)
+        1.1.6.10.7 README.md  (2.6 KB)
+        1.1.6.10.8 README.zh.md  (2.5 KB)
+      1.1.6.11 core/
+        1.1.6.11.1 agent/
+          1.1.6.11.1.1 README.md  (15.4 KB)
+          1.1.6.11.1.2 README.zh.md  (14.6 KB)
+        1.1.6.11.2 agent-default-model/
+          1.1.6.11.2.1 README.md  (5.9 KB)
+          1.1.6.11.2.2 README.zh.md  (5.5 KB)
+        1.1.6.11.3 agent-loop/
+          1.1.6.11.3.1 README.md  (19.9 KB)
+          1.1.6.11.3.2 README.zh.md  (18.9 KB)
+        1.1.6.11.4 agent-tool-presentation/
+          1.1.6.11.4.1 README.md  (6.3 KB)
+          1.1.6.11.4.2 README.zh.md  (6.2 KB)
+        1.1.6.11.5 scope/
+          1.1.6.11.5.1 README.md  (6.6 KB)
+          1.1.6.11.5.2 README.zh.md  (6.3 KB)
+        1.1.6.11.6 session/
+          1.1.6.11.6.1 README.md  (16.7 KB)
+          1.1.6.11.6.2 README.zh.md  (15.7 KB)
+        1.1.6.11.7 system-prompt/
+          1.1.6.11.7.1 README.md  (12.4 KB)
+          1.1.6.11.7.2 README.zh.md  (11.7 KB)
+        1.1.6.11.8 tools/
+          1.1.6.11.8.1 README.md  (17.8 KB)
+          1.1.6.11.8.2 README.zh.md  (17.1 KB)
+        1.1.6.11.9 README.md  (3.5 KB)
+        1.1.6.11.10 README.zh.md  (3.3 KB)
+      1.1.6.12 credentials/
+        1.1.6.12.1 authorization/
+          1.1.6.12.1.1 README.md  (12.2 KB)
+          1.1.6.12.1.2 README.zh.md  (11.2 KB)
+        1.1.6.12.2 credentials/
+          1.1.6.12.2.1 README.md  (13.0 KB)
+          1.1.6.12.2.2 README.zh.md  (11.9 KB)
+        1.1.6.12.3 credentials-local/
+          1.1.6.12.3.1 README.md  (14.7 KB)
+          1.1.6.12.3.2 README.zh.md  (13.8 KB)
+        1.1.6.12.4 README.md  (2.7 KB)
+        1.1.6.12.5 README.zh.md  (2.4 KB)
+      1.1.6.13 deliverables/
+        1.1.6.13.1 tool-present/
+          1.1.6.13.1.1 README.md  (5.1 KB)
+          1.1.6.13.1.2 README.zh.md  (4.7 KB)
+        1.1.6.13.2 workspace-changes/
+          1.1.6.13.2.1 README.md  (11.6 KB)
+          1.1.6.13.2.2 README.zh.md  (10.7 KB)
+        1.1.6.13.3 README.md  (2.3 KB)
+        1.1.6.13.4 README.zh.md  (2.1 KB)
+      1.1.6.14 document/
+        1.1.6.14.1 office-to-pdf/
+          1.1.6.14.1.1 README.md  (8.6 KB)
+          1.1.6.14.1.2 README.zh.md  (7.9 KB)
+        1.1.6.14.2 README.md  (1.5 KB)
+        1.1.6.14.3 README.zh.md  (1.4 KB)
+      1.1.6.15 experimental/
+        1.1.6.15.1 agent-team/
+          1.1.6.15.1.1 README.md  (16.3 KB)
+          1.1.6.15.1.2 README.zh.md  (15.0 KB)
+        1.1.6.15.2 agent-team-profile/
+          1.1.6.15.2.1 README.md  (5.1 KB)
+          1.1.6.15.2.2 README.zh.md  (4.8 KB)
+        1.1.6.15.3 agent-team-web-profile/
+          1.1.6.15.3.1 README.md  (4.7 KB)
+          1.1.6.15.3.2 README.zh.md  (4.5 KB)
+        1.1.6.15.4 auto-review/
+          1.1.6.15.4.1 README.md  (8.4 KB)
+          1.1.6.15.4.2 README.zh.md  (7.4 KB)
+        1.1.6.15.5 browser-use-chrome-devtools-mcp/
+          1.1.6.15.5.1 README.md  (6.2 KB)
+          1.1.6.15.5.2 README.zh.md  (5.8 KB)
+        1.1.6.15.6 browser-use-playwright-mcp/
+          1.1.6.15.6.1 README.md  (6.2 KB)
+          1.1.6.15.6.2 README.zh.md  (5.7 KB)
+        1.1.6.15.7 browser-use-runtime/
+          1.1.6.15.7.1 README.md  (6.2 KB)
+          1.1.6.15.7.2 README.zh.md  (5.7 KB)
+        1.1.6.15.8 browser-use-stagehand-native/
+          1.1.6.15.8.1 README.md  (10.5 KB)
+          1.1.6.15.8.2 README.zh.md  (9.8 KB)
+        1.1.6.15.9 client-ui-agent-team/
+          1.1.6.15.9.1 README.md  (5.1 KB)
+          1.1.6.15.9.2 README.zh.md  (4.9 KB)
+        1.1.6.15.10 computer-use-cua-driver-mcp/
+          1.1.6.15.10.1 README.md  (6.5 KB)
+          1.1.6.15.10.2 README.zh.md  (6.0 KB)
+        1.1.6.15.11 computer-use-cua-driver-native/
+          1.1.6.15.11.1 README.md  (8.0 KB)
+          1.1.6.15.11.2 README.zh.md  (7.3 KB)
+        1.1.6.15.12 inspector/
+          1.1.6.15.12.1 README.md  (13.6 KB)
+          1.1.6.15.12.2 README.zh.md  (12.8 KB)
+        1.1.6.15.13 ptc-runtime-python/
+          1.1.6.15.13.1 README.md  (16.0 KB)
+          1.1.6.15.13.2 README.zh.md  (14.6 KB)
+        1.1.6.15.14 tool-agent-team/
+          1.1.6.15.14.1 README.md  (10.0 KB)
+          1.1.6.15.14.2 README.zh.md  (9.2 KB)
+        1.1.6.15.15 webworker-packer/
+          1.1.6.15.15.1 README.md  (5.9 KB)
+          1.1.6.15.15.2 README.zh.md  (5.5 KB)
+        1.1.6.15.16 webworker-runtime/
+          1.1.6.15.16.1 README.md  (11.3 KB)
+          1.1.6.15.16.2 README.zh.md  (10.3 KB)
+        1.1.6.15.17 AGENTS.md  (2.0 KB)
+        1.1.6.15.18 README.md  (3.8 KB)
+        1.1.6.15.19 README.zh.md  (3.7 KB)
+      1.1.6.16 extensions/
+        1.1.6.16.1 cordis-client-runner/
+          1.1.6.16.1.1 README.md  (10.1 KB)
+          1.1.6.16.1.2 README.zh.md  (9.3 KB)
+        1.1.6.16.2 cordis-host-runner/
+          1.1.6.16.2.1 README.md  (10.0 KB)
+          1.1.6.16.2.2 README.zh.md  (9.3 KB)
+        1.1.6.16.3 tool-cordis/
+          1.1.6.16.3.1 README.md  (3.3 KB)
+          1.1.6.16.3.2 README.zh.md  (3.0 KB)
+        1.1.6.16.4 ui-cordis/
+          1.1.6.16.4.1 README.md  (9.0 KB)
+          1.1.6.16.4.2 README.zh.md  (8.3 KB)
+        1.1.6.16.5 README.md  (2.7 KB)
+        1.1.6.16.6 README.zh.md  (2.5 KB)
+      1.1.6.17 feedback/
+        1.1.6.17.1 command-feedback/
+          1.1.6.17.1.1 README.md  (10.0 KB)
+          1.1.6.17.1.2 README.zh.md  (9.2 KB)
+        1.1.6.17.2 message-feedback/
+          1.1.6.17.2.1 README.md  (7.5 KB)
+          1.1.6.17.2.2 README.zh.md  (6.9 KB)
+        1.1.6.17.3 README.md  (2.3 KB)
+        1.1.6.17.4 README.zh.md  (2.1 KB)
+      1.1.6.18 fs/
+        1.1.6.18.1 fs/
+          1.1.6.18.1.1 README.md  (8.4 KB)
+          1.1.6.18.1.2 README.zh.md  (7.9 KB)
+        1.1.6.18.2 fs-local/
+          1.1.6.18.2.1 README.md  (9.6 KB)
+          1.1.6.18.2.2 README.zh.md  (9.0 KB)
+        1.1.6.18.3 fs-observation-policy/
+          1.1.6.18.3.1 README.md  (8.6 KB)
+          1.1.6.18.3.2 README.zh.md  (8.2 KB)
+        1.1.6.18.4 fs-sandbox/
+          1.1.6.18.4.1 README.md  (7.8 KB)
+          1.1.6.18.4.2 README.zh.md  (7.2 KB)
+        1.1.6.18.5 tool-fs/
+          1.1.6.18.5.1 README.md  (19.2 KB)
+          1.1.6.18.5.2 README.zh.md  (18.1 KB)
+        1.1.6.18.6 tool-fs-search/
+          1.1.6.18.6.1 README.md  (14.5 KB)
+          1.1.6.18.6.2 README.zh.md  (13.7 KB)
+        1.1.6.18.7 tool-str-replace-editor/
+          1.1.6.18.7.1 README.md  (7.7 KB)
+          1.1.6.18.7.2 README.zh.md  (7.2 KB)
+        1.1.6.18.8 README.md  (3.7 KB)
+        1.1.6.18.9 README.zh.md  (3.5 KB)
+      1.1.6.19 goal/
+        1.1.6.19.1 command-goal/
+          1.1.6.19.1.1 README.md  (8.6 KB)
+          1.1.6.19.1.2 README.zh.md  (7.9 KB)
+        1.1.6.19.2 goal/
+          1.1.6.19.2.1 README.md  (11.7 KB)
+          1.1.6.19.2.2 README.zh.md  (10.8 KB)
+        1.1.6.19.3 goal-round-driver/
+          1.1.6.19.3.1 README.md  (8.6 KB)
+          1.1.6.19.3.2 README.zh.md  (8.1 KB)
+        1.1.6.19.4 tool-goal/
+          1.1.6.19.4.1 README.md  (11.1 KB)
+          1.1.6.19.4.2 README.zh.md  (10.4 KB)
+        1.1.6.19.5 README.md  (2.2 KB)
+        1.1.6.19.6 README.zh.md  (2.1 KB)
+      1.1.6.20 guard/
+        1.1.6.20.1 repeat-tool-reminder/
+          1.1.6.20.1.1 README.md  (11.5 KB)
+          1.1.6.20.1.2 README.zh.md  (10.9 KB)
+        1.1.6.20.2 timeout-policy/
+          1.1.6.20.2.1 README.md  (8.8 KB)
+          1.1.6.20.2.2 README.zh.md  (8.3 KB)
+        1.1.6.20.3 README.md  (2.2 KB)
+        1.1.6.20.4 README.zh.md  (2.1 KB)
+      1.1.6.21 hooks/
+        1.1.6.21.1 hook-protocol/
+          1.1.6.21.1.1 README.md  (10.8 KB)
+          1.1.6.21.1.2 README.zh.md  (10.2 KB)
+        1.1.6.21.2 hooks-claude-code/
+          1.1.6.21.2.1 README.md  (15.8 KB)
+          1.1.6.21.2.2 README.zh.md  (15.2 KB)
+        1.1.6.21.3 hooks-codex/
+          1.1.6.21.3.1 README.md  (13.5 KB)
+          1.1.6.21.3.2 README.zh.md  (12.9 KB)
+        1.1.6.21.4 README.md  (2.0 KB)
+        1.1.6.21.5 README.zh.md  (1.9 KB)
+      1.1.6.22 host/
+        1.1.6.22.1 directory-picker/
+          1.1.6.22.1.1 README.md  (6.5 KB)
+          1.1.6.22.1.2 README.zh.md  (5.9 KB)
+        1.1.6.22.2 directory-picker-auto/
+          1.1.6.22.2.1 README.md  (7.1 KB)
+          1.1.6.22.2.2 README.zh.md  (6.8 KB)
+        1.1.6.22.3 directory-picker-browse/
+          1.1.6.22.3.1 README.md  (7.2 KB)
+          1.1.6.22.3.2 README.zh.md  (6.8 KB)
+        1.1.6.22.4 directory-picker-native/
+          1.1.6.22.4.1 README.md  (6.9 KB)
+          1.1.6.22.4.2 README.zh.md  (6.4 KB)
+        1.1.6.22.5 frontend-static/
+          1.1.6.22.5.1 README.md  (6.7 KB)
+          1.1.6.22.5.2 README.zh.md  (6.3 KB)
+        1.1.6.22.6 open-in-app/
+          1.1.6.22.6.1 README.md  (12.2 KB)
+          1.1.6.22.6.2 README.zh.md  (11.4 KB)
+        1.1.6.22.7 plugin-inventory/
+          1.1.6.22.7.1 README.md  (6.7 KB)
+          1.1.6.22.7.2 README.zh.md  (6.1 KB)
+        1.1.6.22.8 webserver/
+          1.1.6.22.8.1 README.md  (7.9 KB)
+          1.1.6.22.8.2 README.zh.md  (7.3 KB)
+        1.1.6.22.9 README.md  (3.2 KB)
+        1.1.6.22.10 README.zh.md  (2.9 KB)
+      1.1.6.23 identity/
+        1.1.6.23.1 anonymous-user-id/
+          1.1.6.23.1.1 README.md  (8.7 KB)
+          1.1.6.23.1.2 README.zh.md  (8.1 KB)
+        1.1.6.23.2 README.md  (1.7 KB)
+        1.1.6.23.3 README.zh.md  (1.5 KB)
+      1.1.6.24 interaction/
+        1.1.6.24.1 commands/
+          1.1.6.24.1.1 README.md  (9.6 KB)
+          1.1.6.24.1.2 README.zh.md  (9.0 KB)
+        1.1.6.24.2 permission-presets/
+          1.1.6.24.2.1 README.md  (10.3 KB)
+          1.1.6.24.2.2 README.zh.md  (9.4 KB)
+        1.1.6.24.3 tool-ask-user/
+          1.1.6.24.3.1 README.md  (7.1 KB)
+          1.1.6.24.3.2 README.zh.md  (6.7 KB)
+        1.1.6.24.4 user-approval/
+          1.1.6.24.4.1 README.md  (9.2 KB)
+          1.1.6.24.4.2 README.zh.md  (8.8 KB)
+        1.1.6.24.5 user-questions/
+          1.1.6.24.5.1 README.md  (5.5 KB)
+          1.1.6.24.5.2 README.zh.md  (5.3 KB)
+        1.1.6.24.6 README.md  (2.9 KB)
+        1.1.6.24.7 README.zh.md  (2.6 KB)
+      1.1.6.25 jobs/
+        1.1.6.25.1 jobs/
+          1.1.6.25.1.1 README.md  (8.2 KB)
+          1.1.6.25.1.2 README.zh.md  (7.6 KB)
+        1.1.6.25.2 jobs-local/
+          1.1.6.25.2.1 README.md  (9.2 KB)
+          1.1.6.25.2.2 README.zh.md  (8.7 KB)
+        1.1.6.25.3 tool-jobs/
+          1.1.6.25.3.1 README.md  (12.5 KB)
+          1.1.6.25.3.2 README.zh.md  (12.0 KB)
+        1.1.6.25.4 README.md  (2.1 KB)
+        1.1.6.25.5 README.zh.md  (2.0 KB)
+      1.1.6.26 llm/
+        1.1.6.26.1 deepseek-llm-api-extensions/
+          1.1.6.26.1.1 README.md  (3.3 KB)
+          1.1.6.26.1.2 README.zh.md  (3.2 KB)
+        1.1.6.26.2 llm/
+          1.1.6.26.2.1 README.md  (15.8 KB)
+          1.1.6.26.2.2 README.zh.md  (14.7 KB)
+        1.1.6.26.3 llm-deepseek/
+          1.1.6.26.3.1 README.md  (24.3 KB)
+          1.1.6.26.3.2 README.zh.md  (22.6 KB)
+        1.1.6.26.4 llm-pi-ai/
+          1.1.6.26.4.1 README.md  (25.0 KB)
+          1.1.6.26.4.2 README.zh.md  (22.8 KB)
+        1.1.6.26.5 llm-retry/
+          1.1.6.26.5.1 README.md  (10.0 KB)
+          1.1.6.26.5.2 README.zh.md  (9.2 KB)
+        1.1.6.26.6 plugin-package-inventory-deepseek/
+          1.1.6.26.6.1 README.md  (4.6 KB)
+          1.1.6.26.6.2 README.zh.md  (4.2 KB)
+        1.1.6.26.7 token-meter/
+          1.1.6.26.7.1 README.md  (14.0 KB)
+          1.1.6.26.7.2 README.zh.md  (12.8 KB)
+        1.1.6.26.8 README.md  (3.2 KB)
+        1.1.6.26.9 README.zh.md  (3.1 KB)
+      1.1.6.27 lsp/
+        1.1.6.27.1 lsp/
+          1.1.6.27.1.1 README.md  (8.6 KB)
+          1.1.6.27.1.2 README.zh.md  (7.8 KB)
+        1.1.6.27.2 lsp-stdio/
+          1.1.6.27.2.1 README.md  (11.6 KB)
+          1.1.6.27.2.2 README.zh.md  (11.0 KB)
+        1.1.6.27.3 tool-lsp/
+          1.1.6.27.3.1 README.md  (9.3 KB)
+          1.1.6.27.3.2 README.zh.md  (8.8 KB)
+        1.1.6.27.4 README.md  (2.2 KB)
+        1.1.6.27.5 README.zh.md  (2.0 KB)
+      1.1.6.28 mcp/
+        1.1.6.28.1 mcp-client/
+          1.1.6.28.1.1 README.md  (18.3 KB)
+          1.1.6.28.1.2 README.zh.md  (16.9 KB)
+        1.1.6.28.2 mcp-resources/
+          1.1.6.28.2.1 README.md  (8.2 KB)
+          1.1.6.28.2.2 README.zh.md  (7.7 KB)
+        1.1.6.28.3 README.md  (2.1 KB)
+        1.1.6.28.4 README.zh.md  (1.9 KB)
+      1.1.6.29 plan/
+        1.1.6.29.1 plan-mode/
+          1.1.6.29.1.1 README.md  (13.1 KB)
+          1.1.6.29.1.2 README.zh.md  (12.3 KB)
+        1.1.6.29.2 README.md  (2.0 KB)
+        1.1.6.29.3 README.zh.md  (1.7 KB)
+      1.1.6.30 preset/
+        1.1.6.30.1 agent-presets/
+          1.1.6.30.1.1 tests/
+            1.1.6.30.1.1.1 fixtures/
+              1.1.6.30.1.1.1.1 user/
+                1.1.6.30.1.1.1.1.1 not-a-preset/
+                  1.1.6.30.1.1.1.1.1.1 notes.txt  (26 B)
+          1.1.6.30.1.2 README.md  (18.6 KB)
+          1.1.6.30.1.3 README.zh.md  (17.5 KB)
+        1.1.6.30.2 persona/
+          1.1.6.30.2.1 README.md  (7.1 KB)
+          1.1.6.30.2.2 README.zh.md  (6.6 KB)
+        1.1.6.30.3 README.md  (2.3 KB)
+        1.1.6.30.4 README.zh.md  (2.3 KB)
+      1.1.6.31 ptc-runtime/
+        1.1.6.31.1 ptc-runtime/
+          1.1.6.31.1.1 README.md  (10.7 KB)
+          1.1.6.31.1.2 README.zh.md  (9.7 KB)
+        1.1.6.31.2 ptc-runtime-node/
+          1.1.6.31.2.1 README.md  (11.2 KB)
+          1.1.6.31.2.2 README.zh.md  (10.0 KB)
+        1.1.6.31.3 README.md  (2.4 KB)
+        1.1.6.31.4 README.zh.md  (2.2 KB)
+      1.1.6.32 runtime-diagnostics/
+        1.1.6.32.1 invariants/
+          1.1.6.32.1.1 README.md  (11.0 KB)
+          1.1.6.32.1.2 README.zh.md  (10.1 KB)
+        1.1.6.32.2 README.md  (1.8 KB)
+        1.1.6.32.3 README.zh.md  (1.6 KB)
+      1.1.6.33 sandbox/
+        1.1.6.33.1 sandbox/
+          1.1.6.33.1.1 README.md  (11.9 KB)
+          1.1.6.33.1.2 README.zh.md  (11.0 KB)
+        1.1.6.33.2 sandbox-local/
+          1.1.6.33.2.1 README.md  (10.5 KB)
+          1.1.6.33.2.2 README.zh.md  (9.7 KB)
+        1.1.6.33.3 sandbox-policy/
+          1.1.6.33.3.1 README.md  (8.8 KB)
+          1.1.6.33.3.2 README.zh.md  (8.2 KB)
+        1.1.6.33.4 sandbox-windows-acl/
+          1.1.6.33.4.1 README.md  (18.3 KB)
+          1.1.6.33.4.2 README.zh.md  (17.3 KB)
+        1.1.6.33.5 README.md  (3.0 KB)
+        1.1.6.33.6 README.zh.md  (2.8 KB)
+      1.1.6.34 schedule/
+        1.1.6.34.1 schedule/
+          1.1.6.34.1.1 README.md  (19.4 KB)
+          1.1.6.34.1.2 README.zh.md  (18.2 KB)
+        1.1.6.34.2 AGENTS.md  (1.7 KB)
+        1.1.6.34.3 README.md  (2.0 KB)
+        1.1.6.34.4 README.zh.md  (1.9 KB)
+      1.1.6.35 sdk/
+        1.1.6.35.1 client/
+          1.1.6.35.1.1 README.md  (10.6 KB)
+          1.1.6.35.1.2 README.zh.md  (10.1 KB)
+        1.1.6.35.2 protocol/
+          1.1.6.35.2.1 README.md  (8.6 KB)
+          1.1.6.35.2.2 README.zh.md  (7.8 KB)
+        1.1.6.35.3 server/
+          1.1.6.35.3.1 README.md  (9.4 KB)
+          1.1.6.35.3.2 README.zh.md  (8.8 KB)
+        1.1.6.35.4 README.md  (2.4 KB)
+        1.1.6.35.5 README.zh.md  (2.3 KB)
+      1.1.6.36 session/
+        1.1.6.36.1 session-checkpoint-policy/
+          1.1.6.36.1.1 README.md  (7.1 KB)
+          1.1.6.36.1.2 README.zh.md  (6.3 KB)
+        1.1.6.36.2 session-format/
+          1.1.6.36.2.1 README.md  (5.6 KB)
+          1.1.6.36.2.2 README.zh.md  (5.2 KB)
+        1.1.6.36.3 session-format-catalog/
+          1.1.6.36.3.1 README.md  (5.2 KB)
+          1.1.6.36.3.2 README.zh.md  (4.8 KB)
+        1.1.6.36.4 session-format-v0-to-v1/
+          1.1.6.36.4.1 README.md  (6.1 KB)
+          1.1.6.36.4.2 README.zh.md  (5.8 KB)
+        1.1.6.36.5 session-format-v1-to-v2/
+          1.1.6.36.5.1 README.md  (7.8 KB)
+          1.1.6.36.5.2 README.zh.md  (7.4 KB)
+        1.1.6.36.6 session-format-v2-to-v3/
+          1.1.6.36.6.1 README.md  (19.9 KB)
+          1.1.6.36.6.2 README.zh.md  (18.2 KB)
+        1.1.6.36.7 session-log-deepseek/
+          1.1.6.36.7.1 README.md  (4.5 KB)
+          1.1.6.36.7.2 README.zh.md  (4.2 KB)
+        1.1.6.36.8 session-persistence/
+          1.1.6.36.8.1 README.md  (15.6 KB)
+          1.1.6.36.8.2 README.zh.md  (14.7 KB)
+        1.1.6.36.9 session-persistence-jsonl/
+          1.1.6.36.9.1 README.md  (16.1 KB)
+          1.1.6.36.9.2 README.zh.md  (14.5 KB)
+        1.1.6.36.10 session-projection/
+          1.1.6.36.10.1 README.md  (10.2 KB)
+          1.1.6.36.10.2 README.zh.md  (9.3 KB)
+        1.1.6.36.11 session-projection-cache/
+          1.1.6.36.11.1 README.md  (10.5 KB)
+          1.1.6.36.11.2 README.zh.md  (9.5 KB)
+        1.1.6.36.12 session-stats/
+          1.1.6.36.12.1 README.md  (7.4 KB)
+          1.1.6.36.12.2 README.zh.md  (6.8 KB)
+        1.1.6.36.13 session-telemetry/
+          1.1.6.36.13.1 README.md  (8.5 KB)
+          1.1.6.36.13.2 README.zh.md  (7.7 KB)
+        1.1.6.36.14 session-telemetry-otel/
+          1.1.6.36.14.1 README.md  (9.1 KB)
+          1.1.6.36.14.2 README.zh.md  (8.4 KB)
+        1.1.6.36.15 session-title/
+          1.1.6.36.15.1 README.md  (8.4 KB)
+          1.1.6.36.15.2 README.zh.md  (7.9 KB)
+        1.1.6.36.16 session-title-all-prompts-llm/
+          1.1.6.36.16.1 README.md  (6.0 KB)
+          1.1.6.36.16.2 README.zh.md  (5.7 KB)
+        1.1.6.36.17 session-title-first-prompt-llm/
+          1.1.6.36.17.1 README.md  (6.2 KB)
+          1.1.6.36.17.2 README.zh.md  (5.6 KB)
+        1.1.6.36.18 session-title-llm/
+          1.1.6.36.18.1 README.md  (7.5 KB)
+          1.1.6.36.18.2 README.zh.md  (6.8 KB)
+        1.1.6.36.19 session-turn-outline/
+          1.1.6.36.19.1 README.md  (7.4 KB)
+          1.1.6.36.19.2 README.zh.md  (6.8 KB)
+        1.1.6.36.20 README.md  (5.5 KB)
+        1.1.6.36.21 README.zh.md  (5.1 KB)
+      1.1.6.37 session-query/
+        1.1.6.37.1 session-log-export/
+          1.1.6.37.1.1 README.md  (7.7 KB)
+          1.1.6.37.1.2 README.zh.md  (7.0 KB)
+        1.1.6.37.2 session-query/
+          1.1.6.37.2.1 README.md  (12.6 KB)
+          1.1.6.37.2.2 README.zh.md  (11.7 KB)
+        1.1.6.37.3 session-query-sqlite/
+          1.1.6.37.3.1 README.md  (12.3 KB)
+          1.1.6.37.3.2 README.zh.md  (11.4 KB)
+        1.1.6.37.4 tool-session-query/
+          1.1.6.37.4.1 README.md  (11.2 KB)
+          1.1.6.37.4.2 README.zh.md  (10.2 KB)
+        1.1.6.37.5 README.md  (2.4 KB)
+        1.1.6.37.6 README.zh.md  (2.2 KB)
+      1.1.6.38 settings/
+        1.1.6.38.1 settings/
+          1.1.6.38.1.1 README.md  (13.0 KB)
+          1.1.6.38.1.2 README.zh.md  (11.7 KB)
+        1.1.6.38.2 settings-file/
+          1.1.6.38.2.1 README.md  (11.0 KB)
+          1.1.6.38.2.2 README.zh.md  (9.8 KB)
+        1.1.6.38.3 README.md  (2.1 KB)
+        1.1.6.38.4 README.zh.md  (1.8 KB)
+      1.1.6.39 shell/
+        1.1.6.39.1 bash-local/
+          1.1.6.39.1.1 README.md  (9.7 KB)
+          1.1.6.39.1.2 README.zh.md  (9.0 KB)
+        1.1.6.39.2 bash-sandbox/
+          1.1.6.39.2.1 README.md  (11.5 KB)
+          1.1.6.39.2.2 README.zh.md  (10.7 KB)
+        1.1.6.39.3 pwsh-local/
+          1.1.6.39.3.1 README.md  (11.5 KB)
+          1.1.6.39.3.2 README.zh.md  (10.7 KB)
+        1.1.6.39.4 pwsh-sandbox/
+          1.1.6.39.4.1 README.md  (9.3 KB)
+          1.1.6.39.4.2 README.zh.md  (8.5 KB)
+        1.1.6.39.5 shell/
+          1.1.6.39.5.1 README.md  (8.8 KB)
+          1.1.6.39.5.2 README.zh.md  (8.1 KB)
+        1.1.6.39.6 shell-env/
+          1.1.6.39.6.1 README.md  (6.9 KB)
+          1.1.6.39.6.2 README.zh.md  (6.5 KB)
+        1.1.6.39.7 tool-bash/
+          1.1.6.39.7.1 README.md  (14.0 KB)
+          1.1.6.39.7.2 README.zh.md  (13.1 KB)
+        1.1.6.39.8 tool-bash-persistent/
+          1.1.6.39.8.1 README.md  (10.5 KB)
+          1.1.6.39.8.2 README.zh.md  (9.6 KB)
+        1.1.6.39.9 tool-pwsh/
+          1.1.6.39.9.1 README.md  (14.0 KB)
+          1.1.6.39.9.2 README.zh.md  (13.3 KB)
+        1.1.6.39.10 tool-pwsh-persistent/
+          1.1.6.39.10.1 README.md  (11.9 KB)
+          1.1.6.39.10.2 README.zh.md  (10.8 KB)
+        1.1.6.39.11 README.md  (3.2 KB)
+        1.1.6.39.12 README.zh.md  (3.0 KB)
+      1.1.6.40 skill/
+        1.1.6.40.1 skill/
+          1.1.6.40.1.1 README.md  (10.9 KB)
+          1.1.6.40.1.2 README.zh.md  (10.0 KB)
+        1.1.6.40.2 skill-badge/
+          1.1.6.40.2.1 README.md  (5.4 KB)
+          1.1.6.40.2.2 README.zh.md  (5.1 KB)
+        1.1.6.40.3 skill-filesystem/
+          1.1.6.40.3.1 README.md  (11.4 KB)
+          1.1.6.40.3.2 README.zh.md  (10.8 KB)
+        1.1.6.40.4 skill-office/
+          1.1.6.40.4.1 README.md  (4.8 KB)
+          1.1.6.40.4.2 README.zh.md  (4.2 KB)
+        1.1.6.40.5 tool-skill/
+          1.1.6.40.5.1 README.md  (14.6 KB)
+          1.1.6.40.5.2 README.zh.md  (13.7 KB)
+        1.1.6.40.6 README.md  (2.5 KB)
+        1.1.6.40.7 README.zh.md  (2.3 KB)
+      1.1.6.41 spill/
+        1.1.6.41.1 spill/
+          1.1.6.41.1.1 README.md  (8.6 KB)
+          1.1.6.41.1.2 README.zh.md  (8.1 KB)
+        1.1.6.41.2 spill-local/
+          1.1.6.41.2.1 README.md  (8.1 KB)
+          1.1.6.41.2.2 README.zh.md  (7.6 KB)
+        1.1.6.41.3 spill-policy/
+          1.1.6.41.3.1 README.md  (9.4 KB)
+          1.1.6.41.3.2 README.zh.md  (8.7 KB)
+        1.1.6.41.4 README.md  (2.2 KB)
+        1.1.6.41.5 README.zh.md  (2.0 KB)
+      1.1.6.42 ssh/
+        1.1.6.42.1 fs-ssh/
+          1.1.6.42.1.1 README.md  (3.6 KB)
+          1.1.6.42.1.2 README.zh.md  (3.3 KB)
+        1.1.6.42.2 sandbox-ssh/
+          1.1.6.42.2.1 README.md  (3.2 KB)
+          1.1.6.42.2.2 README.zh.md  (3.0 KB)
+        1.1.6.42.3 ssh/
+          1.1.6.42.3.1 README.md  (6.7 KB)
+          1.1.6.42.3.2 README.zh.md  (6.1 KB)
+        1.1.6.42.4 subprocess-ssh/
+          1.1.6.42.4.1 README.md  (4.9 KB)
+          1.1.6.42.4.2 README.zh.md  (4.4 KB)
+        1.1.6.42.5 README.md  (1.8 KB)
+        1.1.6.42.6 README.zh.md  (1.6 KB)
+      1.1.6.43 storage/
+        1.1.6.43.1 storage/
+          1.1.6.43.1.1 README.md  (8.1 KB)
+          1.1.6.43.1.2 README.zh.md  (7.7 KB)
+        1.1.6.43.2 storage-domain/
+          1.1.6.43.2.1 README.md  (9.5 KB)
+          1.1.6.43.2.2 README.zh.md  (9.0 KB)
+        1.1.6.43.3 storage-json/
+          1.1.6.43.3.1 README.md  (8.4 KB)
+          1.1.6.43.3.2 README.zh.md  (7.8 KB)
+        1.1.6.43.4 storage-sqlite/
+          1.1.6.43.4.1 README.md  (7.7 KB)
+          1.1.6.43.4.2 README.zh.md  (7.3 KB)
+        1.1.6.43.5 README.md  (2.5 KB)
+        1.1.6.43.6 README.zh.md  (2.4 KB)
+      1.1.6.44 subagent/
+        1.1.6.44.1 subagent/
+          1.1.6.44.1.1 README.md  (19.6 KB)
+          1.1.6.44.1.2 README.zh.md  (18.2 KB)
+        1.1.6.44.2 subagent-acp/
+          1.1.6.44.2.1 README.md  (11.7 KB)
+          1.1.6.44.2.2 README.zh.md  (10.8 KB)
+        1.1.6.44.3 subagent-claude-code/
+          1.1.6.44.3.1 README.md  (14.3 KB)
+          1.1.6.44.3.2 README.zh.md  (13.2 KB)
+        1.1.6.44.4 subagent-codex/
+          1.1.6.44.4.1 README.md  (14.4 KB)
+          1.1.6.44.4.2 README.zh.md  (13.4 KB)
+        1.1.6.44.5 subagent-dsh-sdk/
+          1.1.6.44.5.1 README.md  (13.2 KB)
+          1.1.6.44.5.2 README.zh.md  (12.4 KB)
+        1.1.6.44.6 subagent-fork-in-process/
+          1.1.6.44.6.1 README.md  (9.5 KB)
+          1.1.6.44.6.2 README.zh.md  (9.3 KB)
+        1.1.6.44.7 subagent-in-process-driver/
+          1.1.6.44.7.1 README.md  (10.7 KB)
+          1.1.6.44.7.2 README.zh.md  (10.2 KB)
+        1.1.6.44.8 subagent-spawn-in-process/
+          1.1.6.44.8.1 README.md  (7.9 KB)
+          1.1.6.44.8.2 README.zh.md  (7.4 KB)
+        1.1.6.44.9 tool-subagent/
+          1.1.6.44.9.1 README.md  (16.5 KB)
+          1.1.6.44.9.2 README.zh.md  (15.6 KB)
+        1.1.6.44.10 tool-subagent-control/
+          1.1.6.44.10.1 README.md  (9.9 KB)
+          1.1.6.44.10.2 README.zh.md  (9.4 KB)
+        1.1.6.44.11 README.md  (3.1 KB)
+        1.1.6.44.12 README.zh.md  (3.0 KB)
+      1.1.6.45 subprocess/
+        1.1.6.45.1 subprocess/
+          1.1.6.45.1.1 README.md  (11.9 KB)
+          1.1.6.45.1.2 README.zh.md  (11.2 KB)
+        1.1.6.45.2 subprocess-local/
+          1.1.6.45.2.1 README.md  (18.9 KB)
+          1.1.6.45.2.2 README.zh.md  (17.8 KB)
+        1.1.6.45.3 win32-process/
+          1.1.6.45.3.1 README.md  (7.9 KB)
+          1.1.6.45.3.2 README.zh.md  (7.1 KB)
+        1.1.6.45.4 README.md  (2.4 KB)
+        1.1.6.45.5 README.zh.md  (2.3 KB)
+      1.1.6.46 terminal/
+        1.1.6.46.1 terminal/
+          1.1.6.46.1.1 README.md  (9.1 KB)
+          1.1.6.46.1.2 README.zh.md  (8.5 KB)
+        1.1.6.46.2 terminal-bash/
+          1.1.6.46.2.1 README.md  (11.6 KB)
+          1.1.6.46.2.2 README.zh.md  (10.6 KB)
+        1.1.6.46.3 tool-terminal/
+          1.1.6.46.3.1 README.md  (9.2 KB)
+          1.1.6.46.3.2 README.zh.md  (8.5 KB)
+        1.1.6.46.4 README.md  (2.6 KB)
+        1.1.6.46.5 README.zh.md  (2.5 KB)
+      1.1.6.47 test-support/
+        1.1.6.47.1 agent-loop-testkit/
+          1.1.6.47.1.1 README.md  (6.8 KB)
+          1.1.6.47.1.2 README.zh.md  (6.3 KB)
+        1.1.6.47.2 client-runtime/
+          1.1.6.47.2.1 README.md  (17.1 KB)
+          1.1.6.47.2.2 README.zh.md  (16.0 KB)
+        1.1.6.47.3 llm-mock-server/
+          1.1.6.47.3.1 README.md  (9.3 KB)
+          1.1.6.47.3.2 README.zh.md  (8.9 KB)
+        1.1.6.47.4 llm-replay/
+          1.1.6.47.4.1 README.md  (12.8 KB)
+          1.1.6.47.4.2 README.zh.md  (12.1 KB)
+        1.1.6.47.5 loader-smoke/
+          1.1.6.47.5.1 README.md  (7.6 KB)
+          1.1.6.47.5.2 README.zh.md  (7.4 KB)
+        1.1.6.47.6 remote-mock/
+          1.1.6.47.6.1 README.md  (11.4 KB)
+          1.1.6.47.6.2 README.zh.md  (10.6 KB)
+        1.1.6.47.7 session-snapshot/
+          1.1.6.47.7.1 README.md  (16.2 KB)
+          1.1.6.47.7.2 README.zh.md  (15.1 KB)
+        1.1.6.47.8 README.md  (2.2 KB)
+        1.1.6.47.9 README.zh.md  (2.2 KB)
+      1.1.6.48 todo/
+        1.1.6.48.1 tool-todo/
+          1.1.6.48.1.1 README.md  (11.8 KB)
+          1.1.6.48.1.2 README.zh.md  (10.9 KB)
+        1.1.6.48.2 README.md  (1.7 KB)
+        1.1.6.48.3 README.zh.md  (1.6 KB)
+      1.1.6.49 typert/
+        1.1.6.49.1 generator/
+          1.1.6.49.1.1 README.md  (9.9 KB)
+          1.1.6.49.1.2 README.zh.md  (9.1 KB)
+        1.1.6.49.2 loader/
+          1.1.6.49.2.1 README.md  (6.3 KB)
+          1.1.6.49.2.2 README.zh.md  (5.9 KB)
+        1.1.6.49.3 protocol/
+          1.1.6.49.3.1 README.md  (9.6 KB)
+          1.1.6.49.3.2 README.zh.md  (8.9 KB)
+        1.1.6.49.4 registry/
+          1.1.6.49.4.1 README.md  (7.1 KB)
+          1.1.6.49.4.2 README.zh.md  (6.6 KB)
+        1.1.6.49.5 README.md  (2.6 KB)
+        1.1.6.49.6 README.zh.md  (2.4 KB)
+      1.1.6.50 util/
+        1.1.6.50.1 atomic-write/
+          1.1.6.50.1.1 README.md  (7.7 KB)
+          1.1.6.50.1.2 README.zh.md  (7.2 KB)
+        1.1.6.50.2 brand/
+          1.1.6.50.2.1 README.md  (4.6 KB)
+          1.1.6.50.2.2 README.zh.md  (4.3 KB)
+        1.1.6.50.3 chunked-list/
+          1.1.6.50.3.1 README.md  (3.7 KB)
+          1.1.6.50.3.2 README.zh.md  (3.4 KB)
+        1.1.6.50.4 crypto/
+          1.1.6.50.4.1 README.md  (2.5 KB)
+          1.1.6.50.4.2 README.zh.md  (2.5 KB)
+        1.1.6.50.5 deque/
+          1.1.6.50.5.1 README.md  (3.7 KB)
+          1.1.6.50.5.2 README.zh.md  (3.4 KB)
+        1.1.6.50.6 home-paths/
+          1.1.6.50.6.1 README.md  (5.8 KB)
+          1.1.6.50.6.2 README.zh.md  (5.5 KB)
+        1.1.6.50.7 http-proxy/
+          1.1.6.50.7.1 README.md  (11.4 KB)
+          1.1.6.50.7.2 README.zh.md  (10.9 KB)
+        1.1.6.50.8 launch-environment/
+          1.1.6.50.8.1 README.md  (5.9 KB)
+          1.1.6.50.8.2 README.zh.md  (5.5 KB)
+        1.1.6.50.9 lazy-require/
+          1.1.6.50.9.1 README.md  (2.8 KB)
+          1.1.6.50.9.2 README.zh.md  (2.6 KB)
+        1.1.6.50.10 native-command/
+          1.1.6.50.10.1 README.md  (6.0 KB)
+          1.1.6.50.10.2 README.zh.md  (5.5 KB)
+        1.1.6.50.11 output-retention/
+          1.1.6.50.11.1 README.md  (7.8 KB)
+          1.1.6.50.11.2 README.zh.md  (7.3 KB)
+        1.1.6.50.12 package-manifest/
+          1.1.6.50.12.1 README.md  (4.1 KB)
+          1.1.6.50.12.2 README.zh.md  (3.8 KB)
+        1.1.6.50.13 time/
+          1.1.6.50.13.1 README.md  (2.8 KB)
+          1.1.6.50.13.2 README.zh.md  (2.7 KB)
+        1.1.6.50.14 timeout/
+          1.1.6.50.14.1 README.md  (7.5 KB)
+          1.1.6.50.14.2 README.zh.md  (7.2 KB)
+        1.1.6.50.15 values/
+          1.1.6.50.15.1 README.md  (4.8 KB)
+          1.1.6.50.15.2 README.zh.md  (4.4 KB)
+        1.1.6.50.16 workspace-path/
+          1.1.6.50.16.1 README.md  (3.5 KB)
+          1.1.6.50.16.2 README.zh.md  (3.3 KB)
+        1.1.6.50.17 README.md  (3.4 KB)
+        1.1.6.50.18 README.zh.md  (3.1 KB)
+      1.1.6.51 web/
+        1.1.6.51.1 tool-web/
+          1.1.6.51.1.1 README.md  (18.1 KB)
+          1.1.6.51.1.2 README.zh.md  (17.1 KB)
+        1.1.6.51.2 web/
+          1.1.6.51.2.1 README.md  (10.7 KB)
+          1.1.6.51.2.2 README.zh.md  (10.1 KB)
+        1.1.6.51.3 web-fetch-http/
+          1.1.6.51.3.1 README.md  (8.7 KB)
+          1.1.6.51.3.2 README.zh.md  (8.0 KB)
+        1.1.6.51.4 web-search-deepseek/
+          1.1.6.51.4.1 README.md  (12.2 KB)
+          1.1.6.51.4.2 README.zh.md  (11.2 KB)
+        1.1.6.51.5 web-search-exa/
+          1.1.6.51.5.1 README.md  (8.3 KB)
+          1.1.6.51.5.2 README.zh.md  (7.9 KB)
+        1.1.6.51.6 web-search-perplexity/
+          1.1.6.51.6.1 README.md  (9.6 KB)
+          1.1.6.51.6.2 README.zh.md  (9.0 KB)
+        1.1.6.51.7 AGENTS.md  (581 B)
+        1.1.6.51.8 README.md  (2.5 KB)
+        1.1.6.51.9 README.zh.md  (2.3 KB)
+      1.1.6.52 webhook/
+        1.1.6.52.1 webhook/
+          1.1.6.52.1.1 README.md  (5.0 KB)
+          1.1.6.52.1.2 README.zh.md  (4.8 KB)
+        1.1.6.52.2 webhook-github/
+          1.1.6.52.2.1 README.md  (4.0 KB)
+          1.1.6.52.2.2 README.zh.md  (3.8 KB)
+        1.1.6.52.3 README.md  (1.4 KB)
+        1.1.6.52.4 README.zh.md  (1.3 KB)
+      1.1.6.53 workflow/
+        1.1.6.53.1 tool-ralph/
+          1.1.6.53.1.1 README.md  (11.1 KB)
+          1.1.6.53.1.2 README.zh.md  (10.4 KB)
+        1.1.6.53.2 tool-workflow/
+          1.1.6.53.2.1 README.md  (10.8 KB)
+          1.1.6.53.2.2 README.zh.md  (10.2 KB)
+        1.1.6.53.3 workflow/
+          1.1.6.53.3.1 README.md  (9.5 KB)
+          1.1.6.53.3.2 README.zh.md  (8.9 KB)
+        1.1.6.53.4 workflow-ptc/
+          1.1.6.53.4.1 README.md  (9.9 KB)
+          1.1.6.53.4.2 README.zh.md  (9.2 KB)
+        1.1.6.53.5 README.md  (2.4 KB)
+        1.1.6.53.6 README.zh.md  (2.3 KB)
+      1.1.6.54 workspace/
+        1.1.6.54.1 workspace/
+          1.1.6.54.1.1 README.md  (12.3 KB)
+          1.1.6.54.1.2 README.zh.md  (11.2 KB)
+        1.1.6.54.2 README.md  (2.1 KB)
+        1.1.6.54.3 README.zh.md  (1.9 KB)
+      1.1.6.55 AGENTS.md  (6.0 KB)
+      1.1.6.56 README.md  (8.3 KB)
+      1.1.6.57 README.zh.md  (8.1 KB)
+    1.1.7 python/
+      1.1.7.1 sdk/
+        1.1.7.1.1 examples/
+          1.1.7.1.1.1 README.md  (2.8 KB)
+          1.1.7.1.1.2 README.zh.md  (2.8 KB)
+        1.1.7.1.2 README.md  (6.4 KB)
+        1.1.7.1.3 README.zh.md  (6.2 KB)
+      1.1.7.2 sdk-runtime/
+        1.1.7.2.1 README.md  (5.2 KB)
+        1.1.7.2.2 README.zh.md  (4.9 KB)
+      1.1.7.3 README.md  (1.3 KB)
+      1.1.7.4 README.zh.md  (1.2 KB)
+    1.1.8 scripts/
+      1.1.8.1 AGENTS.md  (834 B)
+    1.1.9 website/
+      1.1.9.1 AGENTS.md  (2.8 KB)
+    1.1.10 AGENTS.md  (16.8 KB)
+    1.1.11 BENCHMARK.md  (231 B)
+    1.1.12 BRAND_GUIDELINES.md  (1.9 KB)
+    1.1.13 BRAND_GUIDELINES.zh.md  (1.6 KB)
+    1.1.14 CONTRIBUTING.md  (1.5 KB)
+    1.1.15 CONTRIBUTING.zh.md  (1.4 KB)
+    1.1.16 README.md  (2.4 KB)
+    1.1.17 README.zh.md  (3.3 KB)
+    1.1.18 SAFETY.md  (1.6 KB)
+    1.1.19 SAFETY.zh.md  (1.5 KB)
+    1.1.20 THIRD_PARTY_NOTICES.md  (21.5 KB)
+  1.2 shirleyzh-dsh-sessions/
+    1.2.1 README.md  (68 B)
+2 Forks/
+  2.1 acp-ui/
+    2.1.1 README.md  (17.2 KB)
+3 Manager/
+  3.1 AtriumCppTools/
+    3.1.1 docs/
+      3.1.1.1 BRANCH_MODEL.md  (4.8 KB)
+      3.1.1.2 BUILD.md  (7.2 KB)
+      3.1.1.3 BUILD_AND_TEST.md  (3.3 KB)
+      3.1.1.4 DECISIONS.md  (7.1 KB)
+      3.1.1.5 DESIGN_PRINCIPLES.md  (6.9 KB)
+      3.1.1.6 NAMING_AND_INTERFACES.md  (5.2 KB)
+      3.1.1.7 STEWARD_CONTRACT.md  (9.3 KB)
+    3.1.2 tools/
+      3.1.2.1 README.md  (1.8 KB)
+    3.1.3 AGENTS.md  (6.3 KB)
+    3.1.4 README.md  (25.3 KB)
+  3.2 AtriumNote/
+    3.2.1 career/
+      3.2.1.1 README.md  (1.6 KB)
+      3.2.1.2 TODO.md  (14.8 KB)
+    3.2.2 culture/
+      3.2.2.1 games/
+        3.2.2.1.1 index.md  (841 B)
+        3.2.2.1.2 README.md  (1.9 KB)
+      3.2.2.2 reading/
+        3.2.2.2.1 index.md  (887 B)
+        3.2.2.2.2 README.md  (1.9 KB)
+      3.2.2.3 screen/
+        3.2.2.3.1 index.md  (864 B)
+        3.2.2.3.2 README.md  (1.7 KB)
+      3.2.2.4 README.md  (2.7 KB)
+    3.2.3 Docs/
+      3.2.3.1 ARCHITECTURE_DESIGN.md  (9.1 KB)
+    3.2.4 education/
+      3.2.4.1 academics/
+        3.2.4.1.1 courses/
+          3.2.4.1.1.1 file/
+            3.2.4.1.1.1.1 2021数据结构/
+              3.2.4.1.1.1.1.1 index.md  (19.7 KB)
+            3.2.4.1.1.1.2 2022 面向对象程序设计语言（C++）/
+              3.2.4.1.1.1.2.1 index.md  (29.2 KB)
+            3.2.4.1.1.1.3 2022算法导论/
+              3.2.4.1.1.1.3.1 index.md  (18.0 KB)
+            3.2.4.1.1.1.4 GPU编程技术/
+              3.2.4.1.1.1.4.1 index.md  (5.5 KB)
+            3.2.4.1.1.1.5 《线性代数》2020年秋季/
+              3.2.4.1.1.1.5.1 index.md  (14.1 KB)
+            3.2.4.1.1.1.6 三维计算机动画/
+              3.2.4.1.1.1.6.1 index.md  (10.7 KB)
+            3.2.4.1.1.1.7 人机交互/
+              3.2.4.1.1.1.7.1 index.md  (2.8 KB)
+            3.2.4.1.1.1.8 信息技术实践/
+              3.2.4.1.1.1.8.1 index.md  (19.2 KB)
+            3.2.4.1.1.1.9 动画原理与技术/
+              3.2.4.1.1.1.9.1 index.md  (12.1 KB)
+            3.2.4.1.1.1.10 操作系统/
+              3.2.4.1.1.1.10.1 index.md  (12.5 KB)
+            3.2.4.1.1.1.11 数字信号处理/
+              3.2.4.1.1.1.11.1 index.md  (9.2 KB)
+            3.2.4.1.1.1.12 数字图像处理-2022/
+              3.2.4.1.1.1.12.1 index.md  (177.7 KB)
+            3.2.4.1.1.1.13 数字媒体合成-2021秋季-自建/
+              3.2.4.1.1.1.13.1 index.md  (48.1 KB)
+            3.2.4.1.1.1.14 数字逻辑/
+              3.2.4.1.1.1.14.1 index.md  (42.1 KB)
+            3.2.4.1.1.1.15 数据库原理与应用/
+              3.2.4.1.1.1.15.1 index.md  (17.2 KB)
+            3.2.4.1.1.1.16 智能交互媒体开发/
+              3.2.4.1.1.1.16.1 index.md  (5.4 KB)
+            3.2.4.1.1.1.17 机器学习/
+              3.2.4.1.1.1.17.1 index.md  (5.8 KB)
+            3.2.4.1.1.1.18 网页设计基础21-22（1）专业课/
+              3.2.4.1.1.1.18.1 index.md  (1.7 KB)
+            3.2.4.1.1.1.19 虚拟现实/
+              3.2.4.1.1.1.19.1 index.md  (7.0 KB)
+            3.2.4.1.1.1.20 计算机图形学/
+              3.2.4.1.1.1.20.1 index.md  (42.7 KB)
+            3.2.4.1.1.1.21 计算机组成原理/
+              3.2.4.1.1.1.21.1 index.md  (24.0 KB)
+            3.2.4.1.1.1.22 计算机网络/
+              3.2.4.1.1.1.22.1 index.md  (22.9 KB)
+            3.2.4.1.1.1.23 语音信号处理/
+              3.2.4.1.1.1.23.1 index.md  (5.9 KB)
+            3.2.4.1.1.1.24 index.md  (2.9 KB)
+          3.2.4.1.1.2 notes/
+            3.2.4.1.1.2.1 计算机图形学/
+              3.2.4.1.1.2.1.1 documents_filing.md  (3.1 KB)
+          3.2.4.1.1.3 index.md  (2.3 KB)
+          3.2.4.1.1.4 README.md  (2.8 KB)
+        3.2.4.1.2 README.md  (1.9 KB)
+      3.2.4.2 language/
+        3.2.4.2.1 README.md  (1002 B)
+      3.2.4.3 study_abroad/
+        3.2.4.3.1 application_materials/
+          3.2.4.3.1.1 README.md  (957 B)
+        3.2.4.3.2 README.md  (910 B)
+      3.2.4.4 README.md  (1.9 KB)
+      3.2.4.5 TODO.md  (2.4 KB)
+    3.2.5 finance/
+      3.2.5.1 README.md  (2.4 KB)
+    3.2.6 inbox/
+      3.2.6.1 README.md  (2.0 KB)
+    3.2.7 journal/
+      3.2.7.1 habits/
+        3.2.7.1.1 README.md  (1.9 KB)
+      3.2.7.2 README.md  (3.3 KB)
+    3.2.8 technology/
+      3.2.8.1 pages/
+        3.2.8.1.1 ClaudeCode.md  (173 B)
+    3.2.9 travel/
+      3.2.9.1 README.md  (2.3 KB)
+    3.2.10 AGENTS.md  (3.5 KB)
+    3.2.11 README.md  (5.2 KB)
+  3.3 AtriumPyTools/
+    3.3.1 tools/
+      3.3.1.1 colorpicker/
+        3.3.1.1.1 docs/
+          3.3.1.1.1.1 ARCHITECTURE_DESIGN.md  (27.9 KB)
+      3.3.1.2 markitdown/
+        3.3.1.2.1 packages/
+          3.3.1.2.1.1 markitdown/
+            3.3.1.2.1.1.1 README.md  (1.9 KB)
+          3.3.1.2.1.2 markitdown-mcp/
+            3.3.1.2.1.2.1 README.md  (5.2 KB)
+          3.3.1.2.1.3 markitdown-ocr/
+            3.3.1.2.1.3.1 README.md  (7.7 KB)
+          3.3.1.2.1.4 markitdown-sample-plugin/
+            3.3.1.2.1.4.1 README.md  (3.5 KB)
+        3.3.1.2.2 CODE_OF_CONDUCT.md  (453 B)
+        3.3.1.2.3 README.md  (18.3 KB)
+        3.3.1.2.4 SECURITY.md  (2.6 KB)
+      3.3.1.3 notionsync/
+        3.3.1.3.1 README.md  (19.9 KB)
+      3.3.1.4 tarotdraw/
+        3.3.1.4.1 data/
+          3.3.1.4.1.1 guides/
+            3.3.1.4.1.1.1 ETHEREAL VISIONS ICCUMINATED TAROT DECK.md  (19.8 KB)
+            3.3.1.4.1.1.2 THE UNIVERSAL WAITE® TAROT DECK.md  (39.8 KB)
+            3.3.1.4.1.1.3 塔罗牌通用指南.md  (13.6 KB)
+        3.3.1.4.2 docs/
+          3.3.1.4.2.1 ARCHITECTURE_DESIGN.md  (12.5 KB)
+        3.3.1.4.3 README.md  (7.3 KB)
+    3.3.2 vocab/
+      3.3.2.1 koolearn-full/
+        3.3.2.1.1 README.md  (4.2 KB)
+      3.3.2.2 koolearn-ielts/
+        3.3.2.2.1 README.md  (7.1 KB)
+    3.3.3 README.md  (12.4 KB)
+  3.4 AtriumSteward/
+    3.4.1 Docs/
+      3.4.1.1 AGENT_ROLES.md  (5.5 KB)
+      3.4.1.2 AGENTS_ROLES.md  (21.3 KB)
+      3.4.1.3 ARCHITECTURE_DESIGN.md  (13.8 KB)
+      3.4.1.4 WORKSPACE_SPECIFICATION.md  (9.4 KB)
+    3.4.2 AGENTS.md  (5.2 KB)
+    3.4.3 README.md  (4.6 KB)
+    3.4.4 README_BRANCHES.md  (3.2 KB)
+4 Projects/
+  4.1 ChestNut_Village/
+    4.1.1 ARCHITECTURE_DESIGN.md  (17.5 KB)
+    4.1.2 README.md  (2.0 KB)
+  4.2 ChestTarot/
+    4.2.1 README.md  (1.7 KB)
+  4.3 ChromaCMS/
+    4.3.1 Docs/
+      4.3.1.1 Agents/
+        4.3.1.1.1 AGENTS.md  (665 B)
+      4.3.1.2 To_Agents/
+        4.3.1.2.1 to_tutor.md  (811 B)
+      4.3.1.3 ARCHITECTURE_DESIGN.md  (104.4 KB)
+      4.3.1.4 TODO.md  (10.6 KB)
+    4.3.2 AGENTS.md  (2.0 KB)
+    4.3.3 README.md  (10.0 KB)
+  4.4 NexusRenderer/
+    4.4.1 Docs/
+      4.4.1.1 ARCHITECTURE_DESIGN.md  (81.2 KB)
+      4.4.1.2 CODE_REVIEW_2026-09.md  (50.2 KB)
+    4.4.2 README.md  (12.1 KB)
+  4.5 OpenGLRenderer/
+    4.5.1 README.md  (11.7 KB)
+    4.5.2 TODO.md  (1.9 KB)
+  4.6 ShaderLearning/
+    4.6.1 UnityBuildIn/
+      4.6.1.1 Assets/
+        4.6.1.1.1 Arts/
+          4.6.1.1.1.1 LowpolySimpleHouse/
+            4.6.1.1.1.1.1 PostProcessing/
+              4.6.1.1.1.1.1.1 Resources/
+                4.6.1.1.1.1.1.1.1 Bluenoise64/
+                  4.6.1.1.1.1.1.1.1.1 LICENSE.txt  (392 B)
+      4.6.1.2 builtin_shaders-2023.2.22f1/
+        4.6.1.2.1 license.txt  (1.0 KB)
+      4.6.1.3 note.md  (299 B)
+      4.6.1.4 README.md  (56 B)
+    4.6.2 README.md  (43 B)
+  4.7 TheRuinsOfLogosAndEidos/
+    4.7.1 Docs/
+      4.7.1.1 .deepseek-share-j81auhd6.md  (96.4 KB)
+5 Storage/
+  5.1 AIWorkSpace/
+    5.1.1 README.md  (9.1 KB)
+  5.2 notion_storage/
+    5.2.1 AI Work Dashboard/
+      5.2.1.1 Technology Gallery/
+        5.2.1.1.1 Claude Code c25e36a4a26d8320a89d01558204a1ae.md  (417 B)
+  5.3 README.md  (0 B)

@@ -44,7 +44,13 @@ class WorkDirMixin:
 from tarotdraw import cards, data, decks, engine, spreads  # noqa: E402
 from tarotdraw.cli import main  # noqa: E402
 from tarotdraw.render_html import HtmlError, image_data_uri, render_html  # noqa: E402
-from tarotdraw.render_text import Palette, render_reading  # noqa: E402
+from tarotdraw.render_text import (  # noqa: E402
+    SUMMARY_JOINER,
+    SUMMARY_SEPARATOR,
+    Palette,
+    render_reading,
+    summary_line,
+)
 
 TOTAL = 78
 
@@ -275,6 +281,93 @@ class TextRenderTests(unittest.TestCase):
         english = render_reading(reading, lang="en", color=False)
         self.assertIn(reading.cards[0].card.en, english)
 
+    def test_lang_both_regression(self):
+        """``--lang both`` 曾在 LABELS[lang] 上抛 KeyError，这里锁死不再复现。"""
+        reading = engine.draw_cards(2, seed=1)
+        for lang in ("zh", "en", "both"):
+            with self.subTest(lang=lang):
+                text = render_reading(reading, lang=lang, color=False)
+                if lang == "zh":
+                    self.assertIn(reading.cards[0].card.zh, text)
+                else:
+                    self.assertIn(reading.cards[0].card.en, text)
+                if lang == "both":
+                    self.assertIn(reading.cards[0].card.zh, text)
+                    self.assertIn(reading.cards[0].card.en, text)
+
+
+class SummaryLineTests(unittest.TestCase):
+    """末尾「牌面·正逆位」一览。"""
+
+    def test_is_the_last_line_and_only_has_cards(self):
+        reading = engine.draw_cards(3, seed=7)
+        text = render_reading(reading, color=False, width=84)
+        last = [line for line in text.splitlines() if line.strip()][-1]
+        self.assertTrue(last.startswith("  牌面一览："), last)
+        body = last.strip().removeprefix("牌面一览：")
+        expected = SUMMARY_SEPARATOR.join(
+            f"{d.card.zh}{SUMMARY_JOINER}{d.orientation_zh}" for d in reading.cards
+        )
+        self.assertEqual(body, expected)
+        # 除牌名与位向之外不应夹带其它信息
+        for noise in (reading.cards[0].card.id, str(reading.seed), "位置", "正位 ·", "◆"):
+            self.assertNotIn(noise, body)
+
+    def test_exact_requested_format(self):
+        """用户要求的示例形态：圣杯一·正位，倒吊人·逆位"""
+        reading = engine.draw_cards(2, seed=1)
+        body = summary_line(reading, with_names=False, palette=Palette(False)).strip()
+        self.assertEqual(
+            body,
+            f"{reading.cards[0].card.zh}{SUMMARY_JOINER}{reading.cards[0].orientation_zh}"
+            f"{SUMMARY_SEPARATOR}"
+            f"{reading.cards[1].card.zh}{SUMMARY_JOINER}{reading.cards[1].orientation_zh}",
+        )
+        self.assertIn("·正位", body)
+        self.assertEqual(body.count(SUMMARY_SEPARATOR), 1)
+
+    def test_single_card_and_all_reversed(self):
+        one = engine.draw_cards(1, seed=42)
+        body = summary_line(one, with_names=False, palette=Palette(False)).strip()
+        self.assertEqual(body, f"{one.cards[0].card.zh}·{one.cards[0].orientation_zh}")
+        rev = engine.draw_cards(4, seed=4, reversed_ratio=1.0)
+        body = summary_line(rev, with_names=False, palette=Palette(False))
+        self.assertNotIn("正位", body)
+        self.assertEqual(body.count("逆位"), 4)
+
+    def test_covers_every_card_in_order(self):
+        reading = engine.draw_cards(TOTAL, seed=3)
+        body = summary_line(reading, with_names=False, palette=Palette(False))
+        # 折行会插换行，还原成一条逻辑串再断言
+        flat = body.replace("\n", "").replace("  ", "")
+        self.assertEqual(flat.count(SUMMARY_SEPARATOR), TOTAL - 1)
+        expected = SUMMARY_SEPARATOR.join(
+            f"{d.card.zh}{SUMMARY_JOINER}{d.orientation_zh}" for d in reading.cards
+        )
+        self.assertEqual(flat, expected)
+
+    def test_can_be_disabled(self):
+        reading = engine.draw_cards(2, seed=1)
+        text = render_reading(reading, color=False, show_summary=False)
+        self.assertNotIn("牌面一览", text)
+
+    def test_respects_lang(self):
+        reading = engine.draw_cards(1, seed=1)
+        english = summary_line(reading, lang="en", palette=Palette(False))
+        self.assertTrue(english.strip().startswith("Cards drawn:"))
+        self.assertIn(reading.cards[0].card.en, english)
+        both = summary_line(reading, lang="both", palette=Palette(False))
+        self.assertIn(reading.cards[0].card.en, both)
+        zh = summary_line(reading, lang="zh", palette=Palette(False))
+        self.assertNotIn(reading.cards[0].card.en, zh)
+
+    def test_wraps_within_width(self):
+        reading = engine.draw_cards(10, seed=1)
+        text = summary_line(reading, palette=Palette(False), width=80)
+        self.assertGreater(len(text.splitlines()), 1)
+        for line in text.splitlines():
+            self.assertLessEqual(len(line), 82, line)
+
 
 # --------------------------------------------------------------------------- HTML
 
@@ -332,6 +425,20 @@ def capture():
     out, err = io.StringIO(), io.StringIO()
     with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
         yield out, err
+
+
+def summary_block(text: str, prefix: str = "牌面一览：") -> str:
+    """从整段输出里取出末尾牌面一览（去掉折行与缩进）。"""
+    return _split_summary(text, prefix)[1]
+
+
+def _split_summary(text: str, prefix: str = "牌面一览：") -> tuple[list[str], str]:
+    """返回 （一览之前的非空行, 一览正文）。"""
+    lines = text.splitlines()
+    start = next(i for i, line in enumerate(lines) if prefix in line)
+    body = "".join(line.strip() for line in lines[start:]).split(prefix, 1)[1]
+    before = [line for line in lines[:start] if line.strip()]
+    return before, body
 
 
 class CliTests(WorkDirMixin, unittest.TestCase):
@@ -395,8 +502,33 @@ class CliTests(WorkDirMixin, unittest.TestCase):
     def test_spread_only_sets_count(self):
         with capture() as (out, _):
             self.assertEqual(main(["--spread", "cross", "--seed", "1", "--color", "never"]), 0)
-        self.assertIn("凯尔特十字", out.getvalue())
-        self.assertEqual(out.getvalue().count("位置:"), 10)
+        text = out.getvalue()
+        self.assertIn("凯尔特十字", text)
+        self.assertEqual(text.count("位置:"), 10)
+        body = summary_block(text)
+        self.assertEqual(body.count(SUMMARY_SEPARATOR), 9)
+
+    def test_summary_is_last_block_after_hint(self):
+        with capture() as (out, _):
+            main(["3", "--seed", "7", "--color", "never"])
+        text = out.getvalue()
+        before, body = _split_summary(text)
+        self.assertIn("复现同一次抽牌", before[-1])
+        self.assertEqual(text.splitlines()[-1].strip(), "")
+        for drawn in engine.draw_cards(3, seed=7).cards:
+            self.assertIn(drawn.card.zh, body)
+
+    def test_lang_both_no_crash(self):
+        with capture() as (out, _):
+            code = main(["2", "--seed", "1", "--lang", "both", "--color", "never"])
+        self.assertEqual(code, 0)
+        self.assertIn("牌面一览", out.getvalue())
+
+    def test_json_mode_has_no_summary(self):
+        with capture() as (out, _):
+            self.assertEqual(main(["2", "--seed", "5", "--json"]), 0)
+        self.assertNotIn("牌面一览", out.getvalue())
+        json.loads(out.getvalue())
 
     def test_upright_only_flag(self):
         with capture() as (out, _):

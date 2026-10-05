@@ -43,6 +43,7 @@ LABELS = {
         "element": "元素",
         "astro": "占星",
         "direction": "方位",
+        "summary": "牌面一览：",
     },
     "en": {
         "title": "T A R O T   D R A W",
@@ -61,8 +62,18 @@ LABELS = {
         "element": "Element",
         "astro": "Astrology",
         "direction": "Direction",
+        "summary": "Cards drawn: ",
     },
 }
+
+#: 牌面一览的分隔符与「牌名·位向」连接符
+SUMMARY_SEPARATOR = "，"
+SUMMARY_JOINER = "·"
+
+
+def _labels(lang: str) -> dict:
+    """取语言对应的标签表；``both`` 复用中文标签（牌名本身已中英并列）。"""
+    return LABELS["en"] if lang == "en" else LABELS["zh"]
 
 
 class Palette:
@@ -156,7 +167,7 @@ def _wrap(text: str, width: int, indent: str = "") -> list[str]:
 
 def banner(palette: Palette, lang: str = "zh", width: int = 84) -> str:
     """顶部标题框。"""
-    label = LABELS[lang]["title"]
+    label = _labels(lang)["title"]
     inner = width - 4
     top = "╔" + "═" * (width - 2) + "╗"
     mid = "║ " + _pad_display(label, inner) + " ║"
@@ -168,7 +179,7 @@ def _orientation_display(drawn, lang: str) -> str:
     """箭头 + 位向，例如 ``▼ 逆位`` / ``▲ Upright``。"""
     key = "reversed" if drawn.orientation == ORIENTATION_REVERSED else "upright"
     arrow = "▼" if drawn.reversed else "▲"
-    return f"{arrow} {LABELS[lang][key]}"
+    return f"{arrow} {_labels(lang)[key]}"
 
 
 def _card_names(drawn, lang: str) -> str:
@@ -178,6 +189,31 @@ def _card_names(drawn, lang: str) -> str:
     if lang == "both":
         return f"{card.zh}  ·  {card.en}"
     return card.zh or card.en
+
+
+def summary_line(
+    reading: Reading,
+    *,
+    lang: str = "zh",
+    palette: Palette | None = None,
+    width: int = 84,
+    with_names: bool = True,
+) -> str:
+    """末尾一览：依次给出每张牌的「牌面·正逆位」，不含其它任何信息。
+
+    形如：``牌面一览：圣杯一·正位，倒吊人·逆位``
+    """
+    palette = palette or Palette(False)
+    labels = _labels(lang)
+    parts = [
+        f"{_card_names(drawn, lang)}{SUMMARY_JOINER}"
+        f"{labels['upright' if not drawn.reversed else 'reversed']}"
+        for drawn in reading.cards
+    ]
+    body = SUMMARY_SEPARATOR.join(parts)
+    text = f"{labels['summary']}{body}" if with_names else body
+    lines = _wrap(text, width, indent="  ")
+    return "\n".join(palette.paint(line, GOLD) for line in lines)
 
 
 def card_block(
@@ -192,7 +228,7 @@ def card_block(
 ) -> str:
     """渲染单张牌。"""
     palette = palette or Palette(False)
-    labels = LABELS[lang]
+    labels = _labels(lang)
     keys: Sequence[str] = deck_keys if deck_keys is not None else tuple(drawn.meanings)
     line_width = width - 8
 
@@ -265,11 +301,16 @@ def render_reading(
     show_intro: bool = False,
     show_meta: bool = True,
     show_hint: bool = True,
+    show_summary: bool = True,
+    summary_with_names: bool = True,
 ) -> str:
-    """把一次抽牌渲染为完整终端文本。"""
+    """把一次抽牌渲染为完整终端文本。
+
+    末尾一行是牌面一览（``show_summary``）：只给每张牌的「牌面·正逆位」。
+    """
     palette = Palette(color)
     width = width or terminal_width()
-    labels = LABELS[lang]
+    labels = _labels(lang)
     parts = [banner(palette, lang, width)]
     parts.append(
         palette.paint(
@@ -295,6 +336,16 @@ def render_reading(
                 f"  {labels['repro']}: --seed {reading.seed}", DIM
             )
         )
+    if show_summary:
+        parts.append(
+            summary_line(
+                reading,
+                lang=lang,
+                palette=palette,
+                width=width,
+                with_names=summary_with_names,
+            )
+        )
     parts.append("")
     return "\n".join(parts)
 
@@ -312,13 +363,13 @@ def render_decks(keys: Sequence[str], labels: Sequence[str]) -> str:
     lines.extend(f"  {key.ljust(width)}  {label}" for key, label in zip(keys, labels))
     return "\n".join(lines)
 
-
 __all__ = [
     "banner",
     "card_block",
     "render_reading",
     "render_spreads",
     "render_decks",
+    "summary_line",
     "Palette",
     "auto_color",
     "terminal_width",

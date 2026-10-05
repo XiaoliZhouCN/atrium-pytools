@@ -6,6 +6,7 @@
 - 三种经典牌阵 + 任意张数自定义牌阵
 - 正位 / 逆位随机（可关闭），三种牌义来源可任选
 - 终端彩色排版输出，或导出**单文件离线 HTML**（牌面图内嵌 base64，可点击翻牌看牌义）
+- 终端输出**最后一行**给出本次全部牌面的一览：`牌面一览：圣杯六·正位，太阳·逆位，宝剑一·正位`
 - 带 `--seed` 可完整复现同一次抽牌
 
 ## 快速开始
@@ -18,6 +19,23 @@ D:\Repositories\Manager\AtriumPyTools\launcher\run_tarotdraw.bat 3
 $env:PYTHONPATH = "D:\Repositories\Manager\AtriumPyTools\tools\tarotdraw"
 D:\Repositories\Manager\.venv\Scripts\python.exe -m tarotdraw 3
 ```
+
+## 输出末尾的牌面一览
+
+每次抽牌的终端输出以这一行**结尾**（在「复现提示」之后）：
+
+```text
+  牌面一览：圣杯六·正位，太阳·逆位，宝剑一·正位
+```
+
+- 只含牌面与正逆位，不夹带位置、牌义、id、种子等任何其它信息
+- 顺序与上面各张牌的编号一致；分隔符为全角逗号 `，`，连接符为 `·`
+- 张数多时会按终端宽度自动折行，折行后仍是同一行的延续
+- `--lang en` 输出 `Cards drawn: The Star·Upright，Nine of Pentacles·Upright`；
+  `--lang both` 输出中英并列牌名
+- `--json` 模式不输出该行（stdout 保持纯 JSON）
+- 编程接口：`tarotdraw.render_text.summary_line(reading)`，
+  或 `render_reading(..., show_summary=False)` 关闭
 
 ## 常用用法
 
@@ -79,7 +97,7 @@ html = render_html(reading)                      # 单文件 HTML 字符串
 `Card`、`get_card`、`all_cards`、`card_ids`、`spread_list`、`spread_keys`、
 `get_spread`、`resolve_spread`、`load_deck`、`load_decks`、`deck_keys`、
 `deck_label`、`render_reading`、`render_spreads`、`render_decks`、
-`render_html`、`write_html`、`data_root`。
+`summary_line`、`render_html`、`write_html`、`data_root`。
 
 ## 数据来源
 
@@ -135,7 +153,7 @@ tools/tarotdraw/
 │   └── render_html.py          # 单文件 HTML 渲染
 ├── data/                       # 素材（拷自 ChestTarot）
 ├── docs/ARCHITECTURE_DESIGN.md # 设计文档
-├── tests/test_tarotdraw.py     # 45 个 unittest
+├── tests/test_tarotdraw.py     # 56 个 unittest
 ├── pyproject.toml
 ├── run_tarotdraw.bat           # 工具内便捷入口
 └── README.md

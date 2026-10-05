@@ -3,7 +3,7 @@
 > **文档版本**：v1.0
 > **创建日期**：2026-02-14
 > **目标路径**：`tools/tarotdraw/docs/ARCHITECTURE_DESIGN.md`
-> **状态**：**已实现**（v0.1.0，单元测试 45 项全绿）
+> **状态**：**已实现**（v0.1.0，单元测试 56 项全绿）
 
 ---
 
@@ -17,7 +17,7 @@
 | 正逆位 | 默认 50% 逆位，可关闭或调整概率；位置由种子决定，可复现 |
 | 牌阵 | 内置 `single` / `three` / `situation` / `cross`，任意张数自动生成位置名 |
 | 牌义 | 三种 deck（通用指南 / Ethereal Visions / Universal Waite）任选或全选 |
-| 呈现 | 终端文本（含颜色、CJK 对齐、自动折行）；单文件离线 HTML（可点击翻牌） |
+| 呈现 | 终端文本（含颜色、CJK 对齐、自动折行）；末尾一行牌面一览（牌面·正逆位）；单文件离线 HTML（可点击翻牌） |
 | 导出 | JSON（供 steward 等外部程序消费）；HTML 文件 |
 
 ### 1.2 明确不做
@@ -67,7 +67,7 @@
 | `decks.py` | 牌义 deck 加载（带缓存） | `load_deck()`、`load_decks()`、`deck_keys()`、`Deck` |
 | `spreads.py` | 牌阵定义与解析 | `SPREADS`、`resolve_spread()`、`get_spread()`、`default_spread_for()` |
 | `engine.py` | 抽牌、正逆位、牌义投影 | `draw_cards()`、`draw()`、`readings_for()`、`Reading`、`DrawnCard` |
-| `render_text.py` | 终端渲染 | `render_reading()`、`render_spreads()`、`render_decks()`、`Palette` |
+| `render_text.py` | 终端渲染 | `render_reading()`、`summary_line()`、`render_spreads()`、`render_decks()`、`Palette` |
 | `render_html.py` | 单文件 HTML 渲染 | `render_html()`、`write_html()`、`image_data_uri()` |
 | `cli.py` | 参数解析、退出码、打印 | `main(argv) -> int`、`build_parser()` |
 
@@ -198,15 +198,16 @@ No module named tarotdraw.__main__; 'tarotdraw' is a package and cannot be direc
 
 ## 六、测试策略
 
-### 6.1 单元 / 集成（45 项，`tests/test_tarotdraw.py`）
+### 6.1 单元 / 集成（56 项，`tests/test_tarotdraw.py`）
 
 | 组 | 覆盖内容 |
 | :-- | :-- |
 | 数据 | 目录结构、78 张牌面图存在、index 形状（22 大牌 + 4×14）、deck 覆盖全部 id、派生字段、坏目录报错 |
 | 引擎 | 默认单张、无放回、同种子可复现、**回报的种子可复现随机抽牌**、正逆位开关与概率极值、非法张数/概率/deck/牌阵、张数不符降级、牌义投影与 deck 一致、JSON 往返 |
-| 文本 | 牌名/位向/位置/种子齐全、颜色开关、行宽不超限、语言变体 |
+| 文本 | 牌名/位向/位置/种子齐全、颜色开关、行宽不超限、语言变体（`zh`/`en`/`both`，`both` 有 KeyError 回归测试） |
+| 牌面一览 | 必须是输出的最后一块、内容只含「牌面·正逆位」（显式断言不含 id/种子/位置等噪声）、全 78 张顺序与分隔符数、单张与全逆位、`show_summary=False` 可关闭、按语言切换、折行不超宽 |
 | HTML | 标签闭合（`HTMLParser` 校验）、完全离线（无 http(s) 外链）、base64 数量、**解出的字节是真实 JPEG（SOI/EOI）**、逆位 class、`--no-embed` 相对路径、标题转义 |
-| CLI | 各子路径退出码、`--json`、`--html`（文件/目录两种目标）、`--no-embed`、`--spread` 推导张数、非法输入干净报错 |
+| CLI | 各子路径退出码、`--json`、`--html`（文件/目录两种目标）、`--no-embed`、`--spread` 推导张数、`--lang both`、一览必须紧跟在复现提示之后且 `--json` 模式不出现、非法输入干净报错 |
 
 ### 6.2 已知数据缺口（测试中登记，非缺陷）
 
@@ -217,10 +218,11 @@ No module named tarotdraw.__main__; 'tarotdraw' is a package and cannot be direc
 
 ### 6.3 人工验收
 
-1. `run_tarotdraw.bat 3` → 终端三张牌，中文正常、无乱码。
+1. `run_tarotdraw.bat 3` → 终端三张牌，中文正常、无乱码；**最后一行**是
+   `牌面一览：…·正位/逆位，…`，且其上一条是复现提示。
 2. `run_tarotdraw.bat 3 --seed 42 --html out\a.html` → 浏览器打开，三张牌面图可见，点击翻牌出牌义，HTML 总大小 ≈ 3 张图 × 4/3。
 3. 断网后重复第 2 步 → 牌面图仍显示（base64 内嵌）。
-4. 同 `--seed` 连跑两次 → 抽牌结果完全一致。
+4. 同 `--seed` 连跑两次 → 抽牌结果与末尾一览完全一致。
 
 ---
 
