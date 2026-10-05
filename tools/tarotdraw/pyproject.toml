@@ -1,0 +1,26 @@
+# D:\Repositories\Manager\AtriumPyTools\tools\tarotdraw\pyproject.toml
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tarotdraw"
+version = "0.1.0"
+description = "塔罗抽牌小工具：纯 Python 抽牌引擎 + 终端/HTML 渲染，无 UI 框架依赖"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []          # 纯标准库，无第三方依赖
+
+[project.scripts]
+tarotdraw = "tarotdraw.cli:main"
+
+[tool.setuptools]
+packages = ["tarotdraw"]
+
+[tool.setuptools.package-dir]
+tarotdraw = "tarotdraw"
+
+# data/ 与 docs/、tests/ 都是包目录的兄弟目录，不参与打包；
+# 需要随包分发数据时用 tools/sync_data.py 或在打包脚本里额外拷贝 data/。
+[tool.setuptools.package-data]
+tarotdraw = ["py.typed"]

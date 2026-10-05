@@ -1,0 +1,11 @@
+# tools/notionsync 本地测试产物 —— 明确忽略，不入库
+tools/notionsync/temp/
+
+# Python 字节码缓存（compileall / import 自动生成，不应入库）
+__pycache__/
+
+# 一次性脚本与临时产物（用完即删，不留历史）
+temp/
+
+# lexicon 的外部数据源下载缓存（ECDICT 63 MB + Tatoeba 24 MB）
+tools/lexicon/.cache/

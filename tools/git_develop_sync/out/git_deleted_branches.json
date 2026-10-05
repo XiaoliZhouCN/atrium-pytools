@@ -1,0 +1,22 @@
+{
+  "time": "2026-10-05T22:07:28+08:00",
+  "note": "删掉的分支与其 SHA，可按 SHA 恢复",
+  "deleted": {
+    "AtriumCppTools:dev/basic": "818d0cde2f6e50c5a7d48cda54074d2ecd3878ec",
+    "AtriumCppTools:tool/loomery": "bd6d3b4c0626d2b3303a1c342cc43ef53c4063cc",
+    "AtriumCppTools:tools": "6c10ecacb3bac83cc3c1069fc59783ed42837de8",
+    "AtriumCppTools:origin/dev/basic": "eddb810af87d273a9b467c1c597d6dd6d84e1767",
+    "AtriumSteward:dev/basic": "4dc3859ab69f06f377f461141df5a8ae865784ef",
+    "AtriumSteward:origin/dev/basic": "4dc3859ab69f06f377f461141df5a8ae865784ef",
+    "ChromaCMS:dev/baisc": "2c3df7641c68171f9f2aa9ee0169b9cd8db0be7e",
+    "ChromaCMS:dev/basic": "d8609fad45cb381aa7aa7bbcf1d4dbec497777d5",
+    "ChromaCMS:origin/dev/basic": "5ca4723cde8f1894335127aec267bd0ac8d41269",
+    "OpenGLRenderer:dev/basic": "2dd1aeb3e63994526d6e5445701e8e0e7f146b98",
+    "OpenGLRenderer:主要的": "1816027a20bf51316612f841ab8082be5de8de32",
+    "OpenGLRenderer:origin/dev/basic": "2dd1aeb3e63994526d6e5445701e8e0e7f146b98",
+    "OpenGLRenderer:origin/dev/optimize": "68925eb33caac35b7dceca613cd6c050ccca9b06",
+    "OpenGLRenderer:origin/dev/qt": "7bfa5f27bd5c22667a5ca8674197d48707135b3e",
+    "OpenGLRenderer:origin/spike/video-render-pipeline": "9650bbb647860da873b8930a3b10533c200aa33e",
+    "OpenGLRenderer:origin/主要的": "1816027a20bf51316612f841ab8082be5de8de32"
+  }
+}

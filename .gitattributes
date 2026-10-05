@@ -1,0 +1,10 @@
+# Windows 批处理必须以 CRLF 检出。
+#
+# cmd.exe 解析 LF-only 的 .bat 会丢失文件位置，把后续行砍掉前几个字符后当命令
+# 执行（set -> TS、enrich -> ich、fetch-ecdict -> ch-ecdict）。这类文件里若再有
+# chcp 之类会改变解析状态的东西，错位会更早触发。
+#
+# 这里显式声明，而不是依赖各人本地的 core.autocrlf —— 那是一个本地设置，
+# 谁把它设成 false（或在非 Windows 上 clone）就会拿到 LF 的 bat 并踩到同样的坑。
+*.bat text eol=crlf
+*.cmd text eol=crlf

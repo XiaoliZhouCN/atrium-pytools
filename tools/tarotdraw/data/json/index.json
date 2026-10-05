@@ -1,0 +1,470 @@
+[
+  {
+    "id": "ma01",
+    "en": "The Fool",
+    "zh": "愚人",
+    "image": "cards/major/ma01.jpg"
+  },
+  {
+    "id": "ma02",
+    "en": "The Magician",
+    "zh": "魔术师",
+    "image": "cards/major/ma02.jpg"
+  },
+  {
+    "id": "ma03",
+    "en": "The High Priestess",
+    "zh": "女祭司",
+    "image": "cards/major/ma03.jpg"
+  },
+  {
+    "id": "ma04",
+    "en": "The Empress",
+    "zh": "女皇",
+    "image": "cards/major/ma04.jpg"
+  },
+  {
+    "id": "ma05",
+    "en": "The Emperor",
+    "zh": "皇帝",
+    "image": "cards/major/ma05.jpg"
+  },
+  {
+    "id": "ma06",
+    "en": "The Hierophant",
+    "zh": "教皇",
+    "image": "cards/major/ma06.jpg"
+  },
+  {
+    "id": "ma07",
+    "en": "The Lovers",
+    "zh": "恋人",
+    "image": "cards/major/ma07.jpg"
+  },
+  {
+    "id": "ma08",
+    "en": "The Chariot",
+    "zh": "战车",
+    "image": "cards/major/ma08.jpg"
+  },
+  {
+    "id": "ma09",
+    "en": "Strength",
+    "zh": "力量",
+    "image": "cards/major/ma09.jpg"
+  },
+  {
+    "id": "ma10",
+    "en": "The Hermit",
+    "zh": "隐士",
+    "image": "cards/major/ma10.jpg"
+  },
+  {
+    "id": "ma11",
+    "en": "Wheel of Fortune",
+    "zh": "命运之轮",
+    "image": "cards/major/ma11.jpg"
+  },
+  {
+    "id": "ma12",
+    "en": "Justice",
+    "zh": "正义",
+    "image": "cards/major/ma12.jpg"
+  },
+  {
+    "id": "ma13",
+    "en": "The Hanged Man",
+    "zh": "倒吊人",
+    "image": "cards/major/ma13.jpg"
+  },
+  {
+    "id": "ma14",
+    "en": "Death",
+    "zh": "死神",
+    "image": "cards/major/ma14.jpg"
+  },
+  {
+    "id": "ma15",
+    "en": "Temperance",
+    "zh": "节制",
+    "image": "cards/major/ma15.jpg"
+  },
+  {
+    "id": "ma16",
+    "en": "The Devil",
+    "zh": "恶魔",
+    "image": "cards/major/ma16.jpg"
+  },
+  {
+    "id": "ma17",
+    "en": "The Tower",
+    "zh": "高塔",
+    "image": "cards/major/ma17.jpg"
+  },
+  {
+    "id": "ma18",
+    "en": "The Star",
+    "zh": "星星",
+    "image": "cards/major/ma18.jpg"
+  },
+  {
+    "id": "ma19",
+    "en": "The Moon",
+    "zh": "月亮",
+    "image": "cards/major/ma19.jpg"
+  },
+  {
+    "id": "ma20",
+    "en": "The Sun",
+    "zh": "太阳",
+    "image": "cards/major/ma20.jpg"
+  },
+  {
+    "id": "ma21",
+    "en": "The Last Judgment",
+    "zh": "审判",
+    "image": "cards/major/ma21.jpg"
+  },
+  {
+    "id": "ma22",
+    "en": "The World",
+    "zh": "世界",
+    "image": "cards/major/ma22.jpg"
+  },
+  {
+    "id": "wands01",
+    "en": "Ace of Wands",
+    "zh": "权杖一",
+    "image": "cards/wands/wands01.jpg"
+  },
+  {
+    "id": "wands02",
+    "en": "Two of Wands",
+    "zh": "权杖二",
+    "image": "cards/wands/wands02.jpg"
+  },
+  {
+    "id": "wands03",
+    "en": "Three of Wands",
+    "zh": "权杖三",
+    "image": "cards/wands/wands03.jpg"
+  },
+  {
+    "id": "wands04",
+    "en": "Four of Wands",
+    "zh": "权杖四",
+    "image": "cards/wands/wands04.jpg"
+  },
+  {
+    "id": "wands05",
+    "en": "Five of Wands",
+    "zh": "权杖五",
+    "image": "cards/wands/wands05.jpg"
+  },
+  {
+    "id": "wands06",
+    "en": "Six of Wands",
+    "zh": "权杖六",
+    "image": "cards/wands/wands06.jpg"
+  },
+  {
+    "id": "wands07",
+    "en": "Seven of Wands",
+    "zh": "权杖七",
+    "image": "cards/wands/wands07.jpg"
+  },
+  {
+    "id": "wands08",
+    "en": "Eight of Wands",
+    "zh": "权杖八",
+    "image": "cards/wands/wands08.jpg"
+  },
+  {
+    "id": "wands09",
+    "en": "Nine of Wands",
+    "zh": "权杖九",
+    "image": "cards/wands/wands09.jpg"
+  },
+  {
+    "id": "wands10",
+    "en": "Ten of Wands",
+    "zh": "权杖十",
+    "image": "cards/wands/wands10.jpg"
+  },
+  {
+    "id": "wands11",
+    "en": "Page of Wands",
+    "zh": "权杖待从",
+    "image": "cards/wands/wands11.jpg"
+  },
+  {
+    "id": "wands12",
+    "en": "Knight of Wands",
+    "zh": "权杖骑士",
+    "image": "cards/wands/wands12.jpg"
+  },
+  {
+    "id": "wands13",
+    "en": "Queen of Wands",
+    "zh": "权杖女王",
+    "image": "cards/wands/wands13.jpg"
+  },
+  {
+    "id": "wands14",
+    "en": "King of Wands",
+    "zh": "权杖国王",
+    "image": "cards/wands/wands14.jpg"
+  },
+  {
+    "id": "cups01",
+    "en": "Ace of Cups",
+    "zh": "圣杯一",
+    "image": "cards/cups/cups01.jpg"
+  },
+  {
+    "id": "cups02",
+    "en": "Two of Cups",
+    "zh": "圣杯二",
+    "image": "cards/cups/cups02.jpg"
+  },
+  {
+    "id": "cups03",
+    "en": "Three of Cups",
+    "zh": "圣杯三",
+    "image": "cards/cups/cups03.jpg"
+  },
+  {
+    "id": "cups04",
+    "en": "Four of Cups",
+    "zh": "圣杯四",
+    "image": "cards/cups/cups04.jpg"
+  },
+  {
+    "id": "cups05",
+    "en": "Five of Cups",
+    "zh": "圣杯五",
+    "image": "cards/cups/cups05.jpg"
+  },
+  {
+    "id": "cups06",
+    "en": "Six of Cups",
+    "zh": "圣杯六",
+    "image": "cards/cups/cups06.jpg"
+  },
+  {
+    "id": "cups07",
+    "en": "Seven of Cups",
+    "zh": "圣杯七",
+    "image": "cards/cups/cups07.jpg"
+  },
+  {
+    "id": "cups08",
+    "en": "Eight of Cups",
+    "zh": "圣杯八",
+    "image": "cards/cups/cups08.jpg"
+  },
+  {
+    "id": "cups09",
+    "en": "Nine of Cups",
+    "zh": "圣杯九",
+    "image": "cards/cups/cups09.jpg"
+  },
+  {
+    "id": "cups10",
+    "en": "Ten of Cups",
+    "zh": "圣杯十",
+    "image": "cards/cups/cups10.jpg"
+  },
+  {
+    "id": "cups11",
+    "en": "Page of Cups",
+    "zh": "圣杯侍从",
+    "image": "cards/cups/cups11.jpg"
+  },
+  {
+    "id": "cups12",
+    "en": "Knight of Cups",
+    "zh": "圣杯骑士",
+    "image": "cards/cups/cups12.jpg"
+  },
+  {
+    "id": "cups13",
+    "en": "Queen of Cups",
+    "zh": "圣杯女王",
+    "image": "cards/cups/cups13.jpg"
+  },
+  {
+    "id": "cups14",
+    "en": "King of Cups",
+    "zh": "圣杯国王",
+    "image": "cards/cups/cups14.jpg"
+  },
+  {
+    "id": "swords01",
+    "en": "Ace of Swords",
+    "zh": "宝剑一",
+    "image": "cards/swords/swords01.jpg"
+  },
+  {
+    "id": "swords02",
+    "en": "Two of Swords",
+    "zh": "宝剑二",
+    "image": "cards/swords/swords02.jpg"
+  },
+  {
+    "id": "swords03",
+    "en": "Three of Swords",
+    "zh": "宝剑三",
+    "image": "cards/swords/swords03.jpg"
+  },
+  {
+    "id": "swords04",
+    "en": "Four of Swords",
+    "zh": "宝剑四",
+    "image": "cards/swords/swords04.jpg"
+  },
+  {
+    "id": "swords05",
+    "en": "Five of Swords",
+    "zh": "宝剑五",
+    "image": "cards/swords/swords05.jpg"
+  },
+  {
+    "id": "swords06",
+    "en": "Six of Swords",
+    "zh": "宝剑六",
+    "image": "cards/swords/swords06.jpg"
+  },
+  {
+    "id": "swords07",
+    "en": "Seven of Swords",
+    "zh": "宝剑七",
+    "image": "cards/swords/swords07.jpg"
+  },
+  {
+    "id": "swords08",
+    "en": "Eight of Swords",
+    "zh": "宝剑八",
+    "image": "cards/swords/swords08.jpg"
+  },
+  {
+    "id": "swords09",
+    "en": "Nine of Swords",
+    "zh": "宝剑九",
+    "image": "cards/swords/swords09.jpg"
+  },
+  {
+    "id": "swords10",
+    "en": "Ten of Swords",
+    "zh": "宝剑十",
+    "image": "cards/swords/swords10.jpg"
+  },
+  {
+    "id": "swords11",
+    "en": "Page of Swords",
+    "zh": "宝剑待从",
+    "image": "cards/swords/swords11.jpg"
+  },
+  {
+    "id": "swords12",
+    "en": "Knight of Swords",
+    "zh": "宝剑骑士",
+    "image": "cards/swords/swords12.jpg"
+  },
+  {
+    "id": "swords13",
+    "en": "Queen of Swords",
+    "zh": "宝剑女王",
+    "image": "cards/swords/swords13.jpg"
+  },
+  {
+    "id": "swords14",
+    "en": "King of Swords",
+    "zh": "宝剑国王",
+    "image": "cards/swords/swords14.jpg"
+  },
+  {
+    "id": "pentacles01",
+    "en": "Ace of Pentacles",
+    "zh": "星币一",
+    "image": "cards/pentacles/pentacles01.jpg"
+  },
+  {
+    "id": "pentacles02",
+    "en": "Two of Pentacles",
+    "zh": "星币二",
+    "image": "cards/pentacles/pentacles02.jpg"
+  },
+  {
+    "id": "pentacles03",
+    "en": "Three of Pentacles",
+    "zh": "星币三",
+    "image": "cards/pentacles/pentacles03.jpg"
+  },
+  {
+    "id": "pentacles04",
+    "en": "Four of Pentacles",
+    "zh": "星币四",
+    "image": "cards/pentacles/pentacles04.jpg"
+  },
+  {
+    "id": "pentacles05",
+    "en": "Five of Pentacles",
+    "zh": "星币五",
+    "image": "cards/pentacles/pentacles05.jpg"
+  },
+  {
+    "id": "pentacles06",
+    "en": "Six of Pentacles",
+    "zh": "星币六",
+    "image": "cards/pentacles/pentacles06.jpg"
+  },
+  {
+    "id": "pentacles07",
+    "en": "Seven of Pentacles",
+    "zh": "星币七",
+    "image": "cards/pentacles/pentacles07.jpg"
+  },
+  {
+    "id": "pentacles08",
+    "en": "Eight of Pentacles",
+    "zh": "星币八",
+    "image": "cards/pentacles/pentacles08.jpg"
+  },
+  {
+    "id": "pentacles09",
+    "en": "Nine of Pentacles",
+    "zh": "星币九",
+    "image": "cards/pentacles/pentacles09.jpg"
+  },
+  {
+    "id": "pentacles10",
+    "en": "Ten of Pentacles",
+    "zh": "星币十",
+    "image": "cards/pentacles/pentacles10.jpg"
+  },
+  {
+    "id": "pentacles11",
+    "en": "Page of Pentacles",
+    "zh": "星币待从",
+    "image": "cards/pentacles/pentacles11.jpg"
+  },
+  {
+    "id": "pentacles12",
+    "en": "Knight of Pentacles",
+    "zh": "星币骑士",
+    "image": "cards/pentacles/pentacles12.jpg"
+  },
+  {
+    "id": "pentacles13",
+    "en": "Queen of Pentacles",
+    "zh": "星币女王",
+    "image": "cards/pentacles/pentacles13.jpg"
+  },
+  {
+    "id": "pentacles14",
+    "en": "King of Pentacles",
+    "zh": "星币国王",
+    "image": "cards/pentacles/pentacles14.jpg"
+  }
+]

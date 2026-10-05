@@ -1,0 +1,782 @@
+[
+  {
+    "id": "ma01",
+    "name": "The Fool",
+    "astro": "Uranus",
+    "element": "",
+    "direction": "",
+    "intro": "The Fool is the spirit of innocence in all of us as we begin our journey. This card may be at the beginning (birth) or the end (transformation) of our path. Each position marks the start of new beginnings where we are free to be creative, have boundless faith, and freely embrace opportunities!",
+    "upright": "Potential, new beginnings, opportunity, adventure",
+    "reversed": "Carelessness, negligence, uncertainty, apathy"
+  },
+  {
+    "id": "ma02",
+    "name": "The Magician",
+    "astro": "Mercury",
+    "element": "",
+    "direction": "",
+    "intro": "The Magician connects the spirit to the physical—he represents \"as above, so below\". He is the master of all four elements: earth, air, fire and water. He is telling you that you hold all the tools to manifest your desires into reality. Creativity, skill, focus and desire are the forces he reveals to you in order to accomplish any goal.",
+    "upright": "Skill, confidence, action, concentration, accomplishment",
+    "reversed": "Unease, lack of planning, powerlessness, procrastination, arrogance"
+  },
+  {
+    "id": "ma03",
+    "name": "High Priestess",
+    "astro": "Moon",
+    "element": "",
+    "direction": "",
+    "intro": "The High Priestess represents wisdom and enlightenment. She is in-between two worlds and embodies the eternal feminine spirit. She is the guardian of the unconscious who guides us to look inward and listen to our own feelings and intuition.",
+    "upright": "The subconscious, wisdom, anima, serenity, mystery",
+    "reversed": "Repression, mistrust, secrets, Loss"
+  },
+  {
+    "id": "ma04",
+    "name": "The Empress",
+    "astro": "Venus",
+    "element": "",
+    "direction": "",
+    "intro": "The Empress is the manifestation of creation, the mother. She invites you to reconnect with the natural world and nourish what we have created",
+    "upright": "Creation, abundance, luxury, nature, pleasure",
+    "reversed": "Neglect, indecisiveness, disconnection, resistance"
+  },
+  {
+    "id": "ma05",
+    "name": "The Emperor",
+    "astro": "Aries",
+    "element": "",
+    "direction": "",
+    "intro": "The Emperor is masculine energy, the father. He is able to calm chaos and offer authoritarian guidance. He exudes the traits of leader, protector, and provider but can be ruthless if disagreed with.",
+    "upright": "Power, structure, patriarchal energy, domination, success",
+    "reversed": "Rigidity, powerlessness, avoidance, chaos"
+  },
+  {
+    "id": "ma06",
+    "name": "The Hierophant",
+    "astro": "Taurus",
+    "element": "",
+    "direction": "",
+    "intro": "The Hierophant is the physical embodiment of institution. He interprets secret knowledge to share within a formal, rigid system. When seeking knowledge, he will guide you to discovery through established educational structures and traditions.",
+    "upright": "Tradition, guidance, spiritu-ality, orthodoxy, institution",
+    "reversed": "Hypocrisy, rebellion, corrup-tion, disobedience"
+  },
+  {
+    "id": "ma07",
+    "name": "The Lovers",
+    "astro": "Gemini",
+    "element": "",
+    "direction": "",
+    "intro": "The Lovers represents the union of duality. They signify a force that binds two entities together to create whole-ness— whether it is a relationship, an event, a personal decision, or ideas. The Lovers asks you to have open communication with yourself and examine your motives and values when contemplating which path to take.",
+    "upright": "Unification, choices, harmony, relationships",
+    "reversed": "Separation, imbalance, conflict, disconnection"
+  },
+  {
+    "id": "ma08",
+    "name": "The Chariot",
+    "astro": "Cancer",
+    "element": "",
+    "direction": "",
+    "intro": "The Chariot represents willpower, determination, and self-assurance in any challenge. The charioteer reminds us to be steadfast and exude self-control in situations that arise in order to ensure victory over any obstacle.",
+    "upright": "Conquest, control, victory, motivation",
+    "reversed": "Aggression, self-doubt, defeat, loss of control"
+  },
+  {
+    "id": "ma09",
+    "name": "Strength",
+    "astro": "Leo",
+    "element": "",
+    "direction": "",
+    "intro": "The Strength card reminds us that true power comes from within. Through patience, gentleness and compassion one can overcome obstacles without resorting to physical aggression. The woman and the lion signify that we need to tame the beast within ourselves and find balance.",
+    "upright": "Inner calm, courage, control, patience",
+    "reversed": "Struggle, anger, rage, pride"
+  },
+  {
+    "id": "ma10",
+    "name": "The Hermit",
+    "astro": "Virgo",
+    "element": "",
+    "direction": "",
+    "intro": "The Hermit advises you that now is a time for reflection. You must look inward for truth and wisdom, for you have all the knowledge you need inside. Be calm and reflective; do not let the outside world distract you from the messages you hold within.",
+    "upright": "Introspection, enlightenment, solitude, reflection",
+    "reversed": "Isolation, foolishness, with-drawal, depression"
+  },
+  {
+    "id": "ma11",
+    "name": "Wheel of Fortune",
+    "astro": "Jupiter",
+    "element": "",
+    "direction": "",
+    "intro": "The Wheel of Fortune shows that opportunity is abundant. All things have a cycle, both good and bad. One makes you appreciate the other and each can offer new options to the situations faced.",
+    "upright": "Luck, change, karma, destiny",
+    "reversed": "Misfortune, chaos, bad luck, resistance"
+  },
+  {
+    "id": "ma12",
+    "name": "Justice",
+    "astro": "Libra",
+    "element": "",
+    "direction": "",
+    "intro": "The Justice card reveals that an outcome will be determined from the decisions you have made. It is a reminder that future actions can be changed by the lessons you learn in the present. It is an indicator that a decision needs to be made.",
+    "upright": "Truth, fairness, equality, balance",
+    "reversed": "Dispute, dishonesty, lack of accountability, corruption"
+  },
+  {
+    "id": "ma13",
+    "name": "The Hanged Man",
+    "astro": "Neptune",
+    "element": "",
+    "direction": "",
+    "intro": "The Hanged Man is an indication that it is time to end old ways and release the restrictions that are holding you back in life. It is a time for inaction and reflection in order for new opportunities to manifest. You must be willing to sacrifice something to gain something new.",
+    "upright": "Sacrifice, release, new perspective, surrender",
+    "reversed": "Indecision, delusion, delay, missed opportunity"
+  },
+  {
+    "id": "ma14",
+    "name": "Death",
+    "astro": "Scorpio",
+    "element": "",
+    "direction": "",
+    "intro": "Death is the harbinger of transfor-mation. He is a reminder that you must shed what is old and familiar to become something new. You must break old habits and release that which is hindering you to make room for something greater.",
+    "upright": "Change, endings, beginnings, transition",
+    "reversed": "Resistance, stagnant, immo-bility, obsession"
+  },
+  {
+    "id": "ma15",
+    "name": "Temperance",
+    "astro": "Sagittarius",
+    "element": "",
+    "direction": "",
+    "intro": "Temperance appears when there is a need for balance of opposing areas in your life. You are being asked to be patient and re-examine priorities in your life that are in disharmony. Temperance assists us by pointing you to life's meaning and purpose.",
+    "upright": "Balance, harmony, purpose, moderation",
+    "reversed": "Competition, frustration, excess, imbalance"
+  },
+  {
+    "id": "ma16",
+    "name": "The Devil",
+    "astro": "Saturn",
+    "element": "",
+    "direction": "",
+    "intro": "The Devil shows you that the problems that constrain you are an illusion; the binding is of your own. It is time to ask yourself what is it that holds you back and are you truly helpless to change the situation?",
+    "upright": "Addiction, obsession, control, materialism",
+    "reversed": "Detachment, freedom, awareness, vulnerability"
+  },
+  {
+    "id": "ma17",
+    "name": "The Tower",
+    "astro": "Mars",
+    "element": "",
+    "direction": "",
+    "intro": "The Tower shows up when you are living in an illusion. You must remove the mask and expose the truth of the situation in order to change it. Change is difficult; you will be shaken, the familiar will be broken down and removed from your comfort zone. The Tower reminds you to let go and let the ego fall away.",
+    "upright": "Upheaval, change, awakening, shock",
+    "reversed": "Denial, avoidance, fear, reluctance"
+  },
+  {
+    "id": "ma18",
+    "name": "The Star",
+    "astro": "Aquarius",
+    "element": "",
+    "direction": "",
+    "intro": "The Star is the light you seek when you enter a new phase of life. She reminds you that you are connected to the universe and all the wisdom you seek is available. The Star shows you that now is the time to embrace new ideas and growth.",
+    "upright": "Renewal, hope, serenity, clarity",
+    "reversed": "Confusion, despair, test of faith, negativity"
+  },
+  {
+    "id": "ma19",
+    "name": "The Moon",
+    "astro": "Pisces",
+    "element": "",
+    "direction": "",
+    "intro": "The Moon is transformational; you are at a time of metamorphosis. You become aware of your shadow self and the lessons that lie within. The card reminds you that fear is an illusion and you will need to purge negativity and tap into your inner awareness for answers.",
+    "upright": "Intuition, illusion, fear, subconscious",
+    "reversed": "Frustration, confusion, unhappiness, disbelief"
+  },
+  {
+    "id": "ma20",
+    "name": "The Sun",
+    "astro": "Sun",
+    "element": "",
+    "direction": "",
+    "intro": "The Sun card shines down confidence and awakening upon you. It is a time to embrace the joys in life and leave darkness and confusion behind",
+    "upright": "Positivity, success, joy, optimism",
+    "reversed": "Selfishness, egotistical, sadness, depression"
+  },
+  {
+    "id": "ma21",
+    "name": "Judgement",
+    "astro": "Pluto",
+    "element": "",
+    "direction": "",
+    "intro": "Judgement shows when it is time for self-evaluation. You are at a crux for reaching a new life and must purge those things that would hinder you from being renewed",
+    "upright": "Rebirth, absolution, renewal, freedom",
+    "reversed": "Self-doubt, rejection, blockage, stagnation"
+  },
+  {
+    "id": "ma22",
+    "name": "The World",
+    "astro": "Saturn",
+    "element": "",
+    "direction": "",
+    "intro": "The World is the final destination of your journey. You have a deeper understanding of your role in the universe and all of your efforts have come full circle.",
+    "upright": "Completion, satisfaction, travel, fulfillment",
+    "reversed": "Regret, incomplete, lack of closure, doubt"
+  },
+  {
+    "id": "wands01",
+    "name": "Ace of Wands",
+    "astro": "Aries, Leo, Sagittarius",
+    "element": "Fire",
+    "direction": "South",
+    "intro": "The Suit of Wands mirror your consciousness and gives insight into the core of what you are-both internal and external. They urge you to take action in situations that arise in your life.",
+    "upright": "Inspiration, potential, creation, enthusiasm",
+    "reversed": "Endings, delay, unmotivated, impatience"
+  },
+  {
+    "id": "wands02",
+    "name": "Two of Wands",
+    "astro": "Aries, Leo, Sagittarius",
+    "element": "Fire",
+    "direction": "South",
+    "intro": "The Suit of Wands mirror your consciousness and gives insight into the core of what you are-both internal and external. They urge you to take action in situations that arise in your life.",
+    "upright": "Focus, decisions, discovery, planning",
+    "reversed": "Overconfidence, stunted, undetermined, blocked"
+  },
+  {
+    "id": "wands03",
+    "name": "Three of Wands",
+    "astro": "Aries, Leo, Sagittarius",
+    "element": "Fire",
+    "direction": "South",
+    "intro": "The Suit of Wands mirror your consciousness and gives insight into the core of what you are-both internal and external. They urge you to take action in situations that arise in your life.",
+    "upright": "Strategy, planning, strength, travel",
+    "reversed": "Delay, obstacles, risk, disappointment"
+  },
+  {
+    "id": "wands04",
+    "name": "Four of Wands",
+    "astro": "Aries, Leo, Sagittarius",
+    "element": "Fire",
+    "direction": "South",
+    "intro": "The Suit of Wands mirror your consciousness and gives insight into the core of what you are-both internal and external. They urge you to take action in situations that arise in your life.",
+    "upright": "Union, celebration, promise, community",
+    "reversed": "Transition, tension, change, instability"
+  },
+  {
+    "id": "wands05",
+    "name": "Five of Wands",
+    "astro": "Aries, Leo, Sagittarius",
+    "element": "Fire",
+    "direction": "South",
+    "intro": "The Suit of Wands mirror your consciousness and gives insight into the core of what you are-both internal and external. They urge you to take action in situations that arise in your life.",
+    "upright": "Conflict, disagreement, resis-tance, competition",
+    "reversed": "Avoidance, self-doubt, evasion, negotiation"
+  },
+  {
+    "id": "wands06",
+    "name": "Six of Wands",
+    "astro": "Aries, Leo, Sagittarius",
+    "element": "Fire",
+    "direction": "South",
+    "intro": "The Suit of Wands mirror your consciousness and gives insight into the core of what you are-both internal and external. They urge you to take action in situations that arise in your life.",
+    "upright": "Victory, confidence, valor, recognition",
+    "reversed": "Egotism, misdirection, doubt, neglect"
+  },
+  {
+    "id": "wands07",
+    "name": "Seven of Wands",
+    "astro": "Aries, Leo, Sagittarius",
+    "element": "Fire",
+    "direction": "South",
+    "intro": "The Suit of Wands mirror your consciousness and gives insight into the core of what you are-both internal and external. They urge you to take action in situations that arise in your life.",
+    "upright": "Challenge, struggle, defense, justification",
+    "reversed": "Inferiority, overwhelmed, judgement, weakness"
+  },
+  {
+    "id": "wands08",
+    "name": "Eight of Wands",
+    "astro": "Aries, Leo, Sagittarius",
+    "element": "Fire",
+    "direction": "South",
+    "intro": "The Suit of Wands mirror your consciousness and gives insight into the core of what you are-both internal and external. They urge you to take action in situations that arise in your life.",
+    "upright": "Action, balance, change, productivity",
+    "reversed": "Frustration, delay, mistakes, confusion"
+  },
+  {
+    "id": "wands09",
+    "name": "Nine of Wands",
+    "astro": "Aries, Leo, Sagittarius",
+    "element": "Fire",
+    "direction": "South",
+    "intro": "The Suit of Wands mirror your consciousness and gives insight into the core of what you are-both internal and external. They urge you to take action in situations that arise in your life.",
+    "upright": "Courage, determination, persistence, hope",
+    "reversed": "Failure, defensive, hesitation, paranoia"
+  },
+  {
+    "id": "wands10",
+    "name": "Ten of Wands",
+    "astro": "Aries, Leo, Sagittarius",
+    "element": "Fire",
+    "direction": "South",
+    "intro": "The Suit of Wands mirror your consciousness and gives insight into the core of what you are-both internal and external. They urge you to take action in situations that arise in your life.",
+    "upright": "Burden, stress, oppression, accomplishment",
+    "reversed": "Relief, simplification, avoid-ance, immaturity"
+  },
+  {
+    "id": "wands11",
+    "name": "Page of Wands",
+    "astro": "Aries, Leo, Sagittarius",
+    "element": "Fire",
+    "direction": "South",
+    "intro": "The Suit of Wands mirror your consciousness and gives insight into the core of what you are-both internal and external. They urge you to take action in situations that arise in your life.",
+    "upright": "Enthusiasm, travel, creativity, exploration",
+    "reversed": "Lazy, pessimism, unfocused, arrogance."
+  },
+  {
+    "id": "wands12",
+    "name": "Knight of Wands",
+    "astro": "Aries, Leo, Sagittarius",
+    "element": "Fire",
+    "direction": "South",
+    "intro": "The Suit of Wands mirror your consciousness and gives insight into the core of what you are-both internal and external. They urge you to take action in situations that arise in your life.",
+    "upright": "Determination, energetic, impulsiveness, passionate",
+    "reversed": "Anger, ego frustration, pessimism"
+  },
+  {
+    "id": "wands13",
+    "name": "Queen of Wands",
+    "astro": "Aries, Leo, Sagittarius",
+    "element": "Fire",
+    "direction": "South",
+    "intro": "The Suit of Wands mirror your consciousness and gives insight into the core of what you are-both internal and external. They urge you to take action in situations that arise in your life.",
+    "upright": "Creativity, growth, intuition, passionate",
+    "reversed": "Cold, jealous, aggressive, domineering"
+  },
+  {
+    "id": "wands14",
+    "name": "King of Wands",
+    "astro": "Aries, Leo, Sagittarius",
+    "element": "Fire",
+    "direction": "South",
+    "intro": "The Suit of Wands mirror your consciousness and gives insight into the core of what you are-both internal and external. They urge you to take action in situations that arise in your life.",
+    "upright": "Influence, respect, leader, maturity",
+    "reversed": "Intolerant, ruthless, impa-tient, impulsive"
+  },
+  {
+    "id": "cups01",
+    "name": "Ace of Cups",
+    "astro": "Cancer, Scorpio, Pisces",
+    "element": "Water",
+    "direction": "West",
+    "intro": "The Suit of Cups delves into your emotional state and relationships. The suit appears when you need to pay attention to your own intuition when making decisions.",
+    "upright": "Compassion, purity, creativity, beginnings",
+    "reversed": "Repressed emotions, endings, separation, vulnerability"
+  },
+  {
+    "id": "cups02",
+    "name": "Two of Cups",
+    "astro": "Cancer, Scorpio, Pisces",
+    "element": "Water",
+    "direction": "West",
+    "intro": "The Suit of Cups delves into your emotional state and relationships. The suit appears when you need to pay attention to your own intuition when making decisions.",
+    "upright": "Health, partnership, harmony, attraction",
+    "reversed": "Imbalance, disconnection, unworthiness, struggle"
+  },
+  {
+    "id": "cups03",
+    "name": "Three of Cups",
+    "astro": "Cancer, Scorpio, Pisces",
+    "element": "Water",
+    "direction": "West",
+    "intro": "The Suit of Cups delves into your emotional state and relationships. The suit appears when you need to pay attention to your own intuition when making decisions.",
+    "upright": "Community, friendship, creativity, pleasure",
+    "reversed": "Over-indulgence, unfaithful-ness, stifled creativity, disconnection"
+  },
+  {
+    "id": "cups04",
+    "name": "Four of Cups",
+    "astro": "Cancer, Scorpio, Pisces",
+    "element": "Water",
+    "direction": "West",
+    "intro": "The Suit of Cups delves into your emotional state and relationships. The suit appears when you need to pay attention to your own intuition when making decisions.",
+    "upright": "Meditation, resentment, apathy, discontentment",
+    "reversed": "Boredom, inexperience, depression, separation"
+  },
+  {
+    "id": "cups05",
+    "name": "Five of Cups",
+    "astro": "Cancer, Scorpio, Pisces",
+    "element": "Water",
+    "direction": "West",
+    "intro": "The Suit of Cups delves into your emotional state and relationships. The suit appears when you need to pay attention to your own intuition when making decisions.",
+    "upright": "Loss, neglect, failure, despair",
+    "reversed": "acceptance, forgiveness, nostalgia"
+  },
+  {
+    "id": "cups06",
+    "name": "Six of Cups",
+    "astro": "Cancer, Scorpio, Pisces",
+    "element": "Water",
+    "direction": "West",
+    "intro": "The Suit of Cups delves into your emotional state and relationships. The suit appears when you need to pay attention to your own intuition when making decisions.",
+    "upright": "Innocence, nostalgia, joy, reunion",
+    "reversed": "Scarcity, naiveté, abuse, disappointment"
+  },
+  {
+    "id": "cups07",
+    "name": "Seven of Cups",
+    "astro": "Cancer, Scorpio, Pisces",
+    "element": "Water",
+    "direction": "West",
+    "intro": "The Suit of Cups delves into your emotional state and relationships. The suit appears when you need to pay attention to your own intuition when making decisions.",
+    "upright": "Illusion, imagination, unrealistic desires, possibility",
+    "reversed": "Temptation, indecision, insecurity, overwhelmed"
+  },
+  {
+    "id": "cups08",
+    "name": "Eight of Cups",
+    "astro": "Cancer, Scorpio, Pisces",
+    "element": "Water",
+    "direction": "West",
+    "intro": "The Suit of Cups delves into your emotional state and relationships. The suit appears when you need to pay attention to your own intuition when making decisions.",
+    "upright": "Abandonment, travel, loss of interest, withdrawal",
+    "reversed": "Hopelessness, confusion, drifting, rejection"
+  },
+  {
+    "id": "cups09",
+    "name": "Nine of Cups",
+    "astro": "Cancer, Scorpio, Pisces",
+    "element": "Water",
+    "direction": "West",
+    "intro": "The Suit of Cups delves into your emotional state and relationships. The suit appears when you need to pay attention to your own intuition when making decisions.",
+    "upright": "Happiness, satisfaction, harmony, accomplishment",
+    "reversed": "Greed, materialism, unrealistic expectations, boastfulness"
+  },
+  {
+    "id": "cups10",
+    "name": "Ten of Cups",
+    "astro": "Cancer, Scorpio, Pisces",
+    "element": "Water",
+    "direction": "West",
+    "intro": "The Suit of Cups delves into your emotional state and relationships. The suit appears when you need to pay attention to your own intuition when making decisions.",
+    "upright": "Abundance, satisfaction, fulfillment, happiness",
+    "reversed": "Broken relationship, neglect, incompletion, misalignment"
+  },
+  {
+    "id": "cups11",
+    "name": "Page of Cups",
+    "astro": "Cancer, Scorpio, Pisces",
+    "element": "Water",
+    "direction": "West",
+    "intro": "The Suit of Cups delves into your emotional state and relationships. The suit appears when you need to pay attention to your own intuition when making decisions.",
+    "upright": "Confidence, happiness, contentment, insight",
+    "reversed": "Immaturity, insecurity, apathy, impulsiveness"
+  },
+  {
+    "id": "cups12",
+    "name": "Knight of Cups",
+    "astro": "Cancer, Scorpio, Pisces",
+    "element": "Water",
+    "direction": "West",
+    "intro": "The Suit of Cups delves into your emotional state and relationships. The suit appears when you need to pay attention to your own intuition when making decisions.",
+    "upright": "Advancement, fulfillment, inspiration, healing",
+    "reversed": "Boastfulness, jealousy, disappointment, egotism"
+  },
+  {
+    "id": "cups13",
+    "name": "Queen of Cups",
+    "astro": "Cancer, Scorpio, Pisces",
+    "element": "Water",
+    "direction": "West",
+    "intro": "The Suit of Cups delves into your emotional state and relationships. The suit appears when you need to pay attention to your own intuition when making decisions.",
+    "upright": "Protection, intuition, unconscious emotion, creativity",
+    "reversed": "Insecurity, dependency, dishonesty, dissatisfaction"
+  },
+  {
+    "id": "cups14",
+    "name": "King of Cups",
+    "astro": "Cancer, Scorpio, Pisces",
+    "element": "Water",
+    "direction": "West",
+    "intro": "The Suit of Cups delves into your emotional state and relationships. The suit appears when you need to pay attention to your own intuition when making decisions.",
+    "upright": "Balance, generosity, strength, restraint",
+    "reversed": "Intolerance, abuse, moodi-ness, dependency"
+  },
+  {
+    "id": "swords01",
+    "name": "Ace of Swords",
+    "astro": "Gemini, Libra, Aquarius",
+    "element": "Air",
+    "direction": "North",
+    "intro": "The Suit of Swords are associated with power and conflict, but be keen to remember that swords have a double edge. They are reminders that there is a fine line between good and evil, so be mindful of your thoughts and ambitions.",
+    "upright": "Focus, clarity, victory, inspiration",
+    "reversed": "Insecurity, confusion, chaos, boredom"
+  },
+  {
+    "id": "swords02",
+    "name": "Two of Swords",
+    "astro": "Gemini, Libra, Aquarius",
+    "element": "Air",
+    "direction": "North",
+    "intro": "The Suit of Swords are associated with power and conflict, but be keen to remember that swords have a double edge. They are reminders that there is a fine line between good and evil, so be mindful of your thoughts and ambitions.",
+    "upright": "Intuition, compromise, indecision, stalemate",
+    "reversed": "Fear, confusion, conflict overwhelmed"
+  },
+  {
+    "id": "swords03",
+    "name": "Three of Swords",
+    "astro": "Gemini, Libra, Aquarius",
+    "element": "Air",
+    "direction": "North",
+    "intro": "The Suit of Swords are associated with power and conflict, but be keen to remember that swords have a double edge. They are reminders that there is a fine line between good and evil, so be mindful of your thoughts and ambitions.",
+    "upright": "Pain, grief, deception, rejection",
+    "reversed": "Forgiveness, recovery, clarity, introspection"
+  },
+  {
+    "id": "swords04",
+    "name": "Four of Swords",
+    "astro": "Gemini, Libra, Aquarius",
+    "element": "Air",
+    "direction": "North",
+    "intro": "The Suit of Swords are associated with power and conflict, but be keen to remember that swords have a double edge. They are reminders that there is a fine line between good and evil, so be mindful of your thoughts and ambitions.",
+    "upright": "Contemplation, meditation, relaxation, rest",
+    "reversed": "Resentment, stagnant, exhaustion, frustration"
+  },
+  {
+    "id": "swords05",
+    "name": "Five of Swords",
+    "astro": "Gemini, Libra, Aquarius",
+    "element": "Air",
+    "direction": "North",
+    "intro": "The Suit of Swords are associated with power and conflict, but be keen to remember that swords have a double edge. They are reminders that there is a fine line between good and evil, so be mindful of your thoughts and ambitions.",
+    "upright": "Selfishness, tension, betrayal entitlement",
+    "reversed": "Resolution, forgiveness, understanding, reunion"
+  },
+  {
+    "id": "swords06",
+    "name": "Six of Swords",
+    "astro": "Gemini, Libra, Aquarius",
+    "element": "Air",
+    "direction": "North",
+    "intro": "The Suit of Swords are associated with power and conflict, but be keen to remember that swords have a double edge. They are reminders that there is a fine line between good and evil, so be mindful of your thoughts and ambitions.",
+    "upright": "Solutions, change, security, transition",
+    "reversed": "Delay, challenges, unbal-anced, procrastination"
+  },
+  {
+    "id": "swords07",
+    "name": "Seven of Swords",
+    "astro": "Gemini, Libra, Aquarius",
+    "element": "Air",
+    "direction": "North",
+    "intro": "The Suit of Swords are associated with power and conflict, but be keen to remember that swords have a double edge. They are reminders that there is a fine line between good and evil, so be mindful of your thoughts and ambitions.",
+    "upright": "Betrayal, escape, deception, irresponsibility",
+    "reversed": "Responsibility, acceptance, challenges, commitment"
+  },
+  {
+    "id": "swords08",
+    "name": "Eight of Swords",
+    "astro": "Gemini, Libra, Aquarius",
+    "element": "Air",
+    "direction": "North",
+    "intro": "The Suit of Swords are associated with power and conflict, but be keen to remember that swords have a double edge. They are reminders that there is a fine line between good and evil, so be mindful of your thoughts and ambitions.",
+    "upright": "Isolation, imprisonment, disappointment, trapped",
+    "reversed": "Release, acceptance, accountability, discovery"
+  },
+  {
+    "id": "swords09",
+    "name": "Nine of Swords",
+    "astro": "Gemini, Libra, Aquarius",
+    "element": "Air",
+    "direction": "North",
+    "intro": "The Suit of Swords are associated with power and conflict, but be keen to remember that swords have a double edge. They are reminders that there is a fine line between good and evil, so be mindful of your thoughts and ambitions.",
+    "upright": "Depression, crisis, fear, anxiety",
+    "reversed": "Objectivity, perception, recovery, revelation"
+  },
+  {
+    "id": "swords10",
+    "name": "Ten of Swords",
+    "astro": "Gemini, Libra, Aquarius",
+    "element": "Air",
+    "direction": "North",
+    "intro": "The Suit of Swords are associated with power and conflict, but be keen to remember that swords have a double edge. They are reminders that there is a fine line between good and evil, so be mindful of your thoughts and ambitions.",
+    "upright": "Betrayal, surrender, defeat, endings",
+    "reversed": "Hope, recovery, acceptance, renewal"
+  },
+  {
+    "id": "swords11",
+    "name": "Page of Swords",
+    "astro": "Gemini, Libra, Aquarius",
+    "element": "Air",
+    "direction": "North",
+    "intro": "The Suit of Swords are associated with power and conflict, but be keen to remember that swords have a double edge. They are reminders that there is a fine line between good and evil, so be mindful of your thoughts and ambitions.",
+    "upright": "Thoughtfulness, clarity, curious, restless",
+    "reversed": "Irritable, hasty, annoying, doubt"
+  },
+  {
+    "id": "swords12",
+    "name": "Knight of Swords",
+    "astro": "Gemini, Libra, Aquarius",
+    "element": "Air",
+    "direction": "North",
+    "intro": "The Suit of Swords are associated with power and conflict, but be keen to remember that swords have a double edge. They are reminders that there is a fine line between good and evil, so be mindful of your thoughts and ambitions.",
+    "upright": "Stubborn, determined, brash overbearing",
+    "reversed": "Weak, unreliable, impatient, disorganized"
+  },
+  {
+    "id": "swords13",
+    "name": "Queen of Swords",
+    "astro": "Gemini, Libra, Aquarius",
+    "element": "Air",
+    "direction": "North",
+    "intro": "The Suit of Swords are associated with power and conflict, but be keen to remember that swords have a double edge. They are reminders that there is a fine line between good and evil, so be mindful of your thoughts and ambitions.",
+    "upright": "Confidence, assurance, orga-nized, intellectual",
+    "reversed": "Cruel, distant, ambitious, emotional"
+  },
+  {
+    "id": "swords14",
+    "name": "King of Swords",
+    "astro": "Gemini, Libra, Aquarius",
+    "element": "Air",
+    "direction": "North",
+    "intro": "The Suit of Swords are associated with power and conflict, but be keen to remember that swords have a double edge. They are reminders that there is a fine line between good and evil, so be mindful of your thoughts and ambitions.",
+    "upright": "Intellect, authority, strength, fairness",
+    "reversed": "Indecisive, cruel, abusive, manipulative"
+  },
+  {
+    "id": "pentacles01",
+    "name": "Ace of Pentacles",
+    "astro": "Taurus, Virgo, Capricorn",
+    "element": "Earth",
+    "direction": "East",
+    "intro": "The Suit of Pentacles relates to the physical aspects of life: work, health, finances, creative outlets, and material possessions. They appear as a mirror for what manifests in the physical world.",
+    "upright": "Prosperity, stability, new beginnings, abundance",
+    "reversed": "Greed, corruption, risk, delay"
+  },
+  {
+    "id": "pentacles02",
+    "name": "Two of Pentacles",
+    "astro": "Taurus, Virgo, Capricorn",
+    "element": "Earth",
+    "direction": "East",
+    "intro": "The Suit of Pentacles relates to the physical aspects of life: work, health, finances, creative outlets, and material possessions. They appear as a mirror for what manifests in the physical world.",
+    "upright": "Balance, renewal, adaptability, change",
+    "reversed": "Irresponsible, neglect, disorganization, unpredictability"
+  },
+  {
+    "id": "pentacles03",
+    "name": "Three of Pentacles",
+    "astro": "Taurus, Virgo, Capricorn",
+    "element": "Earth",
+    "direction": "East",
+    "intro": "The Suit of Pentacles relates to the physical aspects of life: work, health, finances, creative outlets, and material possessions. They appear as a mirror for what manifests in the physical world.",
+    "upright": "Success, collaboration, solutions, confidence",
+    "reversed": "Competition, disharmony, interference, stagnant"
+  },
+  {
+    "id": "pentacles04",
+    "name": "Four of Pentacles",
+    "astro": "Taurus, Virgo, Capricorn",
+    "element": "Earth",
+    "direction": "East",
+    "intro": "The Suit of Pentacles relates to the physical aspects of life: work, health, finances, creative outlets, and material possessions. They appear as a mirror for what manifests in the physical world.",
+    "upright": "Stability, control, influence, security",
+    "reversed": "Greed, loss, materialistic, mistrust"
+  },
+  {
+    "id": "pentacles05",
+    "name": "Five of Pentacles",
+    "astro": "Taurus, Virgo, Capricorn",
+    "element": "Earth",
+    "direction": "East",
+    "intro": "The Suit of Pentacles relates to the physical aspects of life: work, health, finances, creative outlets, and material possessions. They appear as a mirror for what manifests in the physical world.",
+    "upright": "Isolation, poverty, poor health, insecurity",
+    "reversed": "Financial recovery, renewed confidence, spirituality, opportunity"
+  },
+  {
+    "id": "pentacles06",
+    "name": "Six of Pentacles",
+    "astro": "Taurus, Virgo, Capricorn",
+    "element": "Earth",
+    "direction": "East",
+    "intro": "The Suit of Pentacles relates to the physical aspects of life: work, health, finances, creative outlets, and material possessions. They appear as a mirror for what manifests in the physical world.",
+    "upright": "Generosity, charity, empathy, kindness",
+    "reversed": "Selfishness, greed, cruelty, judgement"
+  },
+  {
+    "id": "pentacles07",
+    "name": "Seven of Pentacles",
+    "astro": "Taurus, Virgo, Capricorn",
+    "element": "Earth",
+    "direction": "East",
+    "intro": "The Suit of Pentacles relates to the physical aspects of life: work, health, finances, creative outlets, and material possessions. They appear as a mirror for what manifests in the physical world.",
+    "upright": "Profit, reward, investment, growth",
+    "reversed": "Failure, mistrust, unemploy-ment, re-evaluation"
+  },
+  {
+    "id": "pentacles08",
+    "name": "Eight of Pentacles",
+    "astro": "Taurus, Virgo, Capricorn",
+    "element": "Earth",
+    "direction": "East",
+    "intro": "The Suit of Pentacles relates to the physical aspects of life: work, health, finances, creative outlets, and material possessions. They appear as a mirror for what manifests in the physical world.",
+    "upright": "Creativity, concentration, craftsmanship, focus",
+    "reversed": "Perfectionism, frustration, setbacks, obsession"
+  },
+  {
+    "id": "pentacles09",
+    "name": "Nine of Pentacles",
+    "astro": "Taurus, Virgo, Capricorn",
+    "element": "Earth",
+    "direction": "East",
+    "intro": "The Suit of Pentacles relates to the physical aspects of life: work, health, finances, creative outlets, and material possessions. They appear as a mirror for what manifests in the physical world.",
+    "upright": "Luxury, success, reward, appreciation",
+    "reversed": "Materialism, setbacks, loss, overindulgence"
+  },
+  {
+    "id": "pentacles10",
+    "name": "Ten of Pentacles",
+    "astro": "Taurus, Virgo, Capricorn",
+    "element": "Earth",
+    "direction": "East",
+    "intro": "The Suit of Pentacles relates to the physical aspects of life: work, health, finances, creative outlets, and material possessions. They appear as a mirror for what manifests in the physical world.",
+    "upright": "Wealth, achievement, family, satisfaction",
+    "reversed": "Burden, loss, loneliness, judgement"
+  },
+  {
+    "id": "pentacles11",
+    "name": "Page of Pentacles",
+    "astro": "Taurus, Virgo, Capricorn",
+    "element": "Earth",
+    "direction": "East",
+    "intro": "The Suit of Pentacles relates to the physical aspects of life: work, health, finances, creative outlets, and material possessions. They appear as a mirror for what manifests in the physical world.",
+    "upright": "Opportunity, discovery, manifestation, mastery",
+    "reversed": "Ignorance, immaturity, resentment, frustration"
+  },
+  {
+    "id": "pentacles12",
+    "name": "Knight of Pentacles",
+    "astro": "Taurus, Virgo, Capricorn",
+    "element": "Earth",
+    "direction": "East",
+    "intro": "The Suit of Pentacles relates to the physical aspects of life: work, health, finances, creative outlets, and material possessions. They appear as a mirror for what manifests in the physical world.",
+    "upright": "Prepared, efficient, ambitious, practical",
+    "reversed": "Stagnant, lazy, careless, idle"
+  },
+  {
+    "id": "pentacles13",
+    "name": "Queen of Pentacles",
+    "astro": "Taurus, Virgo, Capricorn",
+    "element": "Earth",
+    "direction": "East",
+    "intro": "The Suit of Pentacles relates to the physical aspects of life: work, health, finances, creative outlets, and material possessions. They appear as a mirror for what manifests in the physical world.",
+    "upright": "Prosperity, pleasure, motherly, security",
+    "reversed": "Imbalance, reclusive, super-ficial, martyrdom"
+  },
+  {
+    "id": "pentacles14",
+    "name": "King of Pentacles",
+    "astro": "Taurus, Virgo, Capricorn",
+    "element": "Earth",
+    "direction": "East",
+    "intro": "The Suit of Pentacles relates to the physical aspects of life: work, health, finances, creative outlets, and material possessions. They appear as a mirror for what manifests in the physical world.",
+    "upright": "Power, influence, strength, abundance",
+    "reversed": "Control, abuse, suppression, instability"
+  }
+]

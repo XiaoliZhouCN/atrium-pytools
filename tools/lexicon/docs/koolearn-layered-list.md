@@ -1,0 +1,146 @@
+# koolearn 雅思分层词表
+
+从新东方在线词典（koolearn.com/dict）抓取雅思分类下的词书，用「被多少本词书收录」作为核心度权重，产出分层词表。
+
+生成时间：2026-10-02 ｜ 数据源：<https://www.koolearn.com/dict/>
+
+## 为什么用「收录数」当权重
+
+koolearn **不提供词频和难度标注**，只提供词表。所以核心度只能间接衡量：一个词被越多本独立词书收录，越可能是真核心词。这个代理权重经抽样验证是有效的——权重最高的词是 `priority / alternative / approach / potential / fundamental / innovation` 这类雅思学术核心词，听力桶前几名是 `seminar / canteen / tutorial / accommodation / faculty / handout` 这类典型听力场景词。
+
+## 数据范围
+
+| 项 | 数量 |
+|---|---|
+| 雅思分类（`fenlei_2_105`）词书 | 123 本 |
+| 排除（PTE 书误挂雅思分类） | 4 本 |
+| **计入雅思库** | **119 本** = 技能 66 本 + 通用 53 本 |
+| 技能桶词书数 | 听力 27 · 阅读 18 · 写作 14 · 口语 8 |
+| 抓取到的 (词书, 词) 记录 | 174,330 条 |
+| 去重后总词条 | **26,728**（合并我们的词书后 **26,747**） |
+
+技能归属写在 [`skill_map.json`](skill_map.json) 里，是**人工定稿**的显式映射，不是关键词猜的。想调整分桶直接改这个文件重跑即可。
+
+## 分层与权重
+
+| 字段 | 含义 |
+|---|---|
+| `tier` | 按 `ielts_books` 分级：**S ≥10 本 · A 5–9 · B 3–4 · C 2 · D 1** |
+| `ielts_books` | 被多少本雅思词书收录（0–119） |
+| `listen_books` / `reading_books` / `writing_books` / `speaking_books` | 该技能桶内被多少本收录 |
+| `skills` | 该词属于哪些技能桶 |
+| `in_base` / `base_level` | 是否在 Vocabulary 系列底座中；1=5000 / 2=10000 / 3=22000 |
+
+**tier 分布**（合并我们的词书后）：S 5736 · A 3930 · B 3730 · C 3445 · D 9906
+
+## 已合并我们的词书
+
+本词表已并入 `AtriumPyTools/tools/lexicon` 从新东方《雅思词汇词根+联想记忆法》
+构建的 3610 词，规则见 [`../README.md`](../README.md)：
+
+- 命中已有词 → `ielts_books += 1`（3591 词，其中 1 词靠模糊匹配并入 `spot-on`）
+- 原书 `*` 标记（听力词汇）→ 额外 `listen_books += 1`（1619 词）
+- 总表没有的词 → 追加 19 条，`wd_id`/`url` 留空，靠 `sources` 列区分
+- `tier` / `skills` 跟随重算；265 词的 tier 因此变化
+
+新增列：`sources`（`koolearn` / `koolearn;xdf` / `xdf`）、`xdf`、`xdf_listening`、
+`xdf_listen_counted`。合并**幂等**，重跑不会重复计数。
+
+> **只有词头，没有释义/音标。** 真正的词典内容（音标、释义、词形变化、词频、
+> 例句、介词搭配）在 `AtriumNote/education/language/vocabularies/wordbook.db`，
+> 由 `tools/lexicon` 的 `rebuild` 生成。本目录是**词表层**，负责「背哪些词、按什么顺序」。
+
+## 文件
+
+**全部位于 `lexicon.config.json` 的 `koolearn_dir`**
+（`AtriumNote/education/language/vocabularies/koolearn-ielts/`），不在代码仓库里。
+
+| 文件 | 内容 | 谁生成 |
+|---|---|---|
+| `0_ielts_layered_master.csv` | 全量主表 **26,747** 词，按 tier → 收录数 → 底座层级排序 | 抓取 + `merge` |
+| `1_L1_base_vocabulary.csv` | 底座：Vocabulary 5000/10000/22000，2606 词 | 抓取 |
+| `2_study_pack_recommended.csv` | **推荐背诵包 7260 词**（底座 ∪ 听力/阅读/写作核心 ∪ L3-xdf），含 `layers` 列标明所属层 | `layers` |
+| `3_L2_listening_core.csv` | 听力核心 **2832** 词（≥5 本收录） | `layers` |
+| `4_L2_reading_core.csv` | 阅读核心 1790 词 | `layers` |
+| `5_L2_writing_core.csv` | 写作核心 367 词 | `layers` |
+| `ielts_layered.json` | 同上的 JSON 派生视图（含 `meta`，约 12 MB）；`layers` 会自动重导出，内容未变则不重写 | `layers` |
+| `raw_tags.json` | 抓取快照：119 本书名、技能分组、通用组 | 抓取 |
+| `drill_state.json` | 认词判定进度（**个人数据，不入库**） | `drill` |
+| `drill_unlearned_r*.txt` | 每轮收工的「不认识 + 不熟」合并清单 | `drill` |
+| `.cache/` | 2917 个词表快照（可删，重跑会重抓） | 抓取 |
+| `_backup_*/` | 每轮合并前的 6 个 CSV 备份（自动轮转，保留最近 3 份） | `merge` / `all` / `layers --backup` |
+
+下面两样**放在代码仓库**里（见 [`../README.md`](../README.md)）：
+
+| 文件 | 内容 |
+|---|---|
+| `tools/lexicon/scripts/crawl_koolearn_ielts.py` | 抓取脚本（可复现，带磁盘缓存） |
+| `tools/lexicon/data/skill_map.json` | 技能归属映射，**人工定稿**，可编辑、必须版本化 |
+
+CSV 用 `utf-8-sig` 编码，Excel 直接双击打开不乱码。每行都带 `url`，可回到原词典页查音标和发音
+（`xdf` 来源的行没有 `url`，因为不在 koolearn 站内）。
+
+> 抓取脚本重跑会**覆盖**上述分层文件、抹掉合并结果。要保留合并，请勿重跑该脚本，
+> 或重跑后重新执行 `run_lexicon.bat merge && run_lexicon.bat layers`。
+
+> 每次 `merge`/`all`/`layers --backup`（未加 `--no-backup`）都会新建一个
+> `_backup_<时间戳>/`，并**自动轮转只保留最近 3 份**（`--keep-backups N` 可改）。
+> `_backup_original/` 是人工命名的合并前存档，不参与轮转、永不被删。
+> 同一秒内重复备份会补 `-2`/`-3` 后缀，不会互相覆盖。
+
+## 分层结果
+
+推荐包 7260 词的构成：
+
+| 来源 | 词数 |
+|---|---|
+| 仅底座（不在三技能核心中） | 1918 |
+| 仅技能核心（不在底座中） | 3288 |
+| 底座 ∩ 技能核心 | 688 |
+| 仅我们词书覆盖（`L3-xdf`） | 1366 |
+| **合计** | **7260** |
+
+底座与雅思全量语料的关系（不同口径，别混淆）：底座 2606 词中有 **2143 词（82%）**在某本雅思词书里出现过，只有 **463 词是雅思语料完全没覆盖的**。也就是说底座的价值不在「独家覆盖」，而在它是一个**已分级、已去重的干净起点**；雅思语料 26,265 词是无序的。
+
+| 核心层 | 词数 | 其中底座已覆盖 |
+|---|---|---|
+| 听力（≥5 本） | 2832 | 377（13%） |
+| 阅读（≥5 本） | 1790 | 475（27%） |
+| 写作（≥5 本） | 367 | 91（25%） |
+| 口语（≥5 本） | **29** | — |
+
+## 建议用法
+
+1. **先背 `2_study_pack_recommended.csv`**，按 `layer_count` 降序——同时命中多个层的词优先。
+   也可以直接用 `tools/lexicon` 的 A/S/D 认词判定工具边测边挑：
+   `run_lexicon.bat drill --pool pack`。
+2. **听力单独推进**。雅思听力考拼写，这桶与阅读桶区分度最高，且页面上有音标和英/美发音 mp3，是目前唯一能直接从「认」走到「写」的桶。
+3. **口语桶别用**。只有 8 本词书、≥5 本收录的核心词仅 29 个，统计上不可靠，站内数据撑不起独立口语词库。
+4. 需要更多词时，按 `tier` 从 S 往下取，`D`（仅 1 本书收录）基本是长尾噪声。
+
+## 已知局限
+
+- **只有词头，没有释义/音标**。本次只抓了词表页。要释义需按词抓详情页（`url` 字段已就绪），建议只对核心词做——5838 词约需 5800 次请求。
+- **没有词频/难度原生标注**，权重是全靠「收录数」代理的。
+- **口语与写作的「产出」信息缺失**。站内是中文简释义，够认词，不够写作/口语的搭配和语域训练；原页面有「词组短语 / 双语例句」可以补抓。
+- **`D` 档占 9893 词**（37%），只有 1 本书收录，噪声比例高，不要整体当词表背。
+
+## 复现
+
+本文件描述的数据由 [`../scripts/crawl_koolearn_ielts.py`](../scripts/crawl_koolearn_ielts.py)
+生成，写入 `lexicon.config.json` 的 `koolearn_dir`：
+
+```powershell
+python tools\lexicon\scripts\crawl_koolearn_ielts.py   # 首次约 5–10 分钟，之后走 .cache 秒级
+run_lexicon.bat qa                                     # 校验行数、tier 一致性、层间包含关系
+```
+
+> 该脚本是**抓取侧**的：重跑会覆盖分层文件、抹掉合并进来的本词书结果，
+> 之后需要重新执行 `run_lexicon.bat merge && run_lexicon.bat layers`。
+
+脚本对 koolearn 的请求为串行友好访问（6 并发 + 缓存），`robots.txt` 未禁止 `/dict/`。
+
+## 后续（未完成）
+
+- **GRE**（优先级低）：GRE 不考听力口语，分听说读写无意义。应改为 Verbal 填空 / 阅读 / AWA 分组，核心是站点 `tag_890`–`tag_935` 那批高阶词书（要你命 3000、Verbal Advantage、Magoosh、巴朗 800 等）。此时 Vocabulary 22000 比雅思场景词对口得多。
+- **APS**：APS 审核面谈是用外语讲自己的课程与专业，本质是**专业英语词汇**问题，不是通用词表。站点有约 50 本专业英语词书（如 `tag_2558` 材料科学与工程专业词汇、`tag_2652` 机械工程专业英语词汇）。需要先确定专业方向才能选书。
